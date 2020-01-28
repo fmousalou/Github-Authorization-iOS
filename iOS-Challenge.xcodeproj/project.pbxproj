@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		51ABFA4108193A830D07D8B1 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1472B44674D823777D29C897 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */; };
 		608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */; };
-		608D18E123E091DB00BFE7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18E023E091DB00BFE7C7 /* SceneDelegate.swift */; };
 		608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18E223E091DB00BFE7C7 /* ViewController.swift */; };
 		608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E423E091DB00BFE7C7 /* Main.storyboard */; };
 		608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E723E091DC00BFE7C7 /* Assets.xcassets */; };
@@ -44,7 +43,6 @@
 		4CF87E523F98E04A4A667417 /* Pods-iOS-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		608D18DB23E091DB00BFE7C7 /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		608D18E023E091DB00BFE7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		608D18E223E091DB00BFE7C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		608D18E523E091DB00BFE7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		608D18E723E091DC00BFE7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				2075C2B6642464659DF42D34 /* Pods-iOS-ChallengeTests.debug.xcconfig */,
 				E7DA398FC06A0B03443418B7 /* Pods-iOS-ChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -131,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
-				608D18E023E091DB00BFE7C7 /* SceneDelegate.swift */,
 				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
 				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
 				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
@@ -410,7 +406,6 @@
 			files = (
 				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
-				608D18E123E091DB00BFE7C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

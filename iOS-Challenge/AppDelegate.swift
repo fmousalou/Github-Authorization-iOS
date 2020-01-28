@@ -11,27 +11,36 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("url => ",url)
+        let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
+        
+        if queryItems?.contains(where: { $0.name == "error" }) == true  {
+            
+            let alert = UIAlertController(title: queryItems?.first(where: { $0.name == "error" })?.value,
+                              message: queryItems?.first(where: { $0.name == "error_description" })?.value,
+                              preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+        }else if let code = queryItems?.first(where: { $0.name == "code"}) {
+            (window?.rootViewController as? ViewController)?.accessTokenLabel.text = code.value
+        }
+        
+        
+        return true
+        
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
+    
 }
 
