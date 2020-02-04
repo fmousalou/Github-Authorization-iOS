@@ -5,16 +5,40 @@ target 'iOS-Challenge' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Alamofire'
+  
   # Pods for iOS-Challenge
+
+  # RX
+  pod 'RxSwift'          
+  pod 'RxCocoa'        
+  pod 'RxGesture'
+  pod 'RxDataSources'
+  pod 'Moya/RxSwift'
+
+  #UI
+  pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher'
+
+  #Others
+  pod 'ObjectMapper'
+  pod 'ReachabilitySwift'
+  
+
+
 
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
-    # Pods for testing
+   
+   #Testing
+   pod 'Quick'
+   pod 'Nimble'
+
   end
 
   target 'iOS-ChallengeUITests' do
-    # Pods for testing
+    #Testing
+   pod 'Quick'
+   pod 'Nimble'
   end
 
 end
