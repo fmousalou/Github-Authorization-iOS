@@ -35,8 +35,6 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -54,5 +52,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ApiClientId</key>
+	<string>$(API_CLIENT_ID)</string>
+	<key>ApiClientSecret</key>
+	<string>$(API_CLIENT_SECRET)</string>
+	<key>ApiBaseURL</key>
+	<string>$(API_BASE_URL)</string>
 </dict>
 </plist>
