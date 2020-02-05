@@ -13,7 +13,11 @@ final class AppDIContainer
     lazy var appConfigurations = AppConfigurations()
     
     func makeAuthorizationSceneDIContainer() -> AuthorizationSceneDIContainer {
-        return AuthorizationSceneDIContainer(dependency: AuthorizationSceneDIContainer.Dependency(clientId: appConfigurations.apiClientId))
+        return AuthorizationSceneDIContainer(dependency: AuthorizationSceneDIContainer.Dependency(
+            clientId: appConfigurations.apiClientId,
+            redirectUrl: appConfigurations.redirectUrl,
+            clientSecret: appConfigurations.apiClientSecret,
+            state: appConfigurations.state, keychainServiceKey: appConfigurations.keychainServiceKey, tokenKey: appConfigurations.keychainKey))
     }
 }
 

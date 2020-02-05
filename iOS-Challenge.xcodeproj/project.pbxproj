@@ -10,20 +10,29 @@
 		51ABFA4108193A830D07D8B1 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1472B44674D823777D29C897 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */; };
 		608D190123E091DC00BFE7C7 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */; };
 		60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */; };
-		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
+		60F3961E23E997E400AA2913 /* AccessTokenResponse+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse+Decodable.swift */; };
+		A206266A23EB1EAE00C7D5FC /* LoadingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206266923EB1EAE00C7D5FC /* LoadingUtility.swift */; };
 		A26F27B623E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F27B523E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift */; };
 		A26F27B923E88E5100DBFB42 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F27B823E88E5100DBFB42 /* Cancellable.swift */; };
+		A2764D7F23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */; };
+		A2764D8123E9D62000761EC1 /* BearerTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */; };
+		A2764D8523E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */; };
+		A2764D8823E9F2E600761EC1 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D8723E9F2E600761EC1 /* AccessTokenResponse.swift */; };
+		A27C3D6523EAAB8800E4F8C4 /* NotificationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C3D6423EAAB8800E4F8C4 /* NotificationUtility.swift */; };
+		A27C3D6723EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C3D6623EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift */; };
+		A27C3D7123EB1CFD00E4F8C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27C3D7023EB1CFC00E4F8C4 /* LaunchScreen.storyboard */; };
+		A27C3D7323EB1D3B00E4F8C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27C3D7223EB1D3B00E4F8C4 /* Assets.xcassets */; };
 		A294F87023E942BD00BA6912 /* UseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F86F23E942BD00BA6912 /* UseCasesTests.swift */; };
 		A294F87423E951C200BA6912 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87323E951C200BA6912 /* Alertable.swift */; };
 		A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */; };
 		A294F87823E9520400BA6912 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87723E9520400BA6912 /* Observable.swift */; };
-		A2A6405023E9BF46007D39CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6404F23E9BF46007D39CD /* AppDelegate.swift */; };
 		A2F73ECD23E9583E0081CBEC /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F73ECC23E9583E0081CBEC /* AppDIContainer.swift */; };
 		A2F73ECF23E95A980081CBEC /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F73ECE23E95A980081CBEC /* AppConfigurations.swift */; };
 		A2F73ED123E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F73ED023E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift */; };
 		A2F73ED323E99AE10081CBEC /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F73ED223E99AE10081CBEC /* AuthorizationViewModel.swift */; };
 		A2F73EE123E9B8610081CBEC /* AuthorizationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F73EE023E9B8610081CBEC /* AuthorizationViewController.storyboard */; };
-		A2F73EE323E9B8A00081CBEC /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F73EE223E9B8A00081CBEC /* AuthorizationViewController.swift */; };
+		A2FCCD6E23EB261600D7288F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCCD6D23EB261600D7288F /* AppDelegate.swift */; };
+		A2FCCD7023EB262500D7288F /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCCD6F23EB262500D7288F /* AuthorizationViewController.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
 		CE9ACAB5E03FBDFE2043F7EF /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AA1B7E69338FA2B3688AA /* Pods_iOS_Challenge.framework */; };
 /* End PBXBuildFile section */
@@ -57,22 +66,32 @@
 		608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		608D190223E091DC00BFE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Decodable.swift"; sourceTree = "<group>"; };
-		60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		60F3961D23E997E400AA2913 /* AccessTokenResponse+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccessTokenResponse+Decodable.swift"; sourceTree = "<group>"; };
 		6ABBBC8954A85B69F34446E4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F25064E8452F508919CED9A /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		A206266923EB1EAE00C7D5FC /* LoadingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUtility.swift; sourceTree = "<group>"; };
 		A26F27B523E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeGitHubUserAndStoreTokenUseCase.swift; sourceTree = "<group>"; };
 		A26F27B823E88E5100DBFB42 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeOAuthTokenWithBearerTokenRepository.swift; sourceTree = "<group>"; };
+		A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearerTokenRepository.swift; sourceTree = "<group>"; };
+		A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeOAuthTokenWithBearerToken.swift; sourceTree = "<group>"; };
+		A2764D8723E9F2E600761EC1 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		A27C3D6423EAAB8800E4F8C4 /* NotificationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtility.swift; sourceTree = "<group>"; };
+		A27C3D6623EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainBearerTokenRepository.swift; sourceTree = "<group>"; };
+		A27C3D7023EB1CFC00E4F8C4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A27C3D7223EB1D3B00E4F8C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A27C3D7423EB1D7E00E4F8C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A294F86F23E942BD00BA6912 /* UseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesTests.swift; sourceTree = "<group>"; };
 		A294F87323E951C200BA6912 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		A294F87723E9520400BA6912 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		A2A6404F23E9BF46007D39CD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../../.Trash/Github-Authorization-iOS-master copy/iOS-Challenge/Application/AppDelegate.swift"; sourceTree = "<group>"; };
 		A2F73ECC23E9583E0081CBEC /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		A2F73ECE23E95A980081CBEC /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		A2F73ED023E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationSceneDIContainer.swift; sourceTree = "<group>"; };
 		A2F73ED223E99AE10081CBEC /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		A2F73EE023E9B8610081CBEC /* AuthorizationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AuthorizationViewController.storyboard; sourceTree = "<group>"; };
-		A2F73EE223E9B8A00081CBEC /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationViewController.swift; path = "../../../../../.Trash/Github-Authorization-iOS-master copy/iOS-Challenge/Presentation/AuthorizationScene/AuthorizationViewController.swift"; sourceTree = "<group>"; };
+		A2FCCD6D23EB261600D7288F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A2FCCD6F23EB262500D7288F /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61D224421BF5714CEAB7504 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7DA398FC06A0B03443418B7 /* Pods-iOS-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +163,7 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
-				60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */,
+				A2764D8223E9D7F700761EC1 /* Data */,
 				A294F87123E9504600BA6912 /* Infrastructure */,
 				A26F27B723E88E4500DBFB42 /* Shared */,
 				A26F27B123E87E6000DBFB42 /* Domain */,
@@ -187,7 +205,7 @@
 		A26F27AE23E87DFC00DBFB42 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				A2A6404F23E9BF46007D39CD /* AppDelegate.swift */,
+				A2FCCD6D23EB261600D7288F /* AppDelegate.swift */,
 				A2F73ECA23E952960081CBEC /* DIContainers */,
 				A2F73ECE23E95A980081CBEC /* AppConfigurations.swift */,
 			);
@@ -205,6 +223,9 @@
 		A26F27B023E87E4E00DBFB42 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A27C3D7423EB1D7E00E4F8C4 /* Info.plist */,
+				A27C3D7223EB1D3B00E4F8C4 /* Assets.xcassets */,
+				A27C3D7023EB1CFC00E4F8C4 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -222,6 +243,7 @@
 		A26F27B223E87E6A00DBFB42 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A2764D8723E9F2E600761EC1 /* AccessTokenResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -229,6 +251,7 @@
 		A26F27B323E87E7200DBFB42 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				A2764D7D23E9C4E000761EC1 /* Repositories */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -249,6 +272,40 @@
 				A294F87723E9520400BA6912 /* Observable.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		A2764D7D23E9C4E000761EC1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */,
+				A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A2764D8223E9D7F700761EC1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A2764D8323E9D80600761EC1 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A2764D8323E9D80600761EC1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */,
+				A27C3D6623EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A2764D8623E9F2D200761EC1 /* Data Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				60F3961D23E997E400AA2913 /* AccessTokenResponse+Decodable.swift */,
+			);
+			path = "Data Mapping";
 			sourceTree = "<group>";
 		};
 		A294F86E23E9428A00BA6912 /* Domain */ = {
@@ -272,6 +329,8 @@
 			children = (
 				A294F87323E951C200BA6912 /* Alertable.swift */,
 				A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */,
+				A27C3D6423EAAB8800E4F8C4 /* NotificationUtility.swift */,
+				A206266923EB1EAE00C7D5FC /* LoadingUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -279,6 +338,8 @@
 		A294F87923E9523D00BA6912 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A2764D8623E9F2D200761EC1 /* Data Mapping */,
+				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -295,7 +356,7 @@
 		A2F73ECB23E954020081CBEC /* AuthorizationScene */ = {
 			isa = PBXGroup;
 			children = (
-				A2F73EE223E9B8A00081CBEC /* AuthorizationViewController.swift */,
+				A2FCCD6F23EB262500D7288F /* AuthorizationViewController.swift */,
 				A2F73EE023E9B8610081CBEC /* AuthorizationViewController.storyboard */,
 				A2F73ED223E99AE10081CBEC /* AuthorizationViewModel.swift */,
 			);
@@ -412,7 +473,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27C3D7123EB1CFD00E4F8C4 /* LaunchScreen.storyboard in Resources */,
 				A2F73EE123E9B8610081CBEC /* AuthorizationViewController.storyboard in Resources */,
+				A27C3D7323EB1D3B00E4F8C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,17 +604,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F73ECD23E9583E0081CBEC /* AppDIContainer.swift in Sources */,
-				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
+				A27C3D6723EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift in Sources */,
+				A2764D8523E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift in Sources */,
+				60F3961E23E997E400AA2913 /* AccessTokenResponse+Decodable.swift in Sources */,
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
+				A2764D8823E9F2E600761EC1 /* AccessTokenResponse.swift in Sources */,
 				A2F73ED123E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift in Sources */,
-				A2F73EE323E9B8A00081CBEC /* AuthorizationViewController.swift in Sources */,
+				A2FCCD6E23EB261600D7288F /* AppDelegate.swift in Sources */,
+				A2FCCD7023EB262500D7288F /* AuthorizationViewController.swift in Sources */,
+				A2764D7F23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift in Sources */,
 				A26F27B923E88E5100DBFB42 /* Cancellable.swift in Sources */,
 				A294F87823E9520400BA6912 /* Observable.swift in Sources */,
 				A26F27B623E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift in Sources */,
-				A2A6405023E9BF46007D39CD /* AppDelegate.swift in Sources */,
 				A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */,
+				A27C3D6523EAAB8800E4F8C4 /* NotificationUtility.swift in Sources */,
 				A2F73ECF23E95A980081CBEC /* AppConfigurations.swift in Sources */,
 				A294F87423E951C200BA6912 /* Alertable.swift in Sources */,
+				A206266A23EB1EAE00C7D5FC /* LoadingUtility.swift in Sources */,
+				A2764D8123E9D62000761EC1 /* BearerTokenRepository.swift in Sources */,
 				A2F73ED323E99AE10081CBEC /* AuthorizationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +783,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iOS-Challenge/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				KEYCHAIN_SERVICE_KEY = "com.digipay.iOS-Challenge";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,6 +806,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iOS-Challenge/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				KEYCHAIN_SERVICE_KEY = "com.digipay.iOS-Challenge";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

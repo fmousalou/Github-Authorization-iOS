@@ -43,9 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window?.rootViewController?.present(alert, animated: true, completion: nil)
             
-        }else if let code = queryItems?.first(where: { $0.name == "code"}) {
-            (window?.rootViewController as? ViewController)?.getAuthentication(with: code.value)
-            
+        }else if let code = queryItems?.first(where: { $0.name == "code"}), let token = code.value {
+            NotificationCenter.postNotification(name: .recievedTokenFromServer, userInfo: [NotificationObjectKeys.oAuthToken:token])
         }
         
         

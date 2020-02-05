@@ -15,12 +15,12 @@ protocol CreateGitHubAuthorizationLinkUseCase
 
 protocol StoreAuthorizedTokenUseCase
 {
-    func execute(completion: @escaping (Result<Bool, Error>) -> Void) -> Cancellable?
+    func execute(bearerToken: String, completion: ((Result<Bool, Error>) -> Void)?)
 }
 
-protocol ConvertGithubOAuthTokenToBearerTokenUseCase
+protocol ExchangeGithubOAuthTokenToBearerTokenUseCase
 {
-    func execute(oAuthToken: String, completion: @escaping (Result<String, Error>) -> Void) -> Cancellable?
+    func execute(oAuthToken: String, completion: @escaping (Result<String, Error>) -> Void)
 }
 
 public class DefaultCreateGitHubAuthorizationLinkUseCase: CreateGitHubAuthorizationLinkUseCase
@@ -45,14 +45,44 @@ public class DefaultCreateGitHubAuthorizationLinkUseCase: CreateGitHubAuthorizat
 
 public class DefaultStoreAuthorizedTokenUseCase: StoreAuthorizedTokenUseCase
 {
-    func execute(completion: @escaping (Result<Bool, Error>) -> Void) -> Cancellable? {
-        fatalError()
+    struct Dependency {
+        let repository: BearerTokenRepository
+    }
+    let dependency: Dependency
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+
+    
+    func execute(bearerToken: String, completion: ((Result<Bool, Error>) -> Void)?) {
+        dependency.repository.save(token: bearerToken, completion: completion)
     }
 }
 
-public class DefaultConvertGithubOAuthTokenToBearerTokenUseCase: ConvertGithubOAuthTokenToBearerTokenUseCase
+public class DefaultExchangeGithubOAuthTokenToBearerTokenUseCase: ExchangeGithubOAuthTokenToBearerTokenUseCase
 {
-    func execute(oAuthToken: String, completion: @escaping (Result<String, Error>) -> Void) -> Cancellable? {
-        fatalError()
+    struct Dependency {
+        let clientId: String
+        let redirectUrl: String
+        let clientSecret: String
+        let state: String
+        let exchangeOAuthTokenWithBearerTokenRepository: ExchangeOAuthTokenWithBearerTokenRepository
+    }
+    
+    let dependency: Dependency
+    
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+    
+    func execute(oAuthToken: String, completion: @escaping (Result<String, Error>) -> Void)
+    {
+        dependency.exchangeOAuthTokenWithBearerTokenRepository.exchangeForBearerToken(
+            code: oAuthToken,
+            clientId: dependency.clientId,
+            redirectUrl: dependency.redirectUrl,
+            clientSecret: dependency.clientSecret,
+            state: dependency.state,
+            completion: completion)
     }
 }

@@ -11,10 +11,10 @@ import UIKit
 final class AppConfigurations
 {
     lazy var apiClientId: String = {
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "ApiClientId") as? String else {
+        guard let apiClientId = Bundle.main.object(forInfoDictionaryKey: "ApiClientId") as? String else {
             fatalError("ApiClientId must not be empty in plist")
         }
-        return apiKey
+        return apiClientId
     }()
     
     lazy var apiBaseURL: String = {
@@ -25,10 +25,21 @@ final class AppConfigurations
     }()
     
     lazy var apiClientSecret: String = {
-        guard let apiBaseURL = Bundle.main.object(forInfoDictionaryKey: "ApiClientSecret") as? String else {
+        guard let apiClientSecret = Bundle.main.object(forInfoDictionaryKey: "ApiClientSecret") as? String else {
             fatalError("ApiClientSecret must not be empty in plist")
         }
-        return apiBaseURL
+        return apiClientSecret
     }()
-
+    
+    lazy var keychainServiceKey: String = {
+        guard let keychainServiceKey = Bundle.main.object(forInfoDictionaryKey: "KeychainServiceKey") as? String else {
+            fatalError("KeychainServiceKey must not be empty in plist")
+        }
+        return keychainServiceKey
+    }()
+    
+    lazy var state = "0"
+    #warning("Must be completed")
+    lazy var redirectUrl = ""
+    lazy var keychainKey = "tokenKey"
 }

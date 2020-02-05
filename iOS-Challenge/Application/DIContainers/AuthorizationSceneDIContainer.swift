@@ -12,6 +12,11 @@ final class AuthorizationSceneDIContainer
 {
     struct Dependency {
         let clientId: String
+        let redirectUrl: String
+        let clientSecret: String
+        let state: String
+        let keychainServiceKey: String
+        let tokenKey: String
     }
     let dependency: Dependency
     init(dependency: Dependency) {
@@ -25,6 +30,37 @@ final class AuthorizationSceneDIContainer
     }
     
     private func makeAuthorizationViewModel() -> AuthorizationViewModel {
-        return DefaultAuthorizationViewModel(dependency: DefaultAuthorizationViewModel.Dependency(clientId: dependency.clientId))
+        return DefaultAuthorizationViewModel(
+            dependency:
+            DefaultAuthorizationViewModel.Dependency(
+                clientId: dependency.clientId,
+                createGitHubAuthorizationLinkUseCase: makeCreateGitHubAuthorizationLinkUseCase(),
+                exchangeGithubOAuthTokenToBearerTokenUseCase: makeExchangeGithubOAuthTokenToBearerTokenUseCase(),
+                storeAuthorizedTokenUseCase: makeStoreAuthorizedTokenUseCase()))
+    }
+    
+    private func makeCreateGitHubAuthorizationLinkUseCase () -> CreateGitHubAuthorizationLinkUseCase{
+        return DefaultCreateGitHubAuthorizationLinkUseCase()
+    }
+    
+    private func makeExchangeGithubOAuthTokenToBearerTokenUseCase() -> ExchangeGithubOAuthTokenToBearerTokenUseCase {
+        return DefaultExchangeGithubOAuthTokenToBearerTokenUseCase(dependency: DefaultExchangeGithubOAuthTokenToBearerTokenUseCase.Dependency(
+            clientId: dependency.clientId,
+            redirectUrl: dependency.redirectUrl,
+            clientSecret: dependency.clientSecret,
+            state: dependency.state,
+            exchangeOAuthTokenWithBearerTokenRepository: makeExchangeOAuthTokenWithBearerTokenRepository()))
+    }
+    
+    private func makeStoreAuthorizedTokenUseCase() -> StoreAuthorizedTokenUseCase {
+        return DefaultStoreAuthorizedTokenUseCase(dependency: DefaultStoreAuthorizedTokenUseCase.Dependency(repository: makeBearerTokenRepository()))
+    }
+    
+    private func makeExchangeOAuthTokenWithBearerTokenRepository() -> ExchangeOAuthTokenWithBearerTokenRepository{
+        return DefaultExchangeOAuthTokenWithBearerTokenRepository()
+    }
+    
+    private func makeBearerTokenRepository() -> BearerTokenRepository {
+        return KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(serviceKey: dependency.keychainServiceKey, tokenKey: dependency.tokenKey))
     }
 }

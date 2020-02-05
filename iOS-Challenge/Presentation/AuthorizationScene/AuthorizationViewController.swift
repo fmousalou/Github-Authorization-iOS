@@ -12,14 +12,19 @@ final class AuthorizationViewController: UIViewController, StoryboardInstantiabl
 {
     fileprivate var viewModel: AuthorizationViewModel!
     
-    @IBOutlet weak var accessTokenLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        accessTokenLabel.text = viewModel.loginMessage
+        messageLabel.text = viewModel.loginMessage
     }
     
-    @IBAction func loginDidPress(_ sender: Any?) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
+    }
+    
+    @IBAction func pressedLoginButton(_ sender: Any?) {
         viewModel.pressedLoginButton()
     }
 }

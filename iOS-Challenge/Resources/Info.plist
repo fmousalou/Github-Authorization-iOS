@@ -56,6 +56,8 @@
 	<string>$(API_CLIENT_ID)</string>
 	<key>ApiClientSecret</key>
 	<string>$(API_CLIENT_SECRET)</string>
+	<key>KeychainServiceKey</key>
+	<string>$(KEYCHAIN_SERVICE_KEY)</string>
 	<key>ApiBaseURL</key>
 	<string>$(API_BASE_URL)</string>
 </dict>
