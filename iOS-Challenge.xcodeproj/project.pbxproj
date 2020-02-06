@@ -36,9 +36,12 @@
 		952E7C7223E9E05C00003582 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7123E9E05C00003582 /* ValidationError.swift */; };
 		952E7C7623E9ECA900003582 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7323E9ECA800003582 /* Owner.swift */; };
 		952E7C7723E9ECA900003582 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7423E9ECA800003582 /* SearchResult.swift */; };
-		952E7C7823E9ECA900003582 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7523E9ECA900003582 /* Items.swift */; };
+		952E7C7823E9ECA900003582 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7523E9ECA900003582 /* Item.swift */; };
 		952E7C7A23EA234E00003582 /* CallBackKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7923EA234E00003582 /* CallBackKeys.swift */; };
 		952E7C7C23EA272600003582 /* Sort&Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E7C7B23EA272600003582 /* Sort&Order.swift */; };
+		95312EF623EAC61700776812 /* MultiSectionGenericEnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95312EF523EAC61700776812 /* MultiSectionGenericEnumModel.swift */; };
+		95312EF923EAC8B900776812 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95312EF823EAC8B900776812 /* RepositoryCell.swift */; };
+		95312EFC23EB0F7A00776812 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95312EFA23EB0F7A00776812 /* ProfileViewController.swift */; };
 		95FD269A23E9614C00690012 /* MoyaProvider+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD269923E9614B00690012 /* MoyaProvider+EX.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
 		CE9ACAB5E03FBDFE2043F7EF /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AA1B7E69338FA2B3688AA /* Pods_iOS_Challenge.framework */; };
@@ -102,9 +105,12 @@
 		952E7C7123E9E05C00003582 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		952E7C7323E9ECA800003582 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		952E7C7423E9ECA800003582 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		952E7C7523E9ECA900003582 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		952E7C7523E9ECA900003582 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		952E7C7923EA234E00003582 /* CallBackKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBackKeys.swift; sourceTree = "<group>"; };
 		952E7C7B23EA272600003582 /* Sort&Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sort&Order.swift"; sourceTree = "<group>"; };
+		95312EF523EAC61700776812 /* MultiSectionGenericEnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiSectionGenericEnumModel.swift; sourceTree = "<group>"; };
+		95312EF823EAC8B900776812 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		95312EFA23EB0F7A00776812 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		95FD269923E9614B00690012 /* MoyaProvider+EX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+EX.swift"; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61D224421BF5714CEAB7504 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,9 +220,11 @@
 		952592FC23E7242F001602AC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95312EF723EAC89500776812 /* Cells */,
 				608D18E223E091DB00BFE7C7 /* LogInViewController.swift */,
 				952E7C6023E9BBBF00003582 /* RepositoryViewController.swift */,
 				952E7C6423E9BD4500003582 /* CommitViewController.swift */,
+				95312EFA23EB0F7A00776812 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,12 +294,29 @@
 		952E7C7023E9E04200003582 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				952E7C7523E9ECA900003582 /* Items.swift */,
+				95312EF423EAC5BB00776812 /* GenericSectionModel */,
+				952E7C7523E9ECA900003582 /* Item.swift */,
 				952E7C7323E9ECA800003582 /* Owner.swift */,
 				952E7C7423E9ECA800003582 /* SearchResult.swift */,
 				952E7C7123E9E05C00003582 /* ValidationError.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		95312EF423EAC5BB00776812 /* GenericSectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				95312EF523EAC61700776812 /* MultiSectionGenericEnumModel.swift */,
+			);
+			path = GenericSectionModel;
+			sourceTree = "<group>";
+		};
+		95312EF723EAC89500776812 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95312EF823EAC8B900776812 /* RepositoryCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9E97234477426D684DD9BFA1 /* Frameworks */ = {
@@ -562,7 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				952E7C6323E9BBDB00003582 /* RepositoryViewModel.swift in Sources */,
-				952E7C7823E9ECA900003582 /* Items.swift in Sources */,
+				952E7C7823E9ECA900003582 /* Item.swift in Sources */,
 				952E7C6923E9CF8000003582 /* MoyaResponse+Map.swift in Sources */,
 				952E7C6723E9BD5500003582 /* CommitViewModel.swift in Sources */,
 				952E7C7A23EA234E00003582 /* CallBackKeys.swift in Sources */,
@@ -573,10 +598,12 @@
 				952E7C5423E96D7B00003582 /* URLComponents+EX.swift in Sources */,
 				952E7C7223E9E05C00003582 /* ValidationError.swift in Sources */,
 				952E7C7C23EA272600003582 /* Sort&Order.swift in Sources */,
+				95312EFC23EB0F7A00776812 /* ProfileViewController.swift in Sources */,
 				952E7C6123E9BBBF00003582 /* RepositoryViewController.swift in Sources */,
 				952E7C7723E9ECA900003582 /* SearchResult.swift in Sources */,
 				952E7C5223E966D500003582 /* ViewController+EX.swift in Sources */,
 				9525930623E727FA001602AC /* StaticValues.swift in Sources */,
+				95312EF623EAC61700776812 /* MultiSectionGenericEnumModel.swift in Sources */,
 				95FD269A23E9614C00690012 /* MoyaProvider+EX.swift in Sources */,
 				952E7C5923E96F4100003582 /* SharedPrefrences.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
@@ -587,6 +614,7 @@
 				952E7C5D23E97AFC00003582 /* Notification+Ex.swift in Sources */,
 				9525930223E72527001602AC /* GitHubAPI.swift in Sources */,
 				9525930823E752B8001602AC /* GitHubService.swift in Sources */,
+				95312EF923EAC8B900776812 /* RepositoryCell.swift in Sources */,
 				9525930423E725A0001602AC /* HTTPManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

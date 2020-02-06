@@ -7,7 +7,7 @@
 import Foundation
 import ObjectMapper
 
-struct Items : Mappable {
+struct Item : Mappable {
     var id : Int?
     var node_id : String?
     var name : String?

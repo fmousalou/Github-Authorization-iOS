@@ -9,4 +9,6 @@
 import Foundation
 
 //let clientId = "your-clientId"
-let clientId = "04860a64b85b7438bf91"
+let clientId    = "04860a64b85b7438bf91"
+let state       = "codeChallenge" // state generate random didn't had time for that
+let redirectURL = "challenge://app/callback"

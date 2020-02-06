@@ -19,16 +19,25 @@ public final class GitHubService {
     
     init() { }
     
-    func FetchRepositories() ->  Observable<(String , Int ,SearchResult?)>
+    func FetchRepositories(keyWord:String = "" )->  Observable<SearchResult?>
     {
         return  provider
             .rx
-            .request(.search(keyWord: "", sort: "", order: "",page: "0"))
+            .request(.search(keyWord: keyWord, sort: "", order: "",page: "0"))
             .timeout(10, scheduler: MainScheduler.instance)
-            .objectWithStatus(SearchResult.self)
+            .object(SearchResult.self)
         
     }
     
+    func login(code:String)->  Observable<SearchResult?>
+       {
+           return  provider
+               .rx
+               .request(.login(code: code))
+               .timeout(10, scheduler: MainScheduler.instance)
+               .object(SearchResult.self)
+           
+       }
     
     
 }

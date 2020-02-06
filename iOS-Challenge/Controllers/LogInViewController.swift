@@ -40,7 +40,7 @@ class LogInViewController: UIViewController {
         bindingFrom()
         bindingTo()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.authorizedSuccessfully), name: .authorized, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.authorizedSuccessfully(_:)), name: .authorized, object: nil)
         
     }
     
@@ -53,6 +53,14 @@ class LogInViewController: UIViewController {
     // MARK: - Bind From ViewModel
     
     private func bindingFrom() {
+        viewModel
+            .message
+            .asObservable()
+            .filter({ $0 != nil})
+            .subscribe(onNext:{ [unowned self] messageSet in
+                guard let messageSet = messageSet else{ return }
+                self.showAlert(title: messageSet.0, message: messageSet.1)
+            }).disposed(by: disposeBag)
         
     }
     
@@ -69,9 +77,9 @@ class LogInViewController: UIViewController {
                 // add parameters
                 urlComponent.queryItems = [
                     URLQueryItem(name: "client_id", value: clientId),
-                    URLQueryItem(name: "redirect_uri", value: "challenge://app/callback"),
+                    URLQueryItem(name: "redirect_uri", value: redirectURL),
                     URLQueryItem(name: "scope", value: "repo"),
-                    URLQueryItem(name: "state", value: "0")
+                    URLQueryItem(name: "state", value: state)
                 ]
                 
                 // convert to url and open link
@@ -87,10 +95,14 @@ class LogInViewController: UIViewController {
     
     // MARK: - Custome Methods
     
-    @objc func authorizedSuccessfully(){
-        if let rootNavigationController = self.storyboard?.instantiateViewController(identifier: "rootNavigation") {
-            UIApplication.shared.setRoot(viewController: rootNavigationController)
-        }
+    @objc func authorizedSuccessfully(_ notification:Notification){
+        if let object = notification.object as? [String:String]{
+            if let code = object["code"]{
+            viewModel.callLogin(code:code)
+            }}
+//        if let rootNavigationController = self.storyboard?.instantiateViewController(identifier: "rootNavigation") {
+//            UIApplication.shared.setRoot(viewController: rootNavigationController)
+//        }
     }
     
     

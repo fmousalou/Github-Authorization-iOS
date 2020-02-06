@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
         configureApi()
-        configureFirstVC()
+//        configureFirstVC()
         
         return true
     }
@@ -57,9 +58,13 @@ extension AppDelegate {
                 errorDescription = errorDescription.replacingOccurrences(of: "+", with: " ")
                 UIApplication.topViewController()?.showAlert(title: error, message: errorDescription)
             }else if let code = queryItems["code"] {
-                let userDataHelper = UserDataHelper()
-                userDataHelper.setToken(token: code)
-                NotificationCenter.default.post(name: .authorized, object: nil)
+                if let state = queryItems["state"],state.compare(state) == .orderedSame{
+//                    let userDataHelper = UserDataHelper()
+//                    userDataHelper.setToken(token: code)
+                    NotificationCenter.default.post(name: .authorized, object: ["code":code])
+                }else{
+                   // someone else requesting  don't do anything
+                }
             }
         }
     }
@@ -70,11 +75,8 @@ extension AppDelegate {
 extension AppDelegate{
     
     fileprivate func configureApi() {
-        HTTPManager.configure(with: [:],baseUrl: URL(string: "https://github.com/")!)
-        HTTPManager.shared.append(headers: ["client_id": clientId,
-                                            "redirect_uri": "challenge://app/callback",
-                                            "scope": "repo",
-                                            "state": "0"])
+        HTTPManager.configure(with: [:],baseUrl: URL(string: "https://api.github.com")!)
+        HTTPManager.shared.append(headers: ["Content-Type": "application/x-www-form-urlencoded"])
     }
     
     /// Configure First ViewController

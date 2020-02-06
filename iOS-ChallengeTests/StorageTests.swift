@@ -27,12 +27,15 @@ class StorageSpec: QuickSpec {
     }()
     
     override func spec() {
+        
+        // using **sharedPrefrences**
         describe("SP_Test") {
             self.SP_removeAllIsTrue()
             self.SP_tokenNotNilAndSavedCorrectly()
         }
         
-        describe("UD") {
+        // using **userDataHelper**
+        describe("UD_Test") {
             self.SP_removeAllIsTrue() // Delete to get fail <<<<<<<=======
             self.UD_tokenIsNil()
             self.UD_tokenNotNilAndSavedCorrectly()

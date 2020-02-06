@@ -12,7 +12,7 @@ import ObjectMapper
 struct SearchResult : Mappable {
     var total_count : Int?
     var incomplete_results : Bool?
-    var items : [Items]?
+    var items : [Item]?
 
     init?(map: Map) {
 
