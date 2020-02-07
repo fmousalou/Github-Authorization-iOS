@@ -12,8 +12,23 @@
 		60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */; };
 		60F3961E23E997E400AA2913 /* AccessTokenResponse+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse+Decodable.swift */; };
 		A206266A23EB1EAE00C7D5FC /* LoadingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206266923EB1EAE00C7D5FC /* LoadingUtility.swift */; };
+		A2067E3B23EB407800843FB3 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E3A23EB407800843FB3 /* RepositoriesViewController.swift */; };
+		A2067E3D23EB408F00843FB3 /* RepositoriesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2067E3C23EB408F00843FB3 /* RepositoriesViewController.storyboard */; };
+		A2067E3F23EB41D800843FB3 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E3E23EB41D800843FB3 /* RepositoriesViewModel.swift */; };
+		A2067E4223EC3A8800843FB3 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4123EC3A8800843FB3 /* AppAppearance.swift */; };
+		A2067E4423ED385500843FB3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4323ED385500843FB3 /* ProfileViewController.swift */; };
+		A2067E4623ED387800843FB3 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2067E4523ED387800843FB3 /* ProfileViewController.storyboard */; };
+		A2067E4823ED388B00843FB3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4723ED388B00843FB3 /* ProfileViewModel.swift */; };
+		A2067E4A23ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4923ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift */; };
+		A2067E4C23ED4CC100843FB3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4B23ED4CC100843FB3 /* Repository.swift */; };
+		A2067E4F23ED4D0700843FB3 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4D23ED4D0700843FB3 /* Owner.swift */; };
+		A2067E5023ED4D0700843FB3 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E4E23ED4D0700843FB3 /* Permissions.swift */; };
+		A2067E5223ED4DE700843FB3 /* Repository+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E5123ED4DE700843FB3 /* Repository+Decodable.swift */; };
+		A2067E5423ED4E4B00843FB3 /* Owner+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E5323ED4E4B00843FB3 /* Owner+Decodable.swift */; };
+		A2067E5623ED4E8A00843FB3 /* Permissions+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E5523ED4E8A00843FB3 /* Permissions+Decodable.swift */; };
+		A2067E5823ED50C400843FB3 /* GithubRepositoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E5723ED50C400843FB3 /* GithubRepositoriesRepository.swift */; };
+		A2067E5A23ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2067E5923ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift */; };
 		A26F27B623E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F27B523E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift */; };
-		A26F27B923E88E5100DBFB42 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F27B823E88E5100DBFB42 /* Cancellable.swift */; };
 		A2764D7F23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */; };
 		A2764D8123E9D62000761EC1 /* BearerTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */; };
 		A2764D8523E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */; };
@@ -33,6 +48,7 @@
 		A2F73EE123E9B8610081CBEC /* AuthorizationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F73EE023E9B8610081CBEC /* AuthorizationViewController.storyboard */; };
 		A2FCCD6E23EB261600D7288F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCCD6D23EB261600D7288F /* AppDelegate.swift */; };
 		A2FCCD7023EB262500D7288F /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCCD6F23EB262500D7288F /* AuthorizationViewController.swift */; };
+		A2FCCD7223EB2BE900D7288F /* MainSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FCCD7123EB2BE900D7288F /* MainSceneDIContainer.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
 		CE9ACAB5E03FBDFE2043F7EF /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AA1B7E69338FA2B3688AA /* Pods_iOS_Challenge.framework */; };
 /* End PBXBuildFile section */
@@ -70,8 +86,23 @@
 		6ABBBC8954A85B69F34446E4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F25064E8452F508919CED9A /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		A206266923EB1EAE00C7D5FC /* LoadingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUtility.swift; sourceTree = "<group>"; };
+		A2067E3A23EB407800843FB3 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
+		A2067E3C23EB408F00843FB3 /* RepositoriesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoriesViewController.storyboard; sourceTree = "<group>"; };
+		A2067E3E23EB41D800843FB3 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
+		A2067E4123EC3A8800843FB3 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		A2067E4323ED385500843FB3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A2067E4523ED387800843FB3 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		A2067E4723ED388B00843FB3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A2067E4923ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRepositoriesFromServerUseCase.swift; sourceTree = "<group>"; };
+		A2067E4B23ED4CC100843FB3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		A2067E4D23ED4D0700843FB3 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		A2067E4E23ED4D0700843FB3 /* Permissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		A2067E5123ED4DE700843FB3 /* Repository+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Decodable.swift"; sourceTree = "<group>"; };
+		A2067E5323ED4E4B00843FB3 /* Owner+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Owner+Decodable.swift"; sourceTree = "<group>"; };
+		A2067E5523ED4E8A00843FB3 /* Permissions+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Permissions+Decodable.swift"; sourceTree = "<group>"; };
+		A2067E5723ED50C400843FB3 /* GithubRepositoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoriesRepository.swift; sourceTree = "<group>"; };
+		A2067E5923ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGithubRepositoriesRepository.swift; sourceTree = "<group>"; };
 		A26F27B523E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeGitHubUserAndStoreTokenUseCase.swift; sourceTree = "<group>"; };
-		A26F27B823E88E5100DBFB42 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeOAuthTokenWithBearerTokenRepository.swift; sourceTree = "<group>"; };
 		A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearerTokenRepository.swift; sourceTree = "<group>"; };
 		A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeOAuthTokenWithBearerToken.swift; sourceTree = "<group>"; };
@@ -92,6 +123,7 @@
 		A2F73EE023E9B8610081CBEC /* AuthorizationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AuthorizationViewController.storyboard; sourceTree = "<group>"; };
 		A2FCCD6D23EB261600D7288F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2FCCD6F23EB262500D7288F /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		A2FCCD7123EB2BE900D7288F /* MainSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneDIContainer.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61D224421BF5714CEAB7504 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7DA398FC06A0B03443418B7 /* Pods-iOS-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,12 +234,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2067E4023EB4BFD00843FB3 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		A26F27AE23E87DFC00DBFB42 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				A2FCCD6D23EB261600D7288F /* AppDelegate.swift */,
 				A2F73ECA23E952960081CBEC /* DIContainers */,
+				A2FCCD6D23EB261600D7288F /* AppDelegate.swift */,
 				A2F73ECE23E95A980081CBEC /* AppConfigurations.swift */,
+				A2067E4123EC3A8800843FB3 /* AppAppearance.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -215,6 +255,8 @@
 		A26F27AF23E87E1000DBFB42 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A2FCCD7623EB2DB300D7288F /* ProfileScene */,
+				A2FCCD7323EB2D8800D7288F /* MainScene */,
 				A2F73ECB23E954020081CBEC /* AuthorizationScene */,
 			);
 			path = Presentation;
@@ -244,6 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				A2764D8723E9F2E600761EC1 /* AccessTokenResponse.swift */,
+				A2067E4B23ED4CC100843FB3 /* Repository.swift */,
+				A2067E4D23ED4D0700843FB3 /* Owner.swift */,
+				A2067E4E23ED4D0700843FB3 /* Permissions.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -260,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				A26F27B523E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift */,
+				A2067E4923ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -268,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				A294F87223E951B700BA6912 /* Utilities */,
-				A26F27B823E88E5100DBFB42 /* Cancellable.swift */,
 				A294F87723E9520400BA6912 /* Observable.swift */,
 			);
 			path = Shared;
@@ -279,6 +324,7 @@
 			children = (
 				A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */,
 				A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */,
+				A2067E5723ED50C400843FB3 /* GithubRepositoriesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -296,6 +342,7 @@
 			children = (
 				A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */,
 				A27C3D6623EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift */,
+				A2067E5923ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -304,6 +351,9 @@
 			isa = PBXGroup;
 			children = (
 				60F3961D23E997E400AA2913 /* AccessTokenResponse+Decodable.swift */,
+				A2067E5123ED4DE700843FB3 /* Repository+Decodable.swift */,
+				A2067E5323ED4E4B00843FB3 /* Owner+Decodable.swift */,
+				A2067E5523ED4E8A00843FB3 /* Permissions+Decodable.swift */,
 			);
 			path = "Data Mapping";
 			sourceTree = "<group>";
@@ -338,8 +388,8 @@
 		A294F87923E9523D00BA6912 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A2764D8623E9F2D200761EC1 /* Data Mapping */,
 				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
+				A2764D8623E9F2D200761EC1 /* Data Mapping */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -349,6 +399,7 @@
 			children = (
 				A2F73ECC23E9583E0081CBEC /* AppDIContainer.swift */,
 				A2F73ED023E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift */,
+				A2FCCD7123EB2BE900D7288F /* MainSceneDIContainer.swift */,
 			);
 			path = DIContainers;
 			sourceTree = "<group>";
@@ -361,6 +412,43 @@
 				A2F73ED223E99AE10081CBEC /* AuthorizationViewModel.swift */,
 			);
 			path = AuthorizationScene;
+			sourceTree = "<group>";
+		};
+		A2FCCD7323EB2D8800D7288F /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2FCCD7523EB2DA700D7288F /* CommitsScene */,
+				A2FCCD7423EB2D9900D7288F /* RepositoriesScene */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		A2FCCD7423EB2D9900D7288F /* RepositoriesScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2067E4023EB4BFD00843FB3 /* Items */,
+				A2067E3A23EB407800843FB3 /* RepositoriesViewController.swift */,
+				A2067E3C23EB408F00843FB3 /* RepositoriesViewController.storyboard */,
+				A2067E3E23EB41D800843FB3 /* RepositoriesViewModel.swift */,
+			);
+			path = RepositoriesScene;
+			sourceTree = "<group>";
+		};
+		A2FCCD7523EB2DA700D7288F /* CommitsScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommitsScene;
+			sourceTree = "<group>";
+		};
+		A2FCCD7623EB2DB300D7288F /* ProfileScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2067E4323ED385500843FB3 /* ProfileViewController.swift */,
+				A2067E4523ED387800843FB3 /* ProfileViewController.storyboard */,
+				A2067E4723ED388B00843FB3 /* ProfileViewModel.swift */,
+			);
+			path = ProfileScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +564,8 @@
 				A27C3D7123EB1CFD00E4F8C4 /* LaunchScreen.storyboard in Resources */,
 				A2F73EE123E9B8610081CBEC /* AuthorizationViewController.storyboard in Resources */,
 				A27C3D7323EB1D3B00E4F8C4 /* Assets.xcassets in Resources */,
+				A2067E4623ED387800843FB3 /* ProfileViewController.storyboard in Resources */,
+				A2067E3D23EB408F00843FB3 /* RepositoriesViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,25 +693,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2067E3B23EB407800843FB3 /* RepositoriesViewController.swift in Sources */,
 				A2F73ECD23E9583E0081CBEC /* AppDIContainer.swift in Sources */,
 				A27C3D6723EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift in Sources */,
 				A2764D8523E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse+Decodable.swift in Sources */,
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
 				A2764D8823E9F2E600761EC1 /* AccessTokenResponse.swift in Sources */,
+				A2067E4C23ED4CC100843FB3 /* Repository.swift in Sources */,
 				A2F73ED123E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift in Sources */,
+				A2067E4F23ED4D0700843FB3 /* Owner.swift in Sources */,
+				A2067E5023ED4D0700843FB3 /* Permissions.swift in Sources */,
 				A2FCCD6E23EB261600D7288F /* AppDelegate.swift in Sources */,
 				A2FCCD7023EB262500D7288F /* AuthorizationViewController.swift in Sources */,
+				A2067E4823ED388B00843FB3 /* ProfileViewModel.swift in Sources */,
 				A2764D7F23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift in Sources */,
-				A26F27B923E88E5100DBFB42 /* Cancellable.swift in Sources */,
+				A2067E4A23ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift in Sources */,
+				A2067E5223ED4DE700843FB3 /* Repository+Decodable.swift in Sources */,
 				A294F87823E9520400BA6912 /* Observable.swift in Sources */,
 				A26F27B623E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift in Sources */,
 				A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */,
+				A2067E5A23ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift in Sources */,
+				A2067E4223EC3A8800843FB3 /* AppAppearance.swift in Sources */,
 				A27C3D6523EAAB8800E4F8C4 /* NotificationUtility.swift in Sources */,
 				A2F73ECF23E95A980081CBEC /* AppConfigurations.swift in Sources */,
+				A2067E3F23EB41D800843FB3 /* RepositoriesViewModel.swift in Sources */,
+				A2067E5423ED4E4B00843FB3 /* Owner+Decodable.swift in Sources */,
 				A294F87423E951C200BA6912 /* Alertable.swift in Sources */,
 				A206266A23EB1EAE00C7D5FC /* LoadingUtility.swift in Sources */,
+				A2067E5623ED4E8A00843FB3 /* Permissions+Decodable.swift in Sources */,
 				A2764D8123E9D62000761EC1 /* BearerTokenRepository.swift in Sources */,
+				A2067E5823ED50C400843FB3 /* GithubRepositoriesRepository.swift in Sources */,
+				A2067E4423ED385500843FB3 /* ProfileViewController.swift in Sources */,
+				A2FCCD7223EB2BE900D7288F /* MainSceneDIContainer.swift in Sources */,
 				A2F73ED323E99AE10081CBEC /* AuthorizationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,7 +886,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iOS-Challenge/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				KEYCHAIN_SERVICE_KEY = "com.digipay.iOS-Challenge";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -805,7 +909,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iOS-Challenge/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				KEYCHAIN_SERVICE_KEY = "com.digipay.iOS-Challenge";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

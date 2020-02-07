@@ -8,14 +8,18 @@
 
 import Foundation
 import UIKit
-
+enum AuthorizationViewModelRoute {
+    case initial
+    case showMainScene
+}
 protocol AuthorizationViewModelInput {
     func pressedLoginButton()
-    func viewWillAppear()
 }
 protocol AuthorizationViewModelOutput {
     var loginMessage: String { get }
     var loginButtonTitle: String { get }
+    var route: Observable<AuthorizationViewModelRoute> { get }
+    func showMainScene()
 }
 
 protocol AuthorizationViewModel: AuthorizationViewModelInput, AuthorizationViewModelOutput {
@@ -24,7 +28,6 @@ protocol AuthorizationViewModel: AuthorizationViewModelInput, AuthorizationViewM
 }
 
 final class DefaultAuthorizationViewModel: AuthorizationViewModel {
-    
     struct Dependency {
         let clientId:String
         let createGitHubAuthorizationLinkUseCase: CreateGitHubAuthorizationLinkUseCase
@@ -58,13 +61,15 @@ final class DefaultAuthorizationViewModel: AuthorizationViewModel {
     }
     
     private func exchangeToken(token: String) {
+        LoadingUtility.showLoading()
         dependency.exchangeGithubOAuthTokenToBearerTokenUseCase.execute(oAuthToken: token) { (result) in
+            LoadingUtility.hideLoading()
             switch result {
             case .success(let bearerToken):
-                let _ = self.dependency.storeAuthorizedTokenUseCase.execute(bearerToken: bearerToken, completion: nil)
+                self.dependency.storeAuthorizedTokenUseCase.execute(bearerToken: bearerToken, completion: nil)
+                self.showMainScene()
             case .failure(let error):
                 print(error)
-                fatalError()
             }
         }
     }
@@ -81,9 +86,10 @@ final class DefaultAuthorizationViewModel: AuthorizationViewModel {
                                     print(result)
         }
     }
-    func viewWillAppear() {
-        
+    var route: Observable<AuthorizationViewModelRoute> = Observable(.initial)
+    func showMainScene() {
+            route.value = .showMainScene
+        }
     }
-    
-}
+
 

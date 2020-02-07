@@ -18,13 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Parameter application: current application
     /// - Parameter launchOptions: launch options passed to app
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let authorizationViewController = appDIContainer.makeAuthorizationSceneDIContainer().makeAuthorizationViewController()
-        let navigationController = UINavigationController(rootViewController: authorizationViewController)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
 
+        AppAppearance.setupAppearance()
+
+        KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
+        serviceKey: appDIContainer.appConfigurations.keychainServiceKey,
+            tokenKey: appDIContainer.appConfigurations.keychainKey)).delete()
+        
+        let bearerTokenRepository: BearerTokenRepository = KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
+            serviceKey: appDIContainer.appConfigurations.keychainServiceKey,
+            tokenKey: appDIContainer.appConfigurations.keychainKey))
+        
+        bearerTokenRepository.fetch { (result) in
+            switch result {
+            case .success(let token):
+                DispatchQueue.main.async {
+                    self.presentMainScene(token: token)
+                }
+            case.failure(_):
+                DispatchQueue.main.async {
+                    self.presentAuthorizationScene()
+                }
+            }
+        }
         return true
     }
 
@@ -46,11 +62,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else if let code = queryItems?.first(where: { $0.name == "code"}), let token = code.value {
             NotificationCenter.postNotification(name: .recievedTokenFromServer, userInfo: [NotificationObjectKeys.oAuthToken:token])
         }
-        
-        
         return true
-        
+    }
+
+    private func presentAuthorizationScene(){
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let authorizationViewController = appDIContainer.makeAuthorizationSceneDIContainer().makeAuthorizationViewController()
+        let navigationController = UINavigationController(rootViewController: authorizationViewController)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
     
+    private func presentMainScene(token: String){
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let mainViewController = appDIContainer.makeMainSceneDIContainer().makeMainView()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
 }
 

@@ -9,11 +9,5 @@
 import Foundation
 
 protocol ExchangeOAuthTokenWithBearerTokenRepository {
-
-    func exchangeForBearerToken(code: String,
-                                clientId: String,
-                                redirectUrl: String,
-                                clientSecret: String,
-                                state: String,
-                                completion: @escaping (Result<String, Error>) -> Void)
+    func exchangeForBearerToken(oAtuthToken: String, completion: @escaping (Result<String, Error>) -> Void)
 }

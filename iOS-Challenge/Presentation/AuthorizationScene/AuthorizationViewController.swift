@@ -11,29 +11,43 @@ import UIKit
 final class AuthorizationViewController: UIViewController, StoryboardInstantiable
 {
     fileprivate var viewModel: AuthorizationViewModel!
-    
+    fileprivate var mainSceneDIContainer:MainSceneDIContainer!
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text = viewModel.loginMessage
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.viewWillAppear()
+        bind(to: viewModel)
     }
     
     @IBAction func pressedLoginButton(_ sender: Any?) {
         viewModel.pressedLoginButton()
     }
+    
+    func bind(to viewModel: AuthorizationViewModel) {
+        viewModel.route.observe(on: self) { [weak self] route in
+            self?.handle(route)
+        }
+    }
+    
+    func handle(_ route: AuthorizationViewModelRoute) {
+        switch route {
+        case .initial: break
+        case .showMainScene:
+            let viewController = RepositoriesViewController.create(with: mainSceneDIContainer.makeRepositoriesViewModel())
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true)
+        }
+    }
 }
 //MARK: - create method
 extension AuthorizationViewController
 {
-    static func create(with viewModel:AuthorizationViewModel) -> AuthorizationViewController {
+    static func create(with viewModel:AuthorizationViewModel, mainSceneDIContainer: MainSceneDIContainer) -> AuthorizationViewController {
         let viewController = AuthorizationViewController.instantiateViewController()
         viewController.viewModel = viewModel
+        viewController.mainSceneDIContainer = mainSceneDIContainer
         return viewController
     }
 }

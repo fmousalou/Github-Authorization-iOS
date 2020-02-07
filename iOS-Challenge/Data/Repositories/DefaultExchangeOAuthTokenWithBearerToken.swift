@@ -12,16 +12,27 @@ import Alamofire
 
 final class DefaultExchangeOAuthTokenWithBearerTokenRepository: ExchangeOAuthTokenWithBearerTokenRepository
 {
-    func exchangeForBearerToken(code: String, clientId: String, redirectUrl: String, clientSecret: String, state: String, completion: @escaping (Swift.Result<String, Error>) -> Void) {
+    struct Dependency {
+        let clientId: String
+        let redirectUrl: String
+        let clientSecret: String
+        let state: String
+    }
+    let dependency: Dependency
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+    
+    func exchangeForBearerToken(oAtuthToken: String, completion: @escaping (Swift.Result<String, Error>) -> Void) {
         guard let url = URL(string:"https://github.com/login/oauth/access_token") else {
             return
         }
-
-        let parameters = ["client_id": clientId,
-                          "redirect_uri": redirectUrl,
-                          "client_secret": clientSecret,
-                          "code": code,
-                          "state": state] as [String:Any]
+        
+        let parameters = ["client_id": dependency.clientId,
+                          "redirect_uri": dependency.redirectUrl,
+                          "client_secret": dependency.clientSecret,
+                          "code": oAtuthToken,
+                          "state": dependency.state] as [String:Any]
         Alamofire.request(url, method: .post,
                           parameters: parameters, encoding: JSONEncoding.prettyPrinted,
                           headers: ["Accept":"application/json"])

@@ -26,7 +26,7 @@ final class AuthorizationSceneDIContainer
     //MARK: - Use Cases
     //MARK: - View Controllers
     func makeAuthorizationViewController() -> AuthorizationViewController {
-        AuthorizationViewController.create(with: makeAuthorizationViewModel())
+        AuthorizationViewController.create(with: makeAuthorizationViewModel(), mainSceneDIContainer: AppDIContainer().makeMainSceneDIContainer())
     }
     
     private func makeAuthorizationViewModel() -> AuthorizationViewModel {
@@ -57,7 +57,11 @@ final class AuthorizationSceneDIContainer
     }
     
     private func makeExchangeOAuthTokenWithBearerTokenRepository() -> ExchangeOAuthTokenWithBearerTokenRepository{
-        return DefaultExchangeOAuthTokenWithBearerTokenRepository()
+        return DefaultExchangeOAuthTokenWithBearerTokenRepository(dependency: DefaultExchangeOAuthTokenWithBearerTokenRepository.Dependency(
+            clientId: dependency.clientId,
+            redirectUrl: dependency.redirectUrl,
+            clientSecret: dependency.clientSecret,
+            state: dependency.state))
     }
     
     private func makeBearerTokenRepository() -> BearerTokenRepository {

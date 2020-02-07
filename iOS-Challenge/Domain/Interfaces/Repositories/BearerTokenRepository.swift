@@ -11,4 +11,5 @@ import Foundation
 protocol BearerTokenRepository {
     func save(token: String, completion: ((Result<Bool, Error>) -> Void)?)
     func fetch(completion: @escaping (Result<String, Error>) -> Void)
+    func delete(completion: ((Result<Bool, Error>) -> Void)?)
 }

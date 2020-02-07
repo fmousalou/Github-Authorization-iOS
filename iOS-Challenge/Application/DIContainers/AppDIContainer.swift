@@ -19,5 +19,9 @@ final class AppDIContainer
             clientSecret: appConfigurations.apiClientSecret,
             state: appConfigurations.state, keychainServiceKey: appConfigurations.keychainServiceKey, tokenKey: appConfigurations.keychainKey))
     }
+    
+    func makeMainSceneDIContainer() -> MainSceneDIContainer {
+        return MainSceneDIContainer()
+    }
 }
 

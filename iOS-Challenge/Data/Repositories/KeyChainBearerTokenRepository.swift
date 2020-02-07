@@ -22,19 +22,24 @@ class KeyChainBearerTokenRepository: BearerTokenRepository
         self.dependency = dependency
     }
 
-    
     func save(token: String, completion: ((Result<Bool, Error>) -> Void)?) {
         let keychain = Keychain(service: dependency.serviceKey)
         keychain[dependency.tokenKey] = token
-        completion?(Result.success(true))
+        completion?(.success(true))
     }
     
     func fetch(completion: @escaping (Result<String, Error>) -> Void) {
         let keychain = Keychain(service: dependency.serviceKey)
         guard let token = keychain[dependency.tokenKey] else {
-            completion(Result.failure(NotFoundInKeychainError()))
+            completion(.failure(NotFoundInKeychainError()))
             return
         }
         completion(Result.success(token))
+    }
+    
+    func delete(completion: ((Result<Bool, Error>) -> Void)? = nil) {
+        let keychain = Keychain(service: dependency.serviceKey)
+        keychain[dependency.tokenKey] = nil
+        completion?(.success(true))
     }
 }

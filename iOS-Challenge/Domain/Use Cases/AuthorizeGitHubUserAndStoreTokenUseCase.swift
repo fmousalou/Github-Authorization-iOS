@@ -78,11 +78,7 @@ public class DefaultExchangeGithubOAuthTokenToBearerTokenUseCase: ExchangeGithub
     func execute(oAuthToken: String, completion: @escaping (Result<String, Error>) -> Void)
     {
         dependency.exchangeOAuthTokenWithBearerTokenRepository.exchangeForBearerToken(
-            code: oAuthToken,
-            clientId: dependency.clientId,
-            redirectUrl: dependency.redirectUrl,
-            clientSecret: dependency.clientSecret,
-            state: dependency.state,
+            oAtuthToken: oAuthToken,
             completion: completion)
     }
 }
