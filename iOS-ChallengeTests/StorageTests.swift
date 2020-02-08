@@ -22,9 +22,7 @@ class StorageSpec: QuickSpec {
         SharedPrefrences()
     }()
     
-    lazy var userDataHelper = {
-        UserDataHelper()
-    }()
+   
     
     override func spec() {
         
@@ -34,20 +32,15 @@ class StorageSpec: QuickSpec {
             self.SP_tokenNotNilAndSavedCorrectly()
         }
         
-        // using **userDataHelper**
-        describe("UD_Test") {
-            self.SP_removeAllIsTrue() // Delete to get fail <<<<<<<=======
-            self.UD_tokenIsNil()
-            self.UD_tokenNotNilAndSavedCorrectly()
-        }
+
     }
     
     // MARK: - sharedPrefrences Test (1)
     
     func SP_tokenNotNilAndSavedCorrectly() {
         it("tokenNotNilAndSavedCorrectly", closure: {
-            self.sharedPrefrences.set(key: .gitToken, value: "123456789")
-            let getVarSecound = self.sharedPrefrences.get(key: .gitToken) as? String
+            self.sharedPrefrences.set(key: .gitTokenTest, value: "123456789")
+            let getVarSecound = self.sharedPrefrences.get(key: .gitTokenTest) as? String
             expect(getVarSecound).toNot(beNil())
             expect(getVarSecound).to(contain("123456789"))
         })
@@ -61,27 +54,11 @@ class StorageSpec: QuickSpec {
     }
     
     func SP_tokenIsNil() {
-        let getVar = self.sharedPrefrences.get(key: .gitToken)
+        let getVar = self.sharedPrefrences.get(key: .gitTokenTest)
         expect(getVar).to(beNil())
     }
     
-    // MARK: - UserDataHelper Test (2)
-    
-    private func UD_tokenIsNil() {
-        it("tokenIsNil", closure: {
-            let token = self.userDataHelper.getToken()
-            expect(token).to(beNil())
-        })
-    }
-    
-    private func UD_tokenNotNilAndSavedCorrectly() {
-        it("tokenNotNilAndSavedCorrectly", closure: {
-            self.userDataHelper.setToken(token: "jfhkhkskfs;a")
-            let token = self.userDataHelper.getToken()
-            expect(token).toNot(beNil())
-            expect(token).to(contain("jfhkhkskfs;a"))
-        })
-    }
+  
     
 }
 

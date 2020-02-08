@@ -11,7 +11,7 @@ import Foundation
 enum PrefrencesKeys : String{
     
     case gitToken = "Token"
-    
+    case gitTokenTest = "TokenTest"
 }
 
 

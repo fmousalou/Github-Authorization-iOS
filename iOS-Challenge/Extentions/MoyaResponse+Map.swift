@@ -37,7 +37,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                             if let errors = json["errors"] as? [[String: Any]],
                                 let error = errors.first {
                                 let code =  error["code"] as? Int
-                                 self.HandlePublicErrors(code ?? 0)
+                                self.HandlePublicErrors(code ?? 0)
                                 return Observable.error(ResponseError(message: message ?? "Api error", statusCode: code ?? 0, validationError: []))
                             }else{
                                 let object = Mapper<T>().map(JSON: json)
@@ -45,36 +45,56 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                             }
                             
                         }
+                        
+                    } catch let error {
+                        return Observable.error(error)
+                    }
                     
-                } catch let error {
-                    return Observable.error(error)
-        }
+                    return Observable.empty()
+                })
         
-        return Observable.empty()
-    })
-}
-
-//    func object<T: Mappable>(_ type: T.Type) -> Observable<T?> {
-//
-//        return parse()
-//            .asObservable()
-//            .flatMap({ (value) -> Observable<T?>  in
-//                let object = Mapper<T>().map(JSON: value)
-//                return Observable.just(object)
-//            })
-//    }
-
-//    private func parse() -> Single<JSONType>  {
-//
-//        return filterSuccessfulStatusCodes()
-//            .flatMap({ (response) -> PrimitiveSequence<SingleTrait, JSONType> in
-//                guard let json = try response.mapJSON() as? JSONType else {
-//                    return Single.error(ResponseError(message: "Invalid data", statusCode: 0, validationError: []))
-//                }
-//                return Single.just(json)
-//            })
-//    }
-
+        
+    }
+    
+    func  rawKeys() -> Observable<[String: Any]?>  {
+        return
+            self.asObservable()
+                .flatMap({ response -> Observable<[String: Any]?> in
+                    do {
+                        if let json = try response.mapJSON() as? [String: Any] {
+                            return Observable.just(json)
+                        }
+                        
+                    } catch let error {
+                        return Observable.error(error)
+                    }
+                    
+                    return Observable.empty()
+                })
+    }
+    
+    
+    //    func object<T: Mappable>(_ type: T.Type) -> Observable<T?> {
+    //
+    //        return parse()
+    //            .asObservable()
+    //            .flatMap({ (value) -> Observable<T?>  in
+    //                let object = Mapper<T>().map(JSON: value)
+    //                return Observable.just(object)
+    //            })
+    //    }
+    
+    //    private func parse() -> Single<JSONType>  {
+    //
+    //        return filterSuccessfulStatusCodes()
+    //            .flatMap({ (response) -> PrimitiveSequence<SingleTrait, JSONType> in
+    //                guard let json = try response.mapJSON() as? JSONType else {
+    //                    return Single.error(ResponseError(message: "Invalid data", statusCode: 0, validationError: []))
+    //                }
+    //                return Single.just(json)
+    //            })
+    //    }
+    
 }
 
 

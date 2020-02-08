@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         configureApi()
-//        configureFirstVC()
+        configureFirstVC()
         
         return true
     }
@@ -59,8 +59,6 @@ extension AppDelegate {
                 UIApplication.topViewController()?.showAlert(title: error, message: errorDescription)
             }else if let code = queryItems["code"] {
                 if let state = queryItems["state"],state.compare(state) == .orderedSame{
-//                    let userDataHelper = UserDataHelper()
-//                    userDataHelper.setToken(token: code)
                     NotificationCenter.default.post(name: .authorized, object: ["code":code])
                 }else{
                    // someone else requesting  don't do anything
@@ -76,13 +74,14 @@ extension AppDelegate{
     
     fileprivate func configureApi() {
         HTTPManager.configure(with: [:],baseUrl: URL(string: "https://api.github.com")!)
-        HTTPManager.shared.append(headers: ["Content-Type": "application/x-www-form-urlencoded"])
+        HTTPManager.shared.append(headers: ["Accept": "application/json"])
     }
     
     /// Configure First ViewController
     fileprivate func configureFirstVC() {
         let userDataHelper = UserDataHelper()
         if let token = userDataHelper.getToken(){
+             print("token=>\(token)")
             // add token API Headers
             HTTPManager.shared.append(headers: ["token": token])
             // if authorized show RepositoryViewController

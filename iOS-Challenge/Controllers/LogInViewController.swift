@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Alamofire
+import Alamofire
 import RxSwift
 import RxGesture
 
@@ -62,6 +62,13 @@ class LogInViewController: UIViewController {
                 self.showAlert(title: messageSet.0, message: messageSet.1)
             }).disposed(by: disposeBag)
         
+        viewModel
+            .gotoRepository
+            .subscribe(onNext:{ [unowned self] _ in
+                if let rootNavigationController = self.storyboard?.instantiateViewController(identifier: "rootNavigation") {
+                    UIApplication.shared.setRoot(viewController: rootNavigationController)
+                }
+            }).disposed(by: disposeBag)
     }
     
     
@@ -78,7 +85,7 @@ class LogInViewController: UIViewController {
                 urlComponent.queryItems = [
                     URLQueryItem(name: "client_id", value: clientId),
                     URLQueryItem(name: "redirect_uri", value: redirectURL),
-                    URLQueryItem(name: "scope", value: "repo"),
+                    URLQueryItem(name: "scope", value: "repo%20user"),
                     URLQueryItem(name: "state", value: state)
                 ]
                 
@@ -98,11 +105,8 @@ class LogInViewController: UIViewController {
     @objc func authorizedSuccessfully(_ notification:Notification){
         if let object = notification.object as? [String:String]{
             if let code = object["code"]{
-            viewModel.callLogin(code:code)
+                viewModel.callLogin(code:code)
             }}
-//        if let rootNavigationController = self.storyboard?.instantiateViewController(identifier: "rootNavigation") {
-//            UIApplication.shared.setRoot(viewController: rootNavigationController)
-//        }
     }
     
     

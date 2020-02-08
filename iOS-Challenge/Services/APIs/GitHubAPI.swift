@@ -23,15 +23,28 @@ extension GitHubAPI: TargetType {
     
     /// The target's base `URL`.
     public var baseURL: URL {
-        return HTTPManager.shared.baseUrl
+        switch self {
+                   
+        case .login( _):
+            return URL(string: "https://github.com")!
+        default:
+            return HTTPManager.shared.baseUrl
+        }
     }
     
     /// The path to be appended to `baseURL` to form the full `URL`.
     public var path: String {
         switch self {
             
-        case .login( _):
-            return "/login/oauth/access_token"
+        case .login( let code):
+            var base = "/login/oauth/access_token?"
+            
+             base = base + "client_id=\(clientId)"
+             base = base + "&code=\(code)"
+             base = base + "&client_secret=\(clientSecret)"
+             base = base + "&redirect_uri=\(redirectURL)"
+             base = base + "&state=\(state)"
+            return base
        
         
         case .search(let keyWord,let sort,let order,let page):
@@ -81,15 +94,10 @@ extension GitHubAPI: TargetType {
     public var task: Moya.Task {
         switch self {
            
-            case .login(let code):
-            var params = [String: Any]()
-               params["client_id"]    = clientId
-//               params["client_secret"]         = "ASC"
-               params["code"]       = code
-               params["redirect_uri"]     = redirectURL
-               params["state"]      = state
-               
-               return .requestParameters(parameters: ["request": params], encoding: JSONEncoding.default)
+//            case .login(let code):
+//            var params = [String: Any]()
+//        
+//               return requestPlain
         default:
             return .requestPlain
         }
