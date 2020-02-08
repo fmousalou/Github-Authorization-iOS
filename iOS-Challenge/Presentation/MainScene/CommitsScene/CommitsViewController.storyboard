@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dol-Wg-lRu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Commits View Controller-->
+        <scene sceneID="hUj-th-Foi">
+            <objects>
+                <viewController storyboardIdentifier="CommitsViewController" id="dol-Wg-lRu" customClass="CommitsViewController" customModule="iOS_Challenge" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="53V-0a-7K1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iVd-9v-gzH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommitTableViewCell" rowHeight="206" id="miI-Ad-azy" customClass="CommitTableViewCell" customModule="iOS_Challenge">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="206"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="miI-Ad-azy" id="TK8-i5-1vW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="206"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBh-BB-Msw">
+                                                    <rect key="frame" x="20" y="20" width="374" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="E8k-o1-7UQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommitId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLd-g7-ise">
+                                                    <rect key="frame" x="20" y="78" width="374" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="9T6-4O-owf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTb-YK-gxY">
+                                                    <rect key="frame" x="20" y="136" width="374" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="cie-nL-jmj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NBh-BB-Msw" secondAttribute="trailing" constant="20" symbolic="YES" id="8Fo-zz-H9b"/>
+                                                <constraint firstItem="pLd-g7-ise" firstAttribute="leading" secondItem="TK8-i5-1vW" secondAttribute="leading" constant="20" symbolic="YES" id="Hbz-yB-Z1O"/>
+                                                <constraint firstAttribute="bottom" secondItem="pTb-YK-gxY" secondAttribute="bottom" constant="20" symbolic="YES" id="Jnw-Hm-M9W"/>
+                                                <constraint firstItem="pTb-YK-gxY" firstAttribute="leading" secondItem="TK8-i5-1vW" secondAttribute="leading" constant="20" symbolic="YES" id="LSb-I2-L2P"/>
+                                                <constraint firstItem="pLd-g7-ise" firstAttribute="top" secondItem="NBh-BB-Msw" secondAttribute="bottom" constant="8" symbolic="YES" id="Vmx-Ex-1c3"/>
+                                                <constraint firstItem="NBh-BB-Msw" firstAttribute="leading" secondItem="TK8-i5-1vW" secondAttribute="leading" constant="20" symbolic="YES" id="YMO-K8-oeu"/>
+                                                <constraint firstItem="pTb-YK-gxY" firstAttribute="top" secondItem="pLd-g7-ise" secondAttribute="bottom" constant="8" symbolic="YES" id="Ycp-Hr-USc"/>
+                                                <constraint firstAttribute="trailing" secondItem="pLd-g7-ise" secondAttribute="trailing" constant="20" symbolic="YES" id="m8K-25-vgA"/>
+                                                <constraint firstItem="NBh-BB-Msw" firstAttribute="top" secondItem="TK8-i5-1vW" secondAttribute="top" constant="20" symbolic="YES" id="mbl-qu-APY"/>
+                                                <constraint firstAttribute="trailing" secondItem="pTb-YK-gxY" secondAttribute="trailing" constant="20" symbolic="YES" id="pfR-fJ-jo6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="pTb-YK-gxY" id="FPU-gn-xaX"/>
+                                            <outlet property="commitIdLabel" destination="pLd-g7-ise" id="MSF-Ny-MEm"/>
+                                            <outlet property="messageLabel" destination="NBh-BB-Msw" id="U5Q-oa-2Q4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iVd-9v-gzH" firstAttribute="top" secondItem="FTQ-eR-kdT" secondAttribute="top" id="Jj8-no-LiR"/>
+                            <constraint firstItem="iVd-9v-gzH" firstAttribute="leading" secondItem="FTQ-eR-kdT" secondAttribute="leading" id="MqI-nB-DEq"/>
+                            <constraint firstItem="FTQ-eR-kdT" firstAttribute="trailing" secondItem="iVd-9v-gzH" secondAttribute="trailing" id="X8a-8v-y53"/>
+                            <constraint firstItem="FTQ-eR-kdT" firstAttribute="bottom" secondItem="iVd-9v-gzH" secondAttribute="bottom" id="uZW-ep-tUP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FTQ-eR-kdT"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="iVd-9v-gzH" id="vOC-dZ-pyg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="quk-cb-WGK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+</document>
