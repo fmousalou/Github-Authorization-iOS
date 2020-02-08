@@ -58,7 +58,7 @@ struct APIEndpoints {
             path: "user",
             method: .get,
             queryParameters: nil,
-            headerParamaters: ["Authorization":"Brearer \(token)"])
+            headerParamaters: ["Authorization":"Bearer \(token)"])
         
     }
 }

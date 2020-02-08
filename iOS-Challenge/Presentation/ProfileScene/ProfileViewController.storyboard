@@ -1,7 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIF-3z-mwB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="NeN-Gy-5iD">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="qIF-3z-mwB" customClass="ProfileViewController" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yGC-9q-35Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-VA-rVK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VZo-VA-rVK" secondAttribute="height" id="k4k-Zc-Axu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6J-UU-KlI">
+                                <rect key="frame" x="0.0" y="466" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6e5-yt-9Q9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-XV-o1Y">
+                                <rect key="frame" x="0.0" y="524" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0yu-eK-u0t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0G-Cg-Laa">
+                                <rect key="frame" x="0.0" y="582" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qOB-V9-dvI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="H0G-Cg-Laa" firstAttribute="top" secondItem="JdA-XV-o1Y" secondAttribute="bottom" constant="8" symbolic="YES" id="6HD-P9-Ggd"/>
+                            <constraint firstItem="ud7-Ox-enr" firstAttribute="trailing" secondItem="JdA-XV-o1Y" secondAttribute="trailing" id="Def-kZ-UkF"/>
+                            <constraint firstItem="VZo-VA-rVK" firstAttribute="leading" secondItem="ud7-Ox-enr" secondAttribute="leading" id="Jci-ES-qKE"/>
+                            <constraint firstItem="JdA-XV-o1Y" firstAttribute="leading" secondItem="ud7-Ox-enr" secondAttribute="leading" id="OKJ-kg-1ed"/>
+                            <constraint firstItem="f6J-UU-KlI" firstAttribute="leading" secondItem="ud7-Ox-enr" secondAttribute="leading" id="QzZ-gh-6Yj"/>
+                            <constraint firstItem="H0G-Cg-Laa" firstAttribute="leading" secondItem="ud7-Ox-enr" secondAttribute="leading" id="TIm-W9-z0u"/>
+                            <constraint firstItem="ud7-Ox-enr" firstAttribute="trailing" secondItem="H0G-Cg-Laa" secondAttribute="trailing" id="ZnS-Ra-wTi"/>
+                            <constraint firstItem="ud7-Ox-enr" firstAttribute="trailing" secondItem="VZo-VA-rVK" secondAttribute="trailing" id="c2c-37-fG3"/>
+                            <constraint firstItem="ud7-Ox-enr" firstAttribute="trailing" secondItem="f6J-UU-KlI" secondAttribute="trailing" id="fJb-gV-C2O"/>
+                            <constraint firstItem="f6J-UU-KlI" firstAttribute="top" secondItem="VZo-VA-rVK" secondAttribute="bottom" constant="8" symbolic="YES" id="ghE-1G-RNx"/>
+                            <constraint firstItem="JdA-XV-o1Y" firstAttribute="top" secondItem="f6J-UU-KlI" secondAttribute="bottom" constant="8" symbolic="YES" id="om3-2K-VAd"/>
+                            <constraint firstItem="VZo-VA-rVK" firstAttribute="top" secondItem="ud7-Ox-enr" secondAttribute="top" id="tmw-Wt-P8z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ud7-Ox-enr"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="VZo-VA-rVK" id="yow-fb-nbv"/>
+                        <outlet property="companyLabel" destination="H0G-Cg-Laa" id="Hds-a6-paG"/>
+                        <outlet property="loginLabel" destination="JdA-XV-o1Y" id="3JE-cC-4F4"/>
+                        <outlet property="nameLabel" destination="f6J-UU-KlI" id="OaL-BI-TFs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMN-5a-vQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="80"/>
+        </scene>
+    </scenes>
 </document>

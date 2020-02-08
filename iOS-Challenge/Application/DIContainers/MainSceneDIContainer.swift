@@ -60,7 +60,26 @@ extension MainSceneDIContainer: RepositoryListFactory {
     }
     
     func makeProfileViewController() -> ProfileViewController {
-        fatalError()
+        ProfileViewController.create(with: makeProfileViewModel())
+    }
+    
+    func makeProfileViewModel() -> ProfileViewModel {
+        return DefaultProfileViewModel(
+            dependency: DefaultProfileViewModel.Dependency(
+                fetchUserDataFromServerUsecase: makeFetchUserDataFromServerUsecase(),
+                bearerTokenRepository: makeBearerTokenRepository()))
+    }
+    
+    func makeFetchUserDataFromServerUsecase() -> FetchUserDataFromServerUsecase {
+        DefaultFetchUserDataFromServerUsecase(
+            dependency: DefaultFetchUserDataFromServerUsecase.Dependency(
+                githubUserRepository: makeGithubUserRepository()))
+    }
+    
+    func makeGithubUserRepository() -> GithubUserRepository {
+        return DefaultGithubUserRepository(
+            dependency: DefaultGithubUserRepository.Dependency(
+                dataTransferService: dependency.apiDataTransferService))
     }
     
     func makeCommitsViewController(with repo: Repository) -> CommitsViewController {

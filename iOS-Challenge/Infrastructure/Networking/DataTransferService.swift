@@ -36,18 +36,21 @@ extension DefaultDataTransferService: DataTransferService {
             completion(.failure(endpointError()))
             return
         }
+        
         Alamofire.request(url,
                           method: endpoint.method,
                           parameters: endpoint.bodyParamaters,
                           encoding: endpoint.bodyEncoding,
                           headers: endpoint.headerParamaters)
             .validate()
-            .responseDecodable { (response : DataResponse<T>) in
+            .responseDecodable { [weak self] (response : DataResponse<T>) in
                 switch response.result {
                 case .success(let responseDecodable):
                     DispatchQueue.main.async { completion(Swift.Result.success(responseDecodable)) }
                 case .failure(let error):
-                    DispatchQueue.main.async { completion(Swift.Result.failure(error)) }
+                    DispatchQueue.main.async {
+                        self?.errorLogger.log(error: error)
+                        completion(Swift.Result.failure(error)) }
                 }
         }
     }

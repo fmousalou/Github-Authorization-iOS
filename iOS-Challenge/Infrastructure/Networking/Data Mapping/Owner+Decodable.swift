@@ -29,6 +29,8 @@ extension Owner : Decodable
         case received_events_url = "received_events_url"
         case type = "type"
         case site_admin = "site_admin"
+        case name = "name"
+        case company = "company"
     }
     
     init(from decoder: Decoder) throws {
@@ -43,6 +45,8 @@ extension Owner : Decodable
         followers_url = try values.decodeIfPresent(String.self, forKey: .followers_url)
         following_url = try values.decodeIfPresent(String.self, forKey: .following_url)
         gists_url = try values.decodeIfPresent(String.self, forKey: .gists_url)
+        name = try values.decodeIfPresent(String.self, forKey: .name)
+        company = try values.decodeIfPresent(String.self, forKey: .company)
         starred_url = try values.decodeIfPresent(String.self, forKey: .starred_url)
         subscriptions_url = try values.decodeIfPresent(String.self, forKey: .subscriptions_url)
         organizations_url = try values.decodeIfPresent(String.self, forKey: .organizations_url)

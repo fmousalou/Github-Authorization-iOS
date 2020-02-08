@@ -70,6 +70,7 @@
 		A2876CBD23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CBC23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift */; };
 		A2876CBF23EE93870017F91D /* GithubUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CBE23EE93870017F91D /* GithubUserRepository.swift */; };
 		A2876CC123EE93D60017F91D /* DefaultGithubUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CC023EE93D60017F91D /* DefaultGithubUserRepository.swift */; };
+		A2876CC323EEA5370017F91D /* BearerTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CC223EEA5370017F91D /* BearerTokenAdapter.swift */; };
 		A294F87023E942BD00BA6912 /* UseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F86F23E942BD00BA6912 /* UseCasesTests.swift */; };
 		A294F87423E951C200BA6912 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87323E951C200BA6912 /* Alertable.swift */; };
 		A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */; };
@@ -178,6 +179,7 @@
 		A2876CBC23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserDataFromServerUsecase.swift; sourceTree = "<group>"; };
 		A2876CBE23EE93870017F91D /* GithubUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserRepository.swift; sourceTree = "<group>"; };
 		A2876CC023EE93D60017F91D /* DefaultGithubUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGithubUserRepository.swift; sourceTree = "<group>"; };
+		A2876CC223EEA5370017F91D /* BearerTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearerTokenAdapter.swift; sourceTree = "<group>"; };
 		A294F86F23E942BD00BA6912 /* UseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesTests.swift; sourceTree = "<group>"; };
 		A294F87323E951C200BA6912 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				A2876C9F23EDC2D20017F91D /* Endpoint.swift */,
 				A2876CA123EDC3AF0017F91D /* NetworkConfigurable.swift */,
 				A2876CA323EDC6990017F91D /* DataTransferService.swift */,
+				A2876CC223EEA5370017F91D /* BearerTokenAdapter.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				A2876CBD23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift in Sources */,
 				A2876CB823EE46F40017F91D /* DefaultGithubCommitsRepository.swift in Sources */,
 				A2067E5823ED50C400843FB3 /* GithubRepositoriesRepository.swift in Sources */,
+				A2876CC323EEA5370017F91D /* BearerTokenAdapter.swift in Sources */,
 				A2876CB023EE43540017F91D /* CommitTableViewCell.swift in Sources */,
 				A2067E4423ED385500843FB3 /* ProfileViewController.swift in Sources */,
 				A2FCCD7223EB2BE900D7288F /* MainSceneDIContainer.swift in Sources */,

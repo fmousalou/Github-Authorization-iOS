@@ -21,7 +21,7 @@ final class AppDIContainer
             serviceKey: appConfigurations.keychainServiceKey,
             tokenKey: appConfigurations.keychainKey))
     }()
-    
+        
     func makeAuthorizationSceneDIContainer() -> AuthorizationSceneDIContainer {
         return AuthorizationSceneDIContainer(dependency: AuthorizationSceneDIContainer.Dependency(
             clientId: appConfigurations.apiClientId,

@@ -8,6 +8,7 @@ target 'iOS-Challenge' do
   pod 'Alamofire'
   pod 'KeychainAccess'
   pod 'PKHUD', '~> 5.0'
+  pod 'Kingfisher'
   
   target 'iOS-ChallengeTests' do
     inherit! :search_paths

@@ -9,20 +9,20 @@
 import UIKit
 
 protocol FetchUserDataFromServerUsecase {
-    func execute(userToken bearerToken: String ,completion: @escaping (Result<Bool, Error>) -> Void)
+    func execute(userToken bearerToken: String ,completion: @escaping (Result<Owner, Error>) -> Void)
 }
 
 
 final class DefaultFetchUserDataFromServerUsecase: FetchUserDataFromServerUsecase {
     struct Dependency {
-        
+        let githubUserRepository: GithubUserRepository
     }
     let dependency: Dependency
     init(dependency: Dependency) {
         self.dependency = dependency
     }
 
-    func execute(userToken bearerToken: String, completion: @escaping (Result<Bool, Error>) -> Void) {
-        
+    func execute(userToken bearerToken: String, completion: @escaping (Result<Owner, Error>) -> Void) {
+        dependency.githubUserRepository.fetchUser(with: bearerToken, completion: completion)
     }
 }

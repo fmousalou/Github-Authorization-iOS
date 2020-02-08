@@ -49,7 +49,7 @@ final class DefaultRepositoriesViewModel: RepositoriesViewModel
     }
     
     func showProfile() {
-        fatalError()
+        route.value = .profile
     }
     
     private var searchTerm = ""

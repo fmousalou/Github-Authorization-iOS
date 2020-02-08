@@ -35,6 +35,7 @@ class RepositoriesViewController: UIViewController, StoryboardInstantiable, Aler
         setupSearchController()
         setupNavbarItems()
         searchController.searchBar.searchTextField.becomeFirstResponder()
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     func bind(to viewModel: RepositoriesViewModel) {
