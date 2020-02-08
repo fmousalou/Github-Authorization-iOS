@@ -10,11 +10,28 @@ import Foundation
 
 final class DefaultGithubRepositoriesRepository: GithubRepositoriesRepository
 {
+    struct Dependency {
+        let dataTransferService: DataTransferService
+    }
+    let dependency: Dependency
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+
     func fetchRepositories(forUserWithToken token: String, perPage: Int, pageNumber: Int, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
         fatalError()
     }
     
     func fetchRepositories(withSearchTerm term: String, perPage: Int, pageNumber: Int, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
-        fatalError()
+        let endpoint = APIEndpoints.repositories(with: term, page: pageNumber, perPage: perPage)
+        
+        dependency.dataTransferService.request(with: endpoint) { (result: Result<RepositorySearchResponseModel, Error>) in
+            switch result {
+            case .success(let repos):
+                DispatchQueue.main.async { completion(Swift.Result.success(repos.items ?? [])) }
+            case .failure(let error):
+                DispatchQueue.main.async { completion(Swift.Result.failure(error)) }
+            }
+        }
     }
 }

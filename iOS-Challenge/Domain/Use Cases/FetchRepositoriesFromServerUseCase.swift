@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FetchRepositoriesFromServerUseCase {
-    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders:FetchListRequestHeaders ,completion:@escaping(Result<Array<Repository>, Error>) -> Void)
+    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders:FetchListRequestHeaders? ,completion:@escaping(Result<Array<Repository>, Error>) -> Void)
 }
 
 
@@ -17,22 +17,20 @@ final class FetchUserRepositoriesFromServerUseCase: FetchRepositoriesFromServerU
 {
     struct Dependency {
         let githubRepositoriesRepository:GithubRepositoriesRepository
-        let parameters: FetchListsRequestParameters
-        let headers: FetchListRequestHeaders
     }
     let dependency: Dependency
     
-    init(dependency: Dependency, parameters: FetchListsRequestParameters, headers: FetchListRequestHeaders) {
+    init(dependency: Dependency) {
         self.dependency = dependency
     }
     
     
-    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders: FetchListRequestHeaders, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
+    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders: FetchListRequestHeaders?, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
         
         dependency.githubRepositoriesRepository.fetchRepositories(
-            forUserWithToken: dependency.headers.token,
-            perPage: dependency.parameters.perPage,
-            pageNumber: dependency.parameters.pageNumber,
+            forUserWithToken: fetchRequestHeaders?.token ?? "",
+            perPage: fetchRequestParameters.perPage,
+            pageNumber: fetchRequestParameters.pageNumber,
             completion: completion)
     }
 }
@@ -41,20 +39,18 @@ final class FetchSearchedRepositoriesFromServerUseCase: FetchRepositoriesFromSer
 {
     struct Dependency {
         let githubRepositoriesRepository:GithubRepositoriesRepository
-        let parameters: FetchListsRequestParameters
-        let searchTerm: String
     }
     let dependency: Dependency
     
-    init(dependency: Dependency, parameters: FetchListsRequestParameters, headers: FetchListRequestHeaders) {
+    init(dependency: Dependency) {
         self.dependency = dependency
     }
     
-    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders: FetchListRequestHeaders, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
+    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders: FetchListRequestHeaders? = nil, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
         dependency.githubRepositoriesRepository.fetchRepositories(
-            withSearchTerm: dependency.searchTerm,
-            perPage: dependency.parameters.perPage,
-            pageNumber: dependency.parameters.pageNumber,
+            withSearchTerm: fetchRequestParameters.searchTerm ?? "",
+            perPage: fetchRequestParameters.perPage,
+            pageNumber: fetchRequestParameters.pageNumber,
             completion: completion)
     }
 }
@@ -62,6 +58,7 @@ final class FetchSearchedRepositoriesFromServerUseCase: FetchRepositoriesFromSer
 struct FetchListsRequestParameters {
     let perPage: Int
     let pageNumber: Int
+    let searchTerm: String?
 }
 
 struct FetchListRequestHeaders{

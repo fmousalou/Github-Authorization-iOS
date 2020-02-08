@@ -37,6 +37,27 @@
 		A27C3D6723EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C3D6623EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift */; };
 		A27C3D7123EB1CFD00E4F8C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27C3D7023EB1CFC00E4F8C4 /* LaunchScreen.storyboard */; };
 		A27C3D7323EB1D3B00E4F8C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27C3D7223EB1D3B00E4F8C4 /* Assets.xcassets */; };
+		A2876C7D23ED97010017F91D /* RepositorySearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C7C23ED97010017F91D /* RepositorySearchResponseModel.swift */; };
+		A2876C8623ED97AF0017F91D /* Parents+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C7F23ED97AF0017F91D /* Parents+Decodable.swift */; };
+		A2876C8723ED97AF0017F91D /* Commit+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8023ED97AF0017F91D /* Commit+Decodable.swift */; };
+		A2876C8823ED97AF0017F91D /* Info+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8123ED97AF0017F91D /* Info+Decodable.swift */; };
+		A2876C8923ED97AF0017F91D /* Author+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8223ED97AF0017F91D /* Author+Decodable.swift */; };
+		A2876C8A23ED97AF0017F91D /* Verification+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8323ED97AF0017F91D /* Verification+Decodable.swift */; };
+		A2876C8B23ED97AF0017F91D /* Tree+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8423ED97AF0017F91D /* Tree+Decodable.swift */; };
+		A2876C8C23ED97AF0017F91D /* Committer+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8523ED97AF0017F91D /* Committer+Decodable.swift */; };
+		A2876C9523ED980E0017F91D /* Parents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8E23ED980D0017F91D /* Parents.swift */; };
+		A2876C9623ED980E0017F91D /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C8F23ED980D0017F91D /* Info.swift */; };
+		A2876C9723ED980E0017F91D /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9023ED980D0017F91D /* Commit.swift */; };
+		A2876C9823ED980E0017F91D /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9123ED980D0017F91D /* Author.swift */; };
+		A2876C9923ED980E0017F91D /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9223ED980D0017F91D /* Verification.swift */; };
+		A2876C9A23ED980E0017F91D /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9323ED980D0017F91D /* Tree.swift */; };
+		A2876C9B23ED980E0017F91D /* Committer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9423ED980D0017F91D /* Committer.swift */; };
+		A2876C9E23EDBFA00017F91D /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9D23EDBFA00017F91D /* ApiEndpoints.swift */; };
+		A2876CA023EDC2D20017F91D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876C9F23EDC2D20017F91D /* Endpoint.swift */; };
+		A2876CA223EDC3AF0017F91D /* NetworkConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA123EDC3AF0017F91D /* NetworkConfigurable.swift */; };
+		A2876CA423EDC6990017F91D /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA323EDC6990017F91D /* DataTransferService.swift */; };
+		A2876CA623EE18ED0017F91D /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA523EE18ED0017F91D /* RepositoryTableViewCell.swift */; };
+		A2876CA823EE30980017F91D /* RepositoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA723EE30980017F91D /* RepositoryItemViewModel.swift */; };
 		A294F87023E942BD00BA6912 /* UseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F86F23E942BD00BA6912 /* UseCasesTests.swift */; };
 		A294F87423E951C200BA6912 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87323E951C200BA6912 /* Alertable.swift */; };
 		A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */; };
@@ -112,6 +133,27 @@
 		A27C3D7023EB1CFC00E4F8C4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A27C3D7223EB1D3B00E4F8C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A27C3D7423EB1D7E00E4F8C4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2876C7C23ED97010017F91D /* RepositorySearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchResponseModel.swift; sourceTree = "<group>"; };
+		A2876C7F23ED97AF0017F91D /* Parents+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Parents+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8023ED97AF0017F91D /* Commit+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Commit+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8123ED97AF0017F91D /* Info+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Info+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8223ED97AF0017F91D /* Author+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8323ED97AF0017F91D /* Verification+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Verification+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8423ED97AF0017F91D /* Tree+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tree+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8523ED97AF0017F91D /* Committer+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Committer+Decodable.swift"; sourceTree = "<group>"; };
+		A2876C8E23ED980D0017F91D /* Parents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parents.swift; sourceTree = "<group>"; };
+		A2876C8F23ED980D0017F91D /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		A2876C9023ED980D0017F91D /* Commit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		A2876C9123ED980D0017F91D /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		A2876C9223ED980D0017F91D /* Verification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		A2876C9323ED980D0017F91D /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		A2876C9423ED980D0017F91D /* Committer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Committer.swift; sourceTree = "<group>"; };
+		A2876C9D23EDBFA00017F91D /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
+		A2876C9F23EDC2D20017F91D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A2876CA123EDC3AF0017F91D /* NetworkConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurable.swift; sourceTree = "<group>"; };
+		A2876CA323EDC6990017F91D /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		A2876CA523EE18ED0017F91D /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		A2876CA723EE30980017F91D /* RepositoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItemViewModel.swift; sourceTree = "<group>"; };
 		A294F86F23E942BD00BA6912 /* UseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesTests.swift; sourceTree = "<group>"; };
 		A294F87323E951C200BA6912 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
@@ -237,6 +279,8 @@
 		A2067E4023EB4BFD00843FB3 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				A2876CA523EE18ED0017F91D /* RepositoryTableViewCell.swift */,
+				A2876CA723EE30980017F91D /* RepositoryItemViewModel.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -285,6 +329,7 @@
 		A26F27B223E87E6A00DBFB42 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A2876C8D23ED980D0017F91D /* Commits */,
 				A2764D8723E9F2E600761EC1 /* AccessTokenResponse.swift */,
 				A2067E4B23ED4CC100843FB3 /* Repository.swift */,
 				A2067E4D23ED4D0700843FB3 /* Owner.swift */,
@@ -332,6 +377,7 @@
 		A2764D8223E9D7F700761EC1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A2876C9C23EDBF940017F91D /* Network */,
 				A2764D8323E9D80600761EC1 /* Repositories */,
 			);
 			path = Data;
@@ -350,12 +396,51 @@
 		A2764D8623E9F2D200761EC1 /* Data Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
+				A2876C7E23ED97AF0017F91D /* Commits */,
 				60F3961D23E997E400AA2913 /* AccessTokenResponse+Decodable.swift */,
 				A2067E5123ED4DE700843FB3 /* Repository+Decodable.swift */,
 				A2067E5323ED4E4B00843FB3 /* Owner+Decodable.swift */,
 				A2067E5523ED4E8A00843FB3 /* Permissions+Decodable.swift */,
+				A2876C7C23ED97010017F91D /* RepositorySearchResponseModel.swift */,
 			);
 			path = "Data Mapping";
+			sourceTree = "<group>";
+		};
+		A2876C7E23ED97AF0017F91D /* Commits */ = {
+			isa = PBXGroup;
+			children = (
+				A2876C7F23ED97AF0017F91D /* Parents+Decodable.swift */,
+				A2876C8023ED97AF0017F91D /* Commit+Decodable.swift */,
+				A2876C8123ED97AF0017F91D /* Info+Decodable.swift */,
+				A2876C8223ED97AF0017F91D /* Author+Decodable.swift */,
+				A2876C8323ED97AF0017F91D /* Verification+Decodable.swift */,
+				A2876C8423ED97AF0017F91D /* Tree+Decodable.swift */,
+				A2876C8523ED97AF0017F91D /* Committer+Decodable.swift */,
+			);
+			path = Commits;
+			sourceTree = "<group>";
+		};
+		A2876C8D23ED980D0017F91D /* Commits */ = {
+			isa = PBXGroup;
+			children = (
+				A2876C8E23ED980D0017F91D /* Parents.swift */,
+				A2876C8F23ED980D0017F91D /* Info.swift */,
+				A2876C9023ED980D0017F91D /* Commit.swift */,
+				A2876C9123ED980D0017F91D /* Author.swift */,
+				A2876C9223ED980D0017F91D /* Verification.swift */,
+				A2876C9323ED980D0017F91D /* Tree.swift */,
+				A2876C9423ED980D0017F91D /* Committer.swift */,
+			);
+			path = Commits;
+			sourceTree = "<group>";
+		};
+		A2876C9C23EDBF940017F91D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A2876C9D23EDBFA00017F91D /* ApiEndpoints.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A294F86E23E9428A00BA6912 /* Domain */ = {
@@ -388,8 +473,10 @@
 		A294F87923E9523D00BA6912 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
 				A2764D8623E9F2D200761EC1 /* Data Mapping */,
+				A2876C9F23EDC2D20017F91D /* Endpoint.swift */,
+				A2876CA123EDC3AF0017F91D /* NetworkConfigurable.swift */,
+				A2876CA323EDC6990017F91D /* DataTransferService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -693,7 +780,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2876C9723ED980E0017F91D /* Commit.swift in Sources */,
+				A2876C8A23ED97AF0017F91D /* Verification+Decodable.swift in Sources */,
+				A2876C9B23ED980E0017F91D /* Committer.swift in Sources */,
 				A2067E3B23EB407800843FB3 /* RepositoriesViewController.swift in Sources */,
+				A2876C8B23ED97AF0017F91D /* Tree+Decodable.swift in Sources */,
 				A2F73ECD23E9583E0081CBEC /* AppDIContainer.swift in Sources */,
 				A27C3D6723EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift in Sources */,
 				A2764D8523E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift in Sources */,
@@ -702,31 +793,48 @@
 				A2764D8823E9F2E600761EC1 /* AccessTokenResponse.swift in Sources */,
 				A2067E4C23ED4CC100843FB3 /* Repository.swift in Sources */,
 				A2F73ED123E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift in Sources */,
+				A2876C8923ED97AF0017F91D /* Author+Decodable.swift in Sources */,
+				A2876CA823EE30980017F91D /* RepositoryItemViewModel.swift in Sources */,
 				A2067E4F23ED4D0700843FB3 /* Owner.swift in Sources */,
 				A2067E5023ED4D0700843FB3 /* Permissions.swift in Sources */,
 				A2FCCD6E23EB261600D7288F /* AppDelegate.swift in Sources */,
 				A2FCCD7023EB262500D7288F /* AuthorizationViewController.swift in Sources */,
 				A2067E4823ED388B00843FB3 /* ProfileViewModel.swift in Sources */,
 				A2764D7F23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift in Sources */,
+				A2876C7D23ED97010017F91D /* RepositorySearchResponseModel.swift in Sources */,
+				A2876C9523ED980E0017F91D /* Parents.swift in Sources */,
+				A2876C9A23ED980E0017F91D /* Tree.swift in Sources */,
 				A2067E4A23ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift in Sources */,
+				A2876C9623ED980E0017F91D /* Info.swift in Sources */,
+				A2876C8623ED97AF0017F91D /* Parents+Decodable.swift in Sources */,
 				A2067E5223ED4DE700843FB3 /* Repository+Decodable.swift in Sources */,
+				A2876C9E23EDBFA00017F91D /* ApiEndpoints.swift in Sources */,
 				A294F87823E9520400BA6912 /* Observable.swift in Sources */,
 				A26F27B623E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift in Sources */,
+				A2876CA423EDC6990017F91D /* DataTransferService.swift in Sources */,
 				A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */,
 				A2067E5A23ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift in Sources */,
 				A2067E4223EC3A8800843FB3 /* AppAppearance.swift in Sources */,
+				A2876C9823ED980E0017F91D /* Author.swift in Sources */,
+				A2876C9923ED980E0017F91D /* Verification.swift in Sources */,
 				A27C3D6523EAAB8800E4F8C4 /* NotificationUtility.swift in Sources */,
 				A2F73ECF23E95A980081CBEC /* AppConfigurations.swift in Sources */,
 				A2067E3F23EB41D800843FB3 /* RepositoriesViewModel.swift in Sources */,
+				A2876C8C23ED97AF0017F91D /* Committer+Decodable.swift in Sources */,
 				A2067E5423ED4E4B00843FB3 /* Owner+Decodable.swift in Sources */,
 				A294F87423E951C200BA6912 /* Alertable.swift in Sources */,
 				A206266A23EB1EAE00C7D5FC /* LoadingUtility.swift in Sources */,
+				A2876C8823ED97AF0017F91D /* Info+Decodable.swift in Sources */,
 				A2067E5623ED4E8A00843FB3 /* Permissions+Decodable.swift in Sources */,
+				A2876CA623EE18ED0017F91D /* RepositoryTableViewCell.swift in Sources */,
+				A2876C8723ED97AF0017F91D /* Commit+Decodable.swift in Sources */,
 				A2764D8123E9D62000761EC1 /* BearerTokenRepository.swift in Sources */,
 				A2067E5823ED50C400843FB3 /* GithubRepositoriesRepository.swift in Sources */,
 				A2067E4423ED385500843FB3 /* ProfileViewController.swift in Sources */,
 				A2FCCD7223EB2BE900D7288F /* MainSceneDIContainer.swift in Sources */,
+				A2876CA023EDC2D20017F91D /* Endpoint.swift in Sources */,
 				A2F73ED323E99AE10081CBEC /* AuthorizationViewModel.swift in Sources */,
+				A2876CA223EDC3AF0017F91D /* NetworkConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

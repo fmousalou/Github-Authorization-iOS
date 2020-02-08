@@ -15,8 +15,10 @@ final class AuthorizationSceneDIContainer
         let redirectUrl: String
         let clientSecret: String
         let state: String
+        let scopes: String
         let keychainServiceKey: String
         let tokenKey: String
+        let apiDataTransferService: DataTransferService
     }
     let dependency: Dependency
     init(dependency: Dependency) {
@@ -40,7 +42,11 @@ final class AuthorizationSceneDIContainer
     }
     
     private func makeCreateGitHubAuthorizationLinkUseCase () -> CreateGitHubAuthorizationLinkUseCase{
-        return DefaultCreateGitHubAuthorizationLinkUseCase()
+        return DefaultCreateGitHubAuthorizationLinkUseCase(
+            dependency: DefaultCreateGitHubAuthorizationLinkUseCase.Dependency(
+            reduirectURL: dependency.redirectUrl,
+            scopes: dependency.scopes,
+            state: dependency.state))
     }
     
     private func makeExchangeGithubOAuthTokenToBearerTokenUseCase() -> ExchangeGithubOAuthTokenToBearerTokenUseCase {
@@ -61,7 +67,8 @@ final class AuthorizationSceneDIContainer
             clientId: dependency.clientId,
             redirectUrl: dependency.redirectUrl,
             clientSecret: dependency.clientSecret,
-            state: dependency.state))
+            state: dependency.state,
+            dataTransferService: dependency.apiDataTransferService))
     }
     
     private func makeBearerTokenRepository() -> BearerTokenRepository {

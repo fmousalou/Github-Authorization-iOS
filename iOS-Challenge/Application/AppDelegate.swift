@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         AppAppearance.setupAppearance()
 
-        KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
-        serviceKey: appDIContainer.appConfigurations.keychainServiceKey,
-            tokenKey: appDIContainer.appConfigurations.keychainKey)).delete()
+//        KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
+//        serviceKey: appDIContainer.appConfigurations.keychainServiceKey,
+//            tokenKey: appDIContainer.appConfigurations.keychainKey)).delete()
         
         let bearerTokenRepository: BearerTokenRepository = KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
             serviceKey: appDIContainer.appConfigurations.keychainServiceKey,

@@ -78,10 +78,10 @@ struct Repository
     let archived : Bool?
     let disabled : Bool?
     let open_issues_count : Int?
-    let license : String?
     let forks : Int?
     let open_issues : Int?
     let watchers : Int?
     let default_branch : String?
     let permissions : Permissions?
+    let score : Double?
 }

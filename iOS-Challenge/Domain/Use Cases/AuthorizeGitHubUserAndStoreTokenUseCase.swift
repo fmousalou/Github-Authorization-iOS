@@ -25,14 +25,25 @@ protocol ExchangeGithubOAuthTokenToBearerTokenUseCase
 
 public class DefaultCreateGitHubAuthorizationLinkUseCase: CreateGitHubAuthorizationLinkUseCase
 {
+    struct Dependency {
+        let reduirectURL: String
+        let scopes: String
+        let state: String
+    }
+    let dependency: Dependency
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+
+    
     func execute(clientId: String) -> String? {
         let urlString = "https://github.com/login/oauth/authorize"
         guard var urlComponents = URLComponents(string: urlString) else { return nil }
         let queryParams: [String:String] =
             ["client_id": clientId,
-             "redirect_uri": "challenge://app/callback",
-             "scope": "repo private_repo user user_email",
-             "state": "0"]
+             "redirect_uri": dependency.reduirectURL,
+             "scope": dependency.scopes,
+             "state": dependency.state]
         var queryItems = [URLQueryItem]()
         for (key, param) in queryParams {
             let queryItem = URLQueryItem(name: key, value: param)

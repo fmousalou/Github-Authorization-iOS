@@ -78,12 +78,12 @@ extension Repository : Decodable
         case archived = "archived"
         case disabled = "disabled"
         case open_issues_count = "open_issues_count"
-        case license = "license"
         case forks = "forks"
         case open_issues = "open_issues"
         case watchers = "watchers"
         case default_branch = "default_branch"
         case permissions = "permissions"
+        case score = "score"
     }
     
     init(from decoder: Decoder) throws {
@@ -156,11 +156,11 @@ extension Repository : Decodable
         archived = try values.decodeIfPresent(Bool.self, forKey: .archived)
         disabled = try values.decodeIfPresent(Bool.self, forKey: .disabled)
         open_issues_count = try values.decodeIfPresent(Int.self, forKey: .open_issues_count)
-        license = try values.decodeIfPresent(String.self, forKey: .license)
         forks = try values.decodeIfPresent(Int.self, forKey: .forks)
         open_issues = try values.decodeIfPresent(Int.self, forKey: .open_issues)
         watchers = try values.decodeIfPresent(Int.self, forKey: .watchers)
         default_branch = try values.decodeIfPresent(String.self, forKey: .default_branch)
         permissions = try values.decodeIfPresent(Permissions.self, forKey: .permissions)
+        score = try values.decodeIfPresent(Double.self, forKey: .score)
     }
 }

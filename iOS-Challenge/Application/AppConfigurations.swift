@@ -38,8 +38,8 @@ final class AppConfigurations
         return keychainServiceKey
     }()
     
+    lazy var githubScopes = "repo private_repo user user_email"
     lazy var state = "0"
-    #warning("Must be completed")
-    lazy var redirectUrl = ""
+    lazy var redirectUrl = "challenge://app/callback"
     lazy var keychainKey = "tokenKey"
 }
