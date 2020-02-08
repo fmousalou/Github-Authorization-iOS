@@ -19,7 +19,7 @@ protocol RepositoryItemViewModelOutput {
 }
 
 protocol RepositoryItemViewModel: RepositoryItemViewModelInput, RepositoryItemViewModelOutput {
-    var repositoryId: Int? { get }
+        var repository: Repository { get }
 }
 
 final class DefaultRepositoryItemViewModel: RepositoryItemViewModel {
@@ -28,10 +28,7 @@ final class DefaultRepositoryItemViewModel: RepositoryItemViewModel {
     var language: String?
     var watchers: Int?
     
-    private let repository: Repository
-    var repositoryId: Int? {
-        return repository.id
-    }
+    var repository: Repository
     init(repository: Repository) {
         self.repository = repository
         self.name = repository.full_name

@@ -19,17 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Parameter launchOptions: launch options passed to app
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        AppAppearance.setupAppearance()
-
-//        KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
-//        serviceKey: appDIContainer.appConfigurations.keychainServiceKey,
-//            tokenKey: appDIContainer.appConfigurations.keychainKey)).delete()
+        AppAppearance.setupAppearance()        
         
-        let bearerTokenRepository: BearerTokenRepository = KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
-            serviceKey: appDIContainer.appConfigurations.keychainServiceKey,
-            tokenKey: appDIContainer.appConfigurations.keychainKey))
-        
-        bearerTokenRepository.fetch { (result) in
+        appDIContainer.keyChainBearerTokenRepository.fetch { (result) in
             switch result {
             case .success(let token):
                 DispatchQueue.main.async {

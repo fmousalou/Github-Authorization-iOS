@@ -18,10 +18,6 @@ final class DefaultGithubRepositoriesRepository: GithubRepositoriesRepository
         self.dependency = dependency
     }
 
-    func fetchRepositories(forUserWithToken token: String, perPage: Int, pageNumber: Int, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
-        fatalError()
-    }
-    
     func fetchRepositories(withSearchTerm term: String, perPage: Int, pageNumber: Int, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
         let endpoint = APIEndpoints.repositories(with: term, page: pageNumber, perPage: perPage)
         

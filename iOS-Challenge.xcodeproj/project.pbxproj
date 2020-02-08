@@ -58,6 +58,18 @@
 		A2876CA423EDC6990017F91D /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA323EDC6990017F91D /* DataTransferService.swift */; };
 		A2876CA623EE18ED0017F91D /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA523EE18ED0017F91D /* RepositoryTableViewCell.swift */; };
 		A2876CA823EE30980017F91D /* RepositoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA723EE30980017F91D /* RepositoryItemViewModel.swift */; };
+		A2876CAA23EE41190017F91D /* CommitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CA923EE41190017F91D /* CommitsViewController.swift */; };
+		A2876CAD23EE432F0017F91D /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CAC23EE432F0017F91D /* CommitsViewModel.swift */; };
+		A2876CB023EE43540017F91D /* CommitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CAF23EE43540017F91D /* CommitTableViewCell.swift */; };
+		A2876CB223EE43720017F91D /* CommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CB123EE43720017F91D /* CommitItemViewModel.swift */; };
+		A2876CB423EE45D60017F91D /* FetchCommitsFromServerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CB323EE45D60017F91D /* FetchCommitsFromServerUseCase.swift */; };
+		A2876CB623EE46B10017F91D /* GithubCommitsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CB523EE46B10017F91D /* GithubCommitsRepository.swift */; };
+		A2876CB823EE46F40017F91D /* DefaultGithubCommitsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CB723EE46F40017F91D /* DefaultGithubCommitsRepository.swift */; };
+		A2876CB923EE7B1D0017F91D /* CommitsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2876CAB23EE430C0017F91D /* CommitsViewController.storyboard */; };
+		A2876CBB23EE91D90017F91D /* LogoutUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CBA23EE91D90017F91D /* LogoutUserUseCase.swift */; };
+		A2876CBD23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CBC23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift */; };
+		A2876CBF23EE93870017F91D /* GithubUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CBE23EE93870017F91D /* GithubUserRepository.swift */; };
+		A2876CC123EE93D60017F91D /* DefaultGithubUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2876CC023EE93D60017F91D /* DefaultGithubUserRepository.swift */; };
 		A294F87023E942BD00BA6912 /* UseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F86F23E942BD00BA6912 /* UseCasesTests.swift */; };
 		A294F87423E951C200BA6912 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87323E951C200BA6912 /* Alertable.swift */; };
 		A294F87623E951E200BA6912 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */; };
@@ -154,6 +166,18 @@
 		A2876CA323EDC6990017F91D /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		A2876CA523EE18ED0017F91D /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		A2876CA723EE30980017F91D /* RepositoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItemViewModel.swift; sourceTree = "<group>"; };
+		A2876CA923EE41190017F91D /* CommitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewController.swift; sourceTree = "<group>"; };
+		A2876CAB23EE430C0017F91D /* CommitsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CommitsViewController.storyboard; path = "/Users/aakpro/Desktop/Github-Authorization-iOS-master/iOS-Challenge/Presentation/MainScene/CommitsScene/CommitsViewController.storyboard"; sourceTree = "<absolute>"; };
+		A2876CAC23EE432F0017F91D /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
+		A2876CAF23EE43540017F91D /* CommitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitTableViewCell.swift; sourceTree = "<group>"; };
+		A2876CB123EE43720017F91D /* CommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItemViewModel.swift; sourceTree = "<group>"; };
+		A2876CB323EE45D60017F91D /* FetchCommitsFromServerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCommitsFromServerUseCase.swift; sourceTree = "<group>"; };
+		A2876CB523EE46B10017F91D /* GithubCommitsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubCommitsRepository.swift; sourceTree = "<group>"; };
+		A2876CB723EE46F40017F91D /* DefaultGithubCommitsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGithubCommitsRepository.swift; sourceTree = "<group>"; };
+		A2876CBA23EE91D90017F91D /* LogoutUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUserUseCase.swift; sourceTree = "<group>"; };
+		A2876CBC23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserDataFromServerUsecase.swift; sourceTree = "<group>"; };
+		A2876CBE23EE93870017F91D /* GithubUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserRepository.swift; sourceTree = "<group>"; };
+		A2876CC023EE93D60017F91D /* DefaultGithubUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGithubUserRepository.swift; sourceTree = "<group>"; };
 		A294F86F23E942BD00BA6912 /* UseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesTests.swift; sourceTree = "<group>"; };
 		A294F87323E951C200BA6912 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		A294F87523E951E200BA6912 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
@@ -351,6 +375,9 @@
 			children = (
 				A26F27B523E88CF100DBFB42 /* AuthorizeGitHubUserAndStoreTokenUseCase.swift */,
 				A2067E4923ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift */,
+				A2876CB323EE45D60017F91D /* FetchCommitsFromServerUseCase.swift */,
+				A2876CBA23EE91D90017F91D /* LogoutUserUseCase.swift */,
+				A2876CBC23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -370,6 +397,8 @@
 				A2764D7E23E9D5FC00761EC1 /* ExchangeOAuthTokenWithBearerTokenRepository.swift */,
 				A2764D8023E9D62000761EC1 /* BearerTokenRepository.swift */,
 				A2067E5723ED50C400843FB3 /* GithubRepositoriesRepository.swift */,
+				A2876CB523EE46B10017F91D /* GithubCommitsRepository.swift */,
+				A2876CBE23EE93870017F91D /* GithubUserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -389,6 +418,8 @@
 				A2764D8423E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift */,
 				A27C3D6623EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift */,
 				A2067E5923ED91F500843FB3 /* DefaultGithubRepositoriesRepository.swift */,
+				A2876CB723EE46F40017F91D /* DefaultGithubCommitsRepository.swift */,
+				A2876CC023EE93D60017F91D /* DefaultGithubUserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -441,6 +472,15 @@
 				A2876C9D23EDBFA00017F91D /* ApiEndpoints.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A2876CAE23EE43370017F91D /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				A2876CAF23EE43540017F91D /* CommitTableViewCell.swift */,
+				A2876CB123EE43720017F91D /* CommitItemViewModel.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		A294F86E23E9428A00BA6912 /* Domain */ = {
@@ -524,6 +564,10 @@
 		A2FCCD7523EB2DA700D7288F /* CommitsScene */ = {
 			isa = PBXGroup;
 			children = (
+				A2876CAE23EE43370017F91D /* Items */,
+				A2876CAB23EE430C0017F91D /* CommitsViewController.storyboard */,
+				A2876CA923EE41190017F91D /* CommitsViewController.swift */,
+				A2876CAC23EE432F0017F91D /* CommitsViewModel.swift */,
 			);
 			path = CommitsScene;
 			sourceTree = "<group>";
@@ -650,6 +694,7 @@
 			files = (
 				A27C3D7123EB1CFD00E4F8C4 /* LaunchScreen.storyboard in Resources */,
 				A2F73EE123E9B8610081CBEC /* AuthorizationViewController.storyboard in Resources */,
+				A2876CB923EE7B1D0017F91D /* CommitsViewController.storyboard in Resources */,
 				A27C3D7323EB1D3B00E4F8C4 /* Assets.xcassets in Resources */,
 				A2067E4623ED387800843FB3 /* ProfileViewController.storyboard in Resources */,
 				A2067E3D23EB408F00843FB3 /* RepositoriesViewController.storyboard in Resources */,
@@ -784,14 +829,18 @@
 				A2876C8A23ED97AF0017F91D /* Verification+Decodable.swift in Sources */,
 				A2876C9B23ED980E0017F91D /* Committer.swift in Sources */,
 				A2067E3B23EB407800843FB3 /* RepositoriesViewController.swift in Sources */,
+				A2876CB423EE45D60017F91D /* FetchCommitsFromServerUseCase.swift in Sources */,
 				A2876C8B23ED97AF0017F91D /* Tree+Decodable.swift in Sources */,
 				A2F73ECD23E9583E0081CBEC /* AppDIContainer.swift in Sources */,
 				A27C3D6723EAB6D200E4F8C4 /* KeyChainBearerTokenRepository.swift in Sources */,
 				A2764D8523E9D86C00761EC1 /* DefaultExchangeOAuthTokenWithBearerToken.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse+Decodable.swift in Sources */,
+				A2876CBF23EE93870017F91D /* GithubUserRepository.swift in Sources */,
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
 				A2764D8823E9F2E600761EC1 /* AccessTokenResponse.swift in Sources */,
+				A2876CBB23EE91D90017F91D /* LogoutUserUseCase.swift in Sources */,
 				A2067E4C23ED4CC100843FB3 /* Repository.swift in Sources */,
+				A2876CB623EE46B10017F91D /* GithubCommitsRepository.swift in Sources */,
 				A2F73ED123E97D3C0081CBEC /* AuthorizationSceneDIContainer.swift in Sources */,
 				A2876C8923ED97AF0017F91D /* Author+Decodable.swift in Sources */,
 				A2876CA823EE30980017F91D /* RepositoryItemViewModel.swift in Sources */,
@@ -805,6 +854,7 @@
 				A2876C9523ED980E0017F91D /* Parents.swift in Sources */,
 				A2876C9A23ED980E0017F91D /* Tree.swift in Sources */,
 				A2067E4A23ED4BB900843FB3 /* FetchRepositoriesFromServerUseCase.swift in Sources */,
+				A2876CAD23EE432F0017F91D /* CommitsViewModel.swift in Sources */,
 				A2876C9623ED980E0017F91D /* Info.swift in Sources */,
 				A2876C8623ED97AF0017F91D /* Parents+Decodable.swift in Sources */,
 				A2067E5223ED4DE700843FB3 /* Repository+Decodable.swift in Sources */,
@@ -826,15 +876,21 @@
 				A206266A23EB1EAE00C7D5FC /* LoadingUtility.swift in Sources */,
 				A2876C8823ED97AF0017F91D /* Info+Decodable.swift in Sources */,
 				A2067E5623ED4E8A00843FB3 /* Permissions+Decodable.swift in Sources */,
+				A2876CC123EE93D60017F91D /* DefaultGithubUserRepository.swift in Sources */,
 				A2876CA623EE18ED0017F91D /* RepositoryTableViewCell.swift in Sources */,
 				A2876C8723ED97AF0017F91D /* Commit+Decodable.swift in Sources */,
 				A2764D8123E9D62000761EC1 /* BearerTokenRepository.swift in Sources */,
+				A2876CAA23EE41190017F91D /* CommitsViewController.swift in Sources */,
+				A2876CBD23EE931C0017F91D /* FetchUserDataFromServerUsecase.swift in Sources */,
+				A2876CB823EE46F40017F91D /* DefaultGithubCommitsRepository.swift in Sources */,
 				A2067E5823ED50C400843FB3 /* GithubRepositoriesRepository.swift in Sources */,
+				A2876CB023EE43540017F91D /* CommitTableViewCell.swift in Sources */,
 				A2067E4423ED385500843FB3 /* ProfileViewController.swift in Sources */,
 				A2FCCD7223EB2BE900D7288F /* MainSceneDIContainer.swift in Sources */,
 				A2876CA023EDC2D20017F91D /* Endpoint.swift in Sources */,
 				A2F73ED323E99AE10081CBEC /* AuthorizationViewModel.swift in Sources */,
 				A2876CA223EDC3AF0017F91D /* NetworkConfigurable.swift in Sources */,
+				A2876CB223EE43720017F91D /* CommitItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

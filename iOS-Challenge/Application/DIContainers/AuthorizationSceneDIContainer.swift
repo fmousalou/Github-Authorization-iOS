@@ -19,6 +19,7 @@ final class AuthorizationSceneDIContainer
         let keychainServiceKey: String
         let tokenKey: String
         let apiDataTransferService: DataTransferService
+        let bearerTokenRepository: BearerTokenRepository
     }
     let dependency: Dependency
     init(dependency: Dependency) {
@@ -72,6 +73,6 @@ final class AuthorizationSceneDIContainer
     }
     
     private func makeBearerTokenRepository() -> BearerTokenRepository {
-        return KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(serviceKey: dependency.keychainServiceKey, tokenKey: dependency.tokenKey))
+        return dependency.bearerTokenRepository
     }
 }

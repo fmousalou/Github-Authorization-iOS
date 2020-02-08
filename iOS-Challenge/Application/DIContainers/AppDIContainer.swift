@@ -15,6 +15,13 @@ final class AppDIContainer
         let apiDataTransferService = DefaultDataTransferService()
         return apiDataTransferService
     }()
+    
+    lazy var keyChainBearerTokenRepository: BearerTokenRepository = {
+        return KeyChainBearerTokenRepository(dependency: KeyChainBearerTokenRepository.Dependency(
+            serviceKey: appConfigurations.keychainServiceKey,
+            tokenKey: appConfigurations.keychainKey))
+    }()
+    
     func makeAuthorizationSceneDIContainer() -> AuthorizationSceneDIContainer {
         return AuthorizationSceneDIContainer(dependency: AuthorizationSceneDIContainer.Dependency(
             clientId: appConfigurations.apiClientId,
@@ -24,11 +31,16 @@ final class AppDIContainer
             scopes: appConfigurations.githubScopes,
             keychainServiceKey: appConfigurations.keychainServiceKey,
             tokenKey: appConfigurations.keychainKey,
-            apiDataTransferService: apiDataTransferService))
+            apiDataTransferService: apiDataTransferService,
+            bearerTokenRepository: keyChainBearerTokenRepository))
     }
     
     func makeMainSceneDIContainer() -> MainSceneDIContainer {
-        return MainSceneDIContainer(dependency: MainSceneDIContainer.Dependency(apiDataTransferService: apiDataTransferService))
+        return MainSceneDIContainer(
+            dependency: MainSceneDIContainer.Dependency(
+                apiDataTransferService: apiDataTransferService,
+                bearerTokenRepository: keyChainBearerTokenRepository,
+                appDIContainer: self))
     }
 }
 

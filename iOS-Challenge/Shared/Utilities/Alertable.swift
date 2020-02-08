@@ -18,9 +18,10 @@ public extension Alertable where Self: UIViewController {
     /// - Parameter message: message of allert
     /// - Parameter preferredStyle: style
     /// - Parameter completion: callback when action is done
-    func showAlert(title: String = "", message: String, preferredStyle: UIAlertController.Style = .alert, completion: (() -> Void)? = nil) {
+    func showAlert(title: String = "", message: String, preferredStyle: UIAlertController.Style = .alert, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: completion)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: handler))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

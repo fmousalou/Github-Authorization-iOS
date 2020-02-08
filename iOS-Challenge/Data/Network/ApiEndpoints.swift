@@ -12,10 +12,10 @@ import Alamofire
 struct APIEndpoints {
     
     static func exchangeToken(clientId: String,
-    redirectUrl: String,
-    clientSecret: String,
-    state: String,
-    oAtuthToken: String) -> Endpoint<AccessTokenResponse> {
+                              redirectUrl: String,
+                              clientSecret: String,
+                              state: String,
+                              oAtuthToken: String) -> Endpoint<AccessTokenResponse> {
         
         let parameters = ["client_id": clientId,
                           "redirect_uri": redirectUrl,
@@ -41,5 +41,24 @@ struct APIEndpoints {
             method: .get,
             queryParameters: queryParams,
             headerParamaters: [:])
+    }
+    
+    static func commits(for repository: Repository, perPage: Int, pageNumber: Int) -> Endpoint<[Commit]> {
+        let queryParams = ["page":pageNumber, "per_page":perPage] as [String : Any]
+        let url = repository.commits_url?.replacingOccurrences(of: "{/sha}", with: "") ?? ""
+        return Endpoint<[Commit]> (
+            baseURLString: url,
+            path: nil,
+            queryParameters: queryParams)
+    }
+    
+    static func user(with token: String) -> Endpoint<Owner> {
+        return Endpoint<Owner>(
+            baseURLString:  AppConfigurations().apiBaseURL,
+            path: "user",
+            method: .get,
+            queryParameters: nil,
+            headerParamaters: ["Authorization":"Brearer \(token)"])
+        
     }
 }

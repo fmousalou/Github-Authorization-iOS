@@ -10,13 +10,17 @@ import UIKit
 
 enum RepositoriesViewModelRoute {
     case initial
-    case showCommits(repoId: Int)
+    case showCommits(repo: Repository)
+    case profile
+    case logout
 }
 
 protocol RepositoriesViewModelInput {
     func search(_ text: String)
     func didSelect(item: RepositoryItemViewModel)
     func loadNextPage()
+    func logout()
+    func showProfile()
 }
 
 protocol RepositoriesViewModelOutput {
@@ -33,6 +37,21 @@ protocol RepositoriesViewModel: RepositoriesViewModelInput, RepositoriesViewMode
 
 final class DefaultRepositoriesViewModel: RepositoriesViewModel
 {
+    func logout() {
+        dependency.logoutUserUseCase.execute { [weak self] (result) in
+            switch result {
+            case .success(_):
+                self?.route.value = .logout
+            case .failure(let err):
+                self?.error.value = err.localizedDescription
+            }
+        }
+    }
+    
+    func showProfile() {
+        fatalError()
+    }
+    
     private var searchTerm = ""
     private var loading = false
     private var isThereMoreData = true
@@ -46,11 +65,7 @@ final class DefaultRepositoriesViewModel: RepositoriesViewModel
     }
     
     func didSelect(item: RepositoryItemViewModel) {
-        guard let repoId = item.repositoryId else {
-            error.value = "Something doesn't work properly, try again later"
-            return
-        }
-        route.value = .showCommits(repoId: repoId)
+        route.value = .showCommits(repo: item.repository)
     }
     
     var route: Observable<RepositoriesViewModelRoute> = Observable(.initial)
@@ -60,6 +75,7 @@ final class DefaultRepositoriesViewModel: RepositoriesViewModel
     
     struct Dependency {
         let fetchRepositoriesFromServerUseCase: FetchRepositoriesFromServerUseCase
+        let logoutUserUseCase: LogoutUserUseCase
     }
     let dependency: Dependency
     init(dependency: Dependency) {

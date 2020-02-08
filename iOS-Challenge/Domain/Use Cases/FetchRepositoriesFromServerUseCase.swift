@@ -12,29 +12,6 @@ protocol FetchRepositoriesFromServerUseCase {
     func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders:FetchListRequestHeaders? ,completion:@escaping(Result<Array<Repository>, Error>) -> Void)
 }
 
-
-final class FetchUserRepositoriesFromServerUseCase: FetchRepositoriesFromServerUseCase
-{
-    struct Dependency {
-        let githubRepositoriesRepository:GithubRepositoriesRepository
-    }
-    let dependency: Dependency
-    
-    init(dependency: Dependency) {
-        self.dependency = dependency
-    }
-    
-    
-    func execute(fetchRequestParameters: FetchListsRequestParameters, fetchRequestHeaders: FetchListRequestHeaders?, completion: @escaping (Result<Array<Repository>, Error>) -> Void) {
-        
-        dependency.githubRepositoriesRepository.fetchRepositories(
-            forUserWithToken: fetchRequestHeaders?.token ?? "",
-            perPage: fetchRequestParameters.perPage,
-            pageNumber: fetchRequestParameters.pageNumber,
-            completion: completion)
-    }
-}
-
 final class FetchSearchedRepositoriesFromServerUseCase: FetchRepositoriesFromServerUseCase
 {
     struct Dependency {

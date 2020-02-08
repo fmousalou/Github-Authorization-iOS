@@ -34,10 +34,8 @@ final class AuthorizationViewController: UIViewController, StoryboardInstantiabl
         switch route {
         case .initial: break
         case .showMainScene:
-            let viewController = RepositoriesViewController.create(with: mainSceneDIContainer.makeRepositoriesViewModel())
-            let navigationController = UINavigationController(rootViewController: viewController)
-            navigationController.modalPresentationStyle = .fullScreen
-            present(navigationController, animated: true)
+            let viewController = RepositoriesViewController.create(with: mainSceneDIContainer.makeRepositoriesViewModel(), repositoryListFactory: mainSceneDIContainer)
+            navigationController?.setViewControllers([viewController], animated: true)
         }
     }
 }
@@ -52,3 +50,7 @@ extension AuthorizationViewController
     }
 }
 
+
+protocol AuthorizationRouteFactory {
+    func makeMainView() -> RepositoriesViewController
+}

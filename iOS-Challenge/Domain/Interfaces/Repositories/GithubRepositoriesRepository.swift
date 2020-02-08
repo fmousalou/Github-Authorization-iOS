@@ -10,8 +10,6 @@ import Foundation
  
 
 protocol GithubRepositoriesRepository {
-    func fetchRepositories(forUserWithToken token: String, perPage: Int, pageNumber: Int, completion: @escaping (Result<Array<Repository>, Error>) -> Void)
-    
     func fetchRepositories(withSearchTerm term: String, perPage: Int, pageNumber: Int, completion: @escaping (Result<Array<Repository>, Error>) -> Void)
 }
 
