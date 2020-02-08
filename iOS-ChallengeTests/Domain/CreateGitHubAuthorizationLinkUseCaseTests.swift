@@ -9,12 +9,12 @@
 import XCTest
 @testable import iOS_Challenge
 
-class UseCasesTests: XCTestCase {
+class CreateGitHubAuthorizationLinkUseCaseTests: XCTestCase {
 
     var createGitHubAuthorizationLinkUseCase: CreateGitHubAuthorizationLinkUseCase!
     var urlString: String!
     override func setUp() {
-        createGitHubAuthorizationLinkUseCase = DefaultCreateGitHubAuthorizationLinkUseCase()
+        createGitHubAuthorizationLinkUseCase = DefaultCreateGitHubAuthorizationLinkUseCase(dependency: DefaultCreateGitHubAuthorizationLinkUseCase.Dependency(reduirectURL: "url", scopes: "scopes", state: "1"))
         urlString = createGitHubAuthorizationLinkUseCase.execute(clientId: "some id")
     }
 
