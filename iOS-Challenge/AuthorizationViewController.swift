@@ -15,7 +15,7 @@ let clientId = "04860a64b85b7438bf91"
 let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28"
 let redirect_url = "challenge://app/callback"
 
-class ViewController: UIViewController {
+class AuthorizationViewController: UIViewController {
 
     @IBOutlet weak var accessTokenLabel: UILabel!
     
