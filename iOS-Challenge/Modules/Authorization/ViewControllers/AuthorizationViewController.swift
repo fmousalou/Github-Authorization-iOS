@@ -31,12 +31,15 @@ class AuthorizationViewController: UIViewController {
         viewModel.getAuthentication(with: code) { [weak self] (result) in
             switch result {
             case .success(let accessToken):
+                UserDefaults.standard
                 break
-                //MARK: TODO navigate to repositories
             case .failure(let error):
                 self?.handleError(error: error)
             }
         }
+    }
+    fileprivate func navigateToRepositories() {
+        
     }
 }
 

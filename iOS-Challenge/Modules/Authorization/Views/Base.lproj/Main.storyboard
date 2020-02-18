@@ -46,6 +46,33 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5sh-vS-Pc9">
+            <objects>
+                <tabBarController id="Zv5-SP-i4K" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EW1-cE-d3y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wkf-cg-ADv" kind="relationship" relationship="viewControllers" id="Msm-eP-qCF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lc6-51-JTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="137"/>
+        </scene>
+        <!--Repositories-->
+        <scene sceneID="oq7-tf-DFH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Repositories" id="wkf-cg-ADv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="N0W-vs-xW2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSU-DZ-KwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="137"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gitLogo" width="246" height="205"/>
