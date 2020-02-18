@@ -6,6 +6,8 @@ target 'iOS-Challenge' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
   # Pods for iOS-Challenge
 
   target 'iOS-ChallengeTests' do
