@@ -30,9 +30,8 @@ extension AppDelegate {
             let title = queryItems?.first(where: { $0.name == "error" })?.value
             let message = queryItems?.first(where: { $0.name == "error_description" })?.value
             window?.rootViewController?.showAlert(withTitle: title, withMessage: message, nil, nil)
-            
-        }else if let code = queryItems?.first(where: { $0.name == "code"}) {
-            (window?.rootViewController as? AuthorizationViewController)?.getAuthentication(with: code.value)
+        } else if let code = queryItems?.first(where: { $0.name == "code"})?.value {
+            (window?.rootViewController as? AuthorizationViewController)?.getAuthenticationCode(with: code)
         }
         return true
     }
