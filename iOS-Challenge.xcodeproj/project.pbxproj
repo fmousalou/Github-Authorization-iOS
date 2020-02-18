@@ -131,12 +131,12 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				F479516A23FBD6F800151527 /* Supporting Files */,
+				F479516923FBD6E300151527 /* Assets */,
+				F479516823FBD6D100151527 /* Modules */,
 				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
 				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
 				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
-				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
-				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
-				608D18EC23E091DC00BFE7C7 /* Info.plist */,
 				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
 				60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */,
 			);
@@ -169,6 +169,30 @@
 				DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F479516823FBD6D100151527 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F479516923FBD6E300151527 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F479516A23FBD6F800151527 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
+				608D18EC23E091DC00BFE7C7 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,7 +612,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iOS-Challenge/Info.plist";
+				DEVELOPMENT_TEAM = GUH2FY2QN2;
+				INFOPLIST_FILE = "iOS-Challenge/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,7 +632,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iOS-Challenge/Info.plist";
+				DEVELOPMENT_TEAM = GUH2FY2QN2;
+				INFOPLIST_FILE = "iOS-Challenge/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
