@@ -28,6 +28,10 @@
 		F479516E23FBD84300151527 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F479516D23FBD84300151527 /* UIViewControllerExtension.swift */; };
 		F479517023FBF91A00151527 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F479516F23FBF91A00151527 /* URLExtension.swift */; };
 		F482EDDC23FD0AD500EB3AEA /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDDB23FD0AD500EB3AEA /* UserDefaultsService.swift */; };
+		F482EDE023FD16A100EB3AEA /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDDF23FD16A100EB3AEA /* Repositories.swift */; };
+		F482EDE223FD1D5F00EB3AEA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE123FD1D5F00EB3AEA /* Search.swift */; };
+		F482EDE423FD22A100EB3AEA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE323FD22A100EB3AEA /* Box.swift */; };
+		F482EDE623FD46FA00EB3AEA /* RepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		F479516D23FBD84300151527 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F479516F23FBF91A00151527 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		F482EDDB23FD0AD500EB3AEA /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		F482EDDF23FD16A100EB3AEA /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		F482EDE123FD1D5F00EB3AEA /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		F482EDE323FD22A100EB3AEA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 			children = (
 				608D18F723E091DC00BFE7C7 /* Info.plist */,
 				F47628D223FC0BD8009D0903 /* AuthorizationTests.swift */,
+				F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */,
 			);
 			path = "iOS-ChallengeTests";
 			sourceTree = "<group>";
@@ -258,6 +267,8 @@
 		F47628D723FC1C7C009D0903 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F482EDDF23FD16A100EB3AEA /* Repositories.swift */,
+				F482EDE123FD1D5F00EB3AEA /* Search.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +307,7 @@
 				608D18EC23E091DC00BFE7C7 /* Info.plist */,
 				F445392423FBFFAF009670AF /* URLs.swift */,
 				F482EDDB23FD0AD500EB3AEA /* UserDefaultsService.swift */,
+				F482EDE323FD22A100EB3AEA /* Box.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -559,9 +571,12 @@
 				F445392523FBFFAF009670AF /* URLs.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
 				F47628DB23FC1DEF009D0903 /* RepositoriesViewController.swift in Sources */,
+				F482EDE423FD22A100EB3AEA /* Box.swift in Sources */,
+				F482EDE023FD16A100EB3AEA /* Repositories.swift in Sources */,
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
 				F445391F23FBFAEE009670AF /* Authorization.swift in Sources */,
 				F479517023FBF91A00151527 /* URLExtension.swift in Sources */,
+				F482EDE223FD1D5F00EB3AEA /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47628D323FC0BD8009D0903 /* AuthorizationTests.swift in Sources */,
+				F482EDE623FD46FA00EB3AEA /* RepositoriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,7 +754,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GUH2FY2QN2;
 				INFOPLIST_FILE = "iOS-Challenge/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -758,7 +774,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GUH2FY2QN2;
 				INFOPLIST_FILE = "iOS-Challenge/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
