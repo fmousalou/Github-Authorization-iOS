@@ -10,21 +10,39 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    //MARK: - Outlets -
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var blogLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    
+    //MARK: - Actions -
+    
+    //MARK: - Vars -
+    private var viewModel = ProfileViewModel()
+    
+    //MARK: - View's LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getProfile()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Functions -
+    fileprivate func getProfile() {
+        viewModel.getProfile { [weak self] (result) in
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                self?.handleError(error: error)
+            }
+        }
+        viewModel.profile.bind() { [weak self] profile in
+            self?.nameLabel.text = profile?.name ?? "-"
+            self?.emailLabel.text = profile?.email ?? "-"
+            self?.blogLabel.text = profile?.blog ?? "-"
+            self?.bioLabel.text = profile?.bio ?? "-"
+        }
     }
-    */
 
 }
