@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepositoriesViewController: UITableViewController {
 
@@ -25,26 +27,29 @@ class RepositoriesViewController: UITableViewController {
         return refreshControl
     }()
     private var viewModel = RepositoriesViewModel()
-    
+    private var disposeBag = DisposeBag()
     //MARK: - View's LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        getRepositories()
     }
     
     //MARK: - Functions -
     fileprivate func setupView() {
-        searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
         tableView.keyboardDismissMode = .onDrag
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.tableHeaderView = searchBar
         tableView.refreshControl = customRefreshControl
+        searchBar.rx.text.orEmpty
+            .throttle(DispatchTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged().subscribe(onNext: { (query) in
+            self.getRepositories(withQuery: query)
+            }).disposed(by: disposeBag)
     }
-    @objc fileprivate func getRepositories() {
-        if searchBar.text == "" { return }
-        viewModel.getRepositories(forQuery: searchBar.text ?? "") { [weak self] (result) in
+    @objc fileprivate func getRepositories(withQuery query: String) {
+        if query == "" { return }
+        viewModel.getRepositories(forQuery: query) { [weak self] (result) in
             switch result {
             case .success(_):
                 self?.tableView.reloadData()
@@ -79,11 +84,5 @@ extension RepositoriesViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-}
-//MARK: - searchController Delegate -
-extension RepositoriesViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        getRepositories()
     }
 }
