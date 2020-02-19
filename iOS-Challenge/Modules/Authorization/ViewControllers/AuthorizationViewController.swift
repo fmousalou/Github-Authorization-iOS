@@ -26,6 +26,15 @@ class AuthorizationViewController: UIViewController {
     //MARK: - Vars -
     var viewModel = AuthorizationViewModel()
     
+    //MARK: - View's LifeCycle -
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = UserDefaultsService.shared.getToken() {
+            navigateToRepositories()
+        }
+    }
+
     //MARK: - Functions -
     func getAuthenticationCode(with code: String) {
         viewModel.getAuthentication(with: code) { [weak self] (result) in
