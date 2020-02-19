@@ -7,10 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Repositories-->
         <scene sceneID="Mre-4c-sVc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wwl-xe-cQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="cyT-N9-syy" customClass="RepositoriesViewController" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sw6-oa-eTA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -31,15 +30,15 @@
                             <outlet property="delegate" destination="cyT-N9-syy" id="IuL-uX-1ZC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bQj-KG-G0h"/>
+                    <navigationItem key="navigationItem" title="Repositories" id="bQj-KG-G0h"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wwl-xe-cQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.9275362318842" y="164.73214285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2YE-Y2-xep">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d7f-au-sFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="FdK-o7-rac" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="C4s-z5-YSH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nae-SV-6co">
@@ -50,6 +49,7 @@
                         <segue destination="cyT-N9-syy" kind="relationship" relationship="rootViewController" id="8ha-Vu-dn5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7f-au-sFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="226.08695652173915" y="164.73214285714286"/>
         </scene>
