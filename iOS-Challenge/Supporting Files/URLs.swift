@@ -14,4 +14,5 @@ struct URLs {
     static let authorizationURL = URLs.baseURL + "/login/oauth/authorize"
     static let authorizationAccessCodeURL = URLs.baseURL + "/login/oauth/access_token"
     static let searchURL = URLs.baseAPIURL + "/search/repositories"
+    static let userURL = URLs.baseAPIURL + "/user"
 }

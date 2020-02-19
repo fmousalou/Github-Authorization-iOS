@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct Profile: Decodable {
+    var name: String?
+    var blog: String?
+    var email: String?
+    var bio: String?
+}
