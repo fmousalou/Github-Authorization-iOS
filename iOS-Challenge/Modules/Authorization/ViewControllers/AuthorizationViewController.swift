@@ -31,7 +31,8 @@ class AuthorizationViewController: UIViewController {
         viewModel.getAuthentication(with: code) { [weak self] (result) in
             switch result {
             case .success(let accessToken):
-                UserDefaults.standard
+                UserDefaultsService.shared.setToken(accessToken.accessToken)
+                self?.navigateToRepositories()
                 break
             case .failure(let error):
                 self?.handleError(error: error)
@@ -39,7 +40,7 @@ class AuthorizationViewController: UIViewController {
         }
     }
     fileprivate func navigateToRepositories() {
-        
+        performSegue(withIdentifier: "presentTabbarController", sender: self)
     }
 }
 

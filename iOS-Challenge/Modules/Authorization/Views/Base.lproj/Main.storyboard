@@ -41,6 +41,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="Zv5-SP-i4K" kind="show" identifier="presentTabbarController" id="hnm-nN-9wc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +52,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="5sh-vS-Pc9">
             <objects>
-                <tabBarController id="Zv5-SP-i4K" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="Zv5-SP-i4K" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lEh-RB-89P"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EW1-cE-d3y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
