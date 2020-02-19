@@ -22,8 +22,16 @@
 		F445392523FBFFAF009670AF /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445392423FBFFAF009670AF /* URLs.swift */; };
 		F445392A23FC0323009670AF /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445392923FC0323009670AF /* AuthorizationViewModel.swift */; };
 		F47628D323FC0BD8009D0903 /* AuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47628D223FC0BD8009D0903 /* AuthorizationTests.swift */; };
+		F47628D923FC1CA0009D0903 /* Repositories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47628D823FC1CA0009D0903 /* Repositories.storyboard */; };
+		F47628DB23FC1DEF009D0903 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47628DA23FC1DEF009D0903 /* RepositoriesViewController.swift */; };
+		F47628DE23FC1E0D009D0903 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47628DD23FC1E0D009D0903 /* RepositoriesViewModel.swift */; };
 		F479516E23FBD84300151527 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F479516D23FBD84300151527 /* UIViewControllerExtension.swift */; };
 		F479517023FBF91A00151527 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F479516F23FBF91A00151527 /* URLExtension.swift */; };
+		F482EDDC23FD0AD500EB3AEA /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDDB23FD0AD500EB3AEA /* UserDefaultsService.swift */; };
+		F482EDE023FD16A100EB3AEA /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDDF23FD16A100EB3AEA /* Repositories.swift */; };
+		F482EDE223FD1D5F00EB3AEA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE123FD1D5F00EB3AEA /* Search.swift */; };
+		F482EDE423FD22A100EB3AEA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE323FD22A100EB3AEA /* Box.swift */; };
+		F482EDE623FD46FA00EB3AEA /* RepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +79,16 @@
 		F445392423FBFFAF009670AF /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		F445392923FC0323009670AF /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		F47628D223FC0BD8009D0903 /* AuthorizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTests.swift; sourceTree = "<group>"; };
+		F47628D823FC1CA0009D0903 /* Repositories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repositories.storyboard; sourceTree = "<group>"; };
+		F47628DA23FC1DEF009D0903 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
+		F47628DD23FC1E0D009D0903 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		F479516D23FBD84300151527 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F479516F23FBF91A00151527 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		F482EDDB23FD0AD500EB3AEA /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		F482EDDF23FD16A100EB3AEA /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		F482EDE123FD1D5F00EB3AEA /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		F482EDE323FD22A100EB3AEA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +169,7 @@
 			children = (
 				608D18F723E091DC00BFE7C7 /* Info.plist */,
 				F47628D223FC0BD8009D0903 /* AuthorizationTests.swift */,
+				F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */,
 			);
 			path = "iOS-ChallengeTests";
 			sourceTree = "<group>";
@@ -179,7 +196,7 @@
 		F445391C23FBFAD1009670AF /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				F445392823FC02C2009670AF /* View */,
+				F445392823FC02C2009670AF /* Views */,
 				F445392723FC02BD009670AF /* ViewModels */,
 				F445392623FC02B5009670AF /* ViewControllers */,
 				F445391D23FBFADA009670AF /* Model */,
@@ -212,17 +229,62 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		F445392823FC02C2009670AF /* View */ = {
+		F445392823FC02C2009670AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
 			);
-			path = View;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F47628D423FC1C5A009D0903 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F47628DC23FC1DFF009D0903 /* ViewModels */,
+				F47628D723FC1C7C009D0903 /* Models */,
+				F47628D623FC1C6B009D0903 /* ViewControllers */,
+				F47628D523FC1C64009D0903 /* Views */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F47628D523FC1C64009D0903 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F47628D823FC1CA0009D0903 /* Repositories.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F47628D623FC1C6B009D0903 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F47628DA23FC1DEF009D0903 /* RepositoriesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F47628D723FC1C7C009D0903 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F482EDDF23FD16A100EB3AEA /* Repositories.swift */,
+				F482EDE123FD1D5F00EB3AEA /* Search.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F47628DC23FC1DFF009D0903 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F47628DD23FC1E0D009D0903 /* RepositoriesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		F479516823FBD6D100151527 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F47628D423FC1C5A009D0903 /* Repositories */,
 				F445391C23FBFAD1009670AF /* Authorization */,
 			);
 			path = Modules;
@@ -244,6 +306,8 @@
 				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
 				608D18EC23E091DC00BFE7C7 /* Info.plist */,
 				F445392423FBFFAF009670AF /* URLs.swift */,
+				F482EDDB23FD0AD500EB3AEA /* UserDefaultsService.swift */,
+				F482EDE323FD22A100EB3AEA /* Box.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -369,6 +433,7 @@
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
+				F47628D923FC1CA0009D0903 /* Repositories.storyboard in Resources */,
 				608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,15 +562,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F482EDDC23FD0AD500EB3AEA /* UserDefaultsService.swift in Sources */,
 				F445392A23FC0323009670AF /* AuthorizationViewModel.swift in Sources */,
 				608D18E323E091DB00BFE7C7 /* AuthorizationViewController.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
+				F47628DE23FC1E0D009D0903 /* RepositoriesViewModel.swift in Sources */,
 				F479516E23FBD84300151527 /* UIViewControllerExtension.swift in Sources */,
 				F445392523FBFFAF009670AF /* URLs.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
+				F47628DB23FC1DEF009D0903 /* RepositoriesViewController.swift in Sources */,
+				F482EDE423FD22A100EB3AEA /* Box.swift in Sources */,
+				F482EDE023FD16A100EB3AEA /* Repositories.swift in Sources */,
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
 				F445391F23FBFAEE009670AF /* Authorization.swift in Sources */,
 				F479517023FBF91A00151527 /* URLExtension.swift in Sources */,
+				F482EDE223FD1D5F00EB3AEA /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47628D323FC0BD8009D0903 /* AuthorizationTests.swift in Sources */,
+				F482EDE623FD46FA00EB3AEA /* RepositoriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,7 +754,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GUH2FY2QN2;
 				INFOPLIST_FILE = "iOS-Challenge/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -702,7 +774,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GUH2FY2QN2;
 				INFOPLIST_FILE = "iOS-Challenge/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

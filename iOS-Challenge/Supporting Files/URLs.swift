@@ -10,6 +10,8 @@ import Foundation
 
 struct URLs {
     static let baseURL = "https://github.com"
+    static let baseAPIURL = "https://api.github.com"
     static let authorizationURL = URLs.baseURL + "/login/oauth/authorize"
     static let authorizationAccessCodeURL = URLs.baseURL + "/login/oauth/access_token"
+    static let searchURL = URLs.baseAPIURL + "/search/repositories"
 }
