@@ -7,3 +7,35 @@
 //
 
 import Foundation
+import Alamofire
+
+class RepositoriesViewModel {
+    
+    private var accessToken: String? {
+        return UserDefaultsService.shared.getToken()
+    }
+    private(set) var repositories = [GithubRepo]()
+    
+    func getRepositories(forQuery query: String, completionHandler: @escaping ((Swift.Result<Void, Error>) -> Void)) {
+        Search.setQuery(query: query)
+        guard let url = URL(string: URLs.searchURL), let requestURL = url.encodeURL(withUrl: url, withMethod: .get, withParameters: Search.parameters) else {
+            completionHandler(.failure(APIError.notURL))
+            return
+        }
+        Alamofire.request(requestURL, method: .get, encoding: JSONEncoding.prettyPrinted, headers: [
+            "Accept": "application/json",
+            "Authorization": "token \(UserDefaultsService.shared.getToken() ?? "")"
+            ]).validate()
+            .responseDecodable { (response: DataResponse<GithubRepositories>) in
+                switch response.result {
+                case .success(let repos):
+                    self.repositories = repos.items
+                    completionHandler(.success(()))
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                }
+        }
+        
+        
+    }
+}
