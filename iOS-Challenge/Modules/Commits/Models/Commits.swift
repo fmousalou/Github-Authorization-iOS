@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct Commit: Decodable {
+    var commit: CommitDetail?
+    
+    struct CommitDetail: Decodable {
+        var message: String?
+        var committer: Committer?
+        
+        struct Committer: Decodable {
+            var name: String?
+        }
+    }
+}
