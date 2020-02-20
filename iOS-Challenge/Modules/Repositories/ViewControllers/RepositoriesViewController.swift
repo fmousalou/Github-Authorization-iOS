@@ -80,7 +80,15 @@ extension RepositoriesViewController {
 //MARK: - TableView Delegate -
 extension RepositoriesViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        searchController.isActive = false
+        let repo = viewModel.repositories[indexPath.row]
+        navigateToCommits(forOwner: repo.owner?.login ?? "", forRepo: repo.name ?? "")
+    }
+    fileprivate func navigateToCommits(forOwner owner: String, forRepo repo: String) {
+        if let commitsController = UIStoryboard(name: "Commits", bundle: nil).instantiateInitialViewController() as? CommitsTableViewController {
+            commitsController.setupContent(owner: owner, repo: repo)
+            navigationController?.pushViewController(commitsController, animated: true)
+        }
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
