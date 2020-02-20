@@ -12,8 +12,8 @@ import Alamofire
 class CommitsViewModel {
     
     private(set) var commits = [Commit]()
-    private let owner: String
-    private let repo: String
+    private(set) var owner: String
+    private(set) var repo: String
     
     init(owner: String, repo: String) {
         self.owner = owner

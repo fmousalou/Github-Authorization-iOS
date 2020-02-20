@@ -19,6 +19,7 @@
 		B386243E23FE6F4E00A00372 /* CommitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386243D23FE6F4E00A00372 /* CommitsTableViewController.swift */; };
 		B386244023FE6F5700A00372 /* Commits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386243F23FE6F5700A00372 /* Commits.storyboard */; };
 		B386244223FE6F6200A00372 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386244123FE6F6200A00372 /* CommitsViewModel.swift */; };
+		B386244423FE7D5400A00372 /* CommitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386244323FE7D5400A00372 /* CommitsTests.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
 		CE9ACAB5E03FBDFE2043F7EF /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AA1B7E69338FA2B3688AA /* Pods_iOS_Challenge.framework */; };
 		F445391F23FBFAEE009670AF /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445391E23FBFAEE009670AF /* Authorization.swift */; };
@@ -34,7 +35,6 @@
 		F482EDE023FD16A100EB3AEA /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDDF23FD16A100EB3AEA /* Repositories.swift */; };
 		F482EDE223FD1D5F00EB3AEA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE123FD1D5F00EB3AEA /* Search.swift */; };
 		F482EDE423FD22A100EB3AEA /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE323FD22A100EB3AEA /* Box.swift */; };
-		F482EDE623FD46FA00EB3AEA /* RepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */; };
 		F482EDEC23FD5B5C00EB3AEA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDEB23FD5B5C00EB3AEA /* ProfileViewModel.swift */; };
 		F482EDEE23FD5B6800EB3AEA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482EDED23FD5B6800EB3AEA /* ProfileViewController.swift */; };
 		F482EDF023FD5B7100EB3AEA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F482EDEF23FD5B7100EB3AEA /* Profile.storyboard */; };
@@ -82,6 +82,7 @@
 		B386243D23FE6F4E00A00372 /* CommitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsTableViewController.swift; sourceTree = "<group>"; };
 		B386243F23FE6F5700A00372 /* Commits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Commits.storyboard; sourceTree = "<group>"; };
 		B386244123FE6F6200A00372 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
+		B386244323FE7D5400A00372 /* CommitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsTests.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61D224421BF5714CEAB7504 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7DA398FC06A0B03443418B7 /* Pods-iOS-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		F482EDDF23FD16A100EB3AEA /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		F482EDE123FD1D5F00EB3AEA /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		F482EDE323FD22A100EB3AEA /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
-		F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTests.swift; sourceTree = "<group>"; };
 		F482EDEB23FD5B5C00EB3AEA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F482EDED23FD5B6800EB3AEA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F482EDEF23FD5B7100EB3AEA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 			children = (
 				608D18F723E091DC00BFE7C7 /* Info.plist */,
 				F47628D223FC0BD8009D0903 /* AuthorizationTests.swift */,
-				F482EDE523FD46FA00EB3AEA /* RepositoriesTests.swift */,
+				B386244323FE7D5400A00372 /* CommitsTests.swift */,
 			);
 			path = "iOS-ChallengeTests";
 			sourceTree = "<group>";
@@ -693,7 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47628D323FC0BD8009D0903 /* AuthorizationTests.swift in Sources */,
-				F482EDE623FD46FA00EB3AEA /* RepositoriesTests.swift in Sources */,
+				B386244423FE7D5400A00372 /* CommitsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
