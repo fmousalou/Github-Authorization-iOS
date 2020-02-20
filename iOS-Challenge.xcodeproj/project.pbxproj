@@ -15,6 +15,10 @@
 		608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */; };
 		608D190123E091DC00BFE7C7 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */; };
 		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
+		B386243C23FE6F3700A00372 /* Commits.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386243B23FE6F3700A00372 /* Commits.swift */; };
+		B386243E23FE6F4E00A00372 /* CommitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386243D23FE6F4E00A00372 /* CommitsTableViewController.swift */; };
+		B386244023FE6F5700A00372 /* Commits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386243F23FE6F5700A00372 /* Commits.storyboard */; };
+		B386244223FE6F6200A00372 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386244123FE6F6200A00372 /* CommitsViewModel.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
 		CE9ACAB5E03FBDFE2043F7EF /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AA1B7E69338FA2B3688AA /* Pods_iOS_Challenge.framework */; };
 		F445391F23FBFAEE009670AF /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445391E23FBFAEE009670AF /* Authorization.swift */; };
@@ -74,6 +78,10 @@
 		60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		6ABBBC8954A85B69F34446E4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F25064E8452F508919CED9A /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		B386243B23FE6F3700A00372 /* Commits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commits.swift; sourceTree = "<group>"; };
+		B386243D23FE6F4E00A00372 /* CommitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsTableViewController.swift; sourceTree = "<group>"; };
+		B386243F23FE6F5700A00372 /* Commits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Commits.storyboard; sourceTree = "<group>"; };
+		B386244123FE6F6200A00372 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61D224421BF5714CEAB7504 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7DA398FC06A0B03443418B7 /* Pods-iOS-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +207,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B386243623FE6F0D00A00372 /* Commits */ = {
+			isa = PBXGroup;
+			children = (
+				B386243A23FE6F2E00A00372 /* Models */,
+				B386243923FE6F2700A00372 /* Views */,
+				B386243823FE6F2200A00372 /* ViewControllers */,
+				B386243723FE6F1C00A00372 /* ViewModels */,
+			);
+			path = Commits;
+			sourceTree = "<group>";
+		};
+		B386243723FE6F1C00A00372 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B386244123FE6F6200A00372 /* CommitsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B386243823FE6F2200A00372 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B386243D23FE6F4E00A00372 /* CommitsTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B386243923FE6F2700A00372 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B386243F23FE6F5700A00372 /* Commits.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B386243A23FE6F2E00A00372 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B386243B23FE6F3700A00372 /* Commits.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F445391C23FBFAD1009670AF /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +341,7 @@
 		F479516823FBD6D100151527 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B386243623FE6F0D00A00372 /* Commits */,
 				F482EDE723FD5B3A00EB3AEA /* Profile */,
 				F47628D423FC1C5A009D0903 /* Repositories */,
 				F445391C23FBFAD1009670AF /* Authorization */,
@@ -481,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
+				B386244023FE6F5700A00372 /* Commits.storyboard in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
 				F482EDF023FD5B7100EB3AEA /* Profile.storyboard in Resources */,
 				F47628D923FC1CA0009D0903 /* Repositories.storyboard in Resources */,
@@ -613,11 +666,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F482EDDC23FD0AD500EB3AEA /* UserDefaultsService.swift in Sources */,
+				B386244223FE6F6200A00372 /* CommitsViewModel.swift in Sources */,
 				F445392A23FC0323009670AF /* AuthorizationViewModel.swift in Sources */,
 				608D18E323E091DB00BFE7C7 /* AuthorizationViewController.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
 				F47628DE23FC1E0D009D0903 /* RepositoriesViewModel.swift in Sources */,
 				F479516E23FBD84300151527 /* UIViewControllerExtension.swift in Sources */,
+				B386243C23FE6F3700A00372 /* Commits.swift in Sources */,
 				F445392523FBFFAF009670AF /* URLs.swift in Sources */,
 				F4C1A24523FD5C13004C7976 /* Profile.swift in Sources */,
 				F482EDEE23FD5B6800EB3AEA /* ProfileViewController.swift in Sources */,
@@ -626,6 +681,7 @@
 				F482EDE423FD22A100EB3AEA /* Box.swift in Sources */,
 				F482EDE023FD16A100EB3AEA /* Repositories.swift in Sources */,
 				F445391F23FBFAEE009670AF /* Authorization.swift in Sources */,
+				B386243E23FE6F4E00A00372 /* CommitsTableViewController.swift in Sources */,
 				F479517023FBF91A00151527 /* URLExtension.swift in Sources */,
 				F482EDEC23FD5B5C00EB3AEA /* ProfileViewModel.swift in Sources */,
 				F482EDE223FD1D5F00EB3AEA /* Search.swift in Sources */,
