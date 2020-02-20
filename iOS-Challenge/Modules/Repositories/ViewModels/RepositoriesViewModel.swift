@@ -22,11 +22,12 @@ class RepositoriesViewModel {
             completionHandler(.failure(APIError.notURL))
             return
         }
-        Alamofire.request(requestURL, method: .get, encoding: JSONEncoding.prettyPrinted, headers: [
-            "Accept": "application/json",
-            "Authorization": "token \(UserDefaultsService.shared.getToken() ?? "")"
-            ]).validate()
-            .responseDecodable { (response: DataResponse<GithubRepositories>) in
+        AF.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: [
+        "Accept": "application/json",
+        "Authorization": "token \(UserDefaultsService.shared.getToken() ?? "")"
+        ], interceptor: nil)
+            .validate()
+            .responseDecodable { (response: DataResponse<GithubRepositories, AFError>) in
                 switch response.result {
                 case .success(let repos):
                     self.repositories = repos.items

@@ -34,12 +34,9 @@ class AuthorizationViewModel {
             return
         }
         Authorization.setCode(code: code)
-        
-        Alamofire.request(url, method: .post,
-                          parameters: Authorization.parameters, encoding: JSONEncoding.prettyPrinted,
-                          headers: ["Accept":"application/json"])
+        AF.request(url, method: .post, parameters: Authorization.parameters, encoding: JSONEncoding.prettyPrinted, headers: ["Accept":"application/json"], interceptor: nil)
             .validate()
-            .responseDecodable { (response : DataResponse<AccessTokenResponse>) in
+            .responseDecodable { (response: DataResponse<AccessTokenResponse, AFError>) in
                 switch response.result {
                 case .success(let accessToken):
                     completionHandler(.success(accessToken))

@@ -18,11 +18,12 @@ class ProfileViewModel {
             completionHandler(.failure(APIError.notURL))
             return
         }
-        Alamofire.request(url, method: .get, encoding: JSONEncoding.prettyPrinted, headers: [
-            "Accept": "application/json",
-            "Authorization": "token \(UserDefaultsService.shared.getToken() ?? "")"
-            ]).validate()
-            .responseDecodable { (response: DataResponse<Profile>) in
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: [
+        "Accept": "application/json",
+        "Authorization": "token \(UserDefaultsService.shared.getToken() ?? "")"
+        ], interceptor: nil)
+            .validate()
+            .responseDecodable(completionHandler: { (response: DataResponse<Profile, AFError>) in
                 switch response.result {
                 case .success(let profile):
                     self.profile.value = profile
@@ -30,6 +31,6 @@ class ProfileViewModel {
                 case .failure(let error):
                     completionHandler(.failure(error))
                 }
-        }
+            })
     }
 }
