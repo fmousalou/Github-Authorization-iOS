@@ -23,7 +23,6 @@ class RepositoriesViewController: UITableViewController {
     }
     private var customRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(getRepositories), for: .valueChanged)
         return refreshControl
     }()
     private var viewModel = RepositoriesViewModel()
@@ -41,6 +40,7 @@ class RepositoriesViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.tableHeaderView = searchBar
         tableView.refreshControl = customRefreshControl
+        customRefreshControl.addTarget(self, action: #selector(getRepositories), for: .valueChanged)
         searchBar.rx.text.orEmpty
             .throttle(DispatchTimeInterval.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged().subscribe(onNext: { (query) in

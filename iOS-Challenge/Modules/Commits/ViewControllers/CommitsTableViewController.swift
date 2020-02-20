@@ -13,7 +13,6 @@ class CommitsTableViewController: UITableViewController {
     //MARK: - Vars -
     private var customRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(getCommits), for: .valueChanged)
         return refreshControl
     }()
     private var viewModel = CommitsViewModel(owner: "", repo: "")
@@ -32,6 +31,7 @@ class CommitsTableViewController: UITableViewController {
     fileprivate func setupView() {
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.refreshControl = customRefreshControl
+        customRefreshControl.addTarget(self, action: #selector(getCommits), for: .valueChanged)
     }
     
     @objc fileprivate func getCommits() {
