@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authorization View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="AuthorizationViewController" id="BYZ-38-t0r" customClass="AuthorizationViewController" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-ep-68A">
+                                <rect key="frame" x="16" y="796" width="382" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" title="Login to Github">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjL-qw-0Q4"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gitLogo" translatesAutoresizingMaskIntoConstraints="NO" id="6jR-cO-etr">
+                                <rect key="frame" x="-39" y="243" width="492" height="410"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6jR-cO-etr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6mM-gV-hg7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ghU-ep-68A" secondAttribute="bottom" constant="16" id="Chb-o5-sMs"/>
+                            <constraint firstItem="ghU-ep-68A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NaS-hb-w0M"/>
+                            <constraint firstItem="6jR-cO-etr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="boS-Jt-44h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ghU-ep-68A" secondAttribute="trailing" constant="16" id="jvq-nK-t6F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="Zv5-SP-i4K" kind="show" identifier="presentTabbarController" id="hnm-nN-9wc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5sh-vS-Pc9">
+            <objects>
+                <tabBarController modalPresentationStyle="fullScreen" id="Zv5-SP-i4K" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lEh-RB-89P"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EW1-cE-d3y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wkf-cg-ADv" kind="relationship" relationship="viewControllers" id="Msm-eP-qCF"/>
+                        <segue destination="U0E-k7-lGK" kind="relationship" relationship="viewControllers" id="42d-aX-orG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lc6-51-JTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="137"/>
+        </scene>
+        <!--Repositories-->
+        <scene sceneID="oq7-tf-DFH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Repositories" id="wkf-cg-ADv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="N0W-vs-xW2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSU-DZ-KwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="137"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="yiT-6P-XyA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="U0E-k7-lGK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cva-TW-V0S"/>
+                    <navigationItem key="navigationItem" id="u3s-aW-h6c"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0R-ld-yIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="196"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gitLogo" width="246" height="205"/>
+    </resources>
+</document>
