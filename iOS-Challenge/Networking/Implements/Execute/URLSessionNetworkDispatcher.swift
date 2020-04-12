@@ -74,6 +74,12 @@ public struct URLSessionNetworkDispatcher: NetworkDispatcher {
         }
         
         // Set Token
+        let token = DataManager.shared.getToken()
+        let tokenType = DataManager.shared.getTokenType()
+        if !token.isEmpty {
+            print("Token \(token)")
+            urlRequest.addValue("\(tokenType) \(token)", forHTTPHeaderField: "Authorization")
+        }
         
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         switch request.requestType ?? RequestType.applicationJson {

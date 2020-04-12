@@ -27,6 +27,7 @@
 		F5D5DD5F24432108001E441C /* OAuthAuthorizeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD5E24432108001E441C /* OAuthAuthorizeNetwork.swift */; };
 		F5D5DD6124433F15001E441C /* NilRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD6024433F15001E441C /* NilRequest.swift */; };
 		F5D5DD632443404A001E441C /* OAuthAccessTokenNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */; };
+		F5D5DD662443521A001E441C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD652443521A001E441C /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		F5D5DD5E24432108001E441C /* OAuthAuthorizeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthAuthorizeNetwork.swift; sourceTree = "<group>"; };
 		F5D5DD6024433F15001E441C /* NilRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilRequest.swift; sourceTree = "<group>"; };
 		F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthAccessTokenNetwork.swift; sourceTree = "<group>"; };
+		F5D5DD652443521A001E441C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				F5D5DD64244351DA001E441C /* DB */,
 				F5D5DD4924431B02001E441C /* Networking */,
 				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
 				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
@@ -249,6 +252,14 @@
 				F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */,
 			);
 			path = Senarios;
+			sourceTree = "<group>";
+		};
+		F5D5DD64244351DA001E441C /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD652443521A001E441C /* DataManager.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +476,7 @@
 				F5D5DD552443203D001E441C /* Enums.swift in Sources */,
 				F5D5DD5C24432088001E441C /* URLSessionNetworkDispatcher.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
+				F5D5DD662443521A001E441C /* DataManager.swift in Sources */,
 				F5D5DD5A24432066001E441C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
