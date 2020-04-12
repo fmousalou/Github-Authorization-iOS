@@ -6,4 +6,15 @@
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ProfileVC: BaseVC {
+    
+    private var viewModel : ProfileVM!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel = ProfileVM(self)
+    }
+    
+}

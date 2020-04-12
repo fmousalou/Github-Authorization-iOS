@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class ProfileVM {
+    
+    weak var vc: ProfileVC!
+    
+    init(_ vc: ProfileVC) {
+        self.vc = vc
+    }
+    
+    func loadData() {
+        
+    }
+    
+}

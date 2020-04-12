@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class RepositoriesSearchVM {
+    
+    weak var vc: RepositoriesSearchVC!
+    
+    init(_ vc: RepositoriesSearchVC) {
+        self.vc = vc
+    }
+    
+    func loadData() {
+        
+    }
+    
+}

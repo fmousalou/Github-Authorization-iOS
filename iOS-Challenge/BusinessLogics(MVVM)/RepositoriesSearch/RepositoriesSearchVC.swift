@@ -6,4 +6,15 @@
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class RepositoriesSearchVC: BaseVC {
+    
+    private var viewModel : RepositoriesSearchVM!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel = RepositoriesSearchVM(self)
+    }
+    
+}

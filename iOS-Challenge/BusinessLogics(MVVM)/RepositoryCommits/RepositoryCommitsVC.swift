@@ -6,4 +6,15 @@
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class RepositoryCommitsVC: BaseVC {
+    
+    private var viewModel : RepositoryCommitsVM!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel = RepositoryCommitsVM(self)
+    }
+    
+}

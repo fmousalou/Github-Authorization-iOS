@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class RepositoryCommitsVM {
+    
+    weak var vc: RepositoryCommitsVC!
+    
+    init(_ vc: RepositoryCommitsVC) {
+        self.vc = vc
+    }
+    
+    func loadData() {
+        
+    }
+    
+}

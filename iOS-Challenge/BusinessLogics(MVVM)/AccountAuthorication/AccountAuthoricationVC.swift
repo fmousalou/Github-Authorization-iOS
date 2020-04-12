@@ -6,4 +6,15 @@
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class AccountAuthoricationVC: BaseVC {
+    
+    private var viewModel : AccountAuthoricationVM!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel = AccountAuthoricationVM(self)
+    }
+    
+}

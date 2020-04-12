@@ -35,6 +35,7 @@
 		F5D5DD7B24436309001E441C /* RepositoryCommitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD7A24436309001E441C /* RepositoryCommitsVM.swift */; };
 		F5D5DD7D24436313001E441C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD7C24436313001E441C /* ProfileVC.swift */; };
 		F5D5DD7F2443631B001E441C /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD7E2443631B001E441C /* ProfileVM.swift */; };
+		F5D5DD8124436923001E441C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD8024436923001E441C /* BaseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F5D5DD7A24436309001E441C /* RepositoryCommitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCommitsVM.swift; sourceTree = "<group>"; };
 		F5D5DD7C24436313001E441C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F5D5DD7E2443631B001E441C /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		F5D5DD8024436923001E441C /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		F5D5DD6924436121001E441C /* BusinessLogics(MVVM) */ = {
 			isa = PBXGroup;
 			children = (
+				F5D5DD8024436923001E441C /* BaseVC.swift */,
 				F5D5DD6B2443622D001E441C /* AccountAuthorication */,
 				F5D5DD6C2443624F001E441C /* RepositoriesSearch */,
 				F5D5DD6D2443627E001E441C /* RepositoryCommits */,
@@ -569,6 +572,7 @@
 				F5D5DD552443203D001E441C /* Enums.swift in Sources */,
 				F5D5DD5C24432088001E441C /* URLSessionNetworkDispatcher.swift in Sources */,
 				F5D5DD662443521A001E441C /* DataManager.swift in Sources */,
+				F5D5DD8124436923001E441C /* BaseVC.swift in Sources */,
 				F5D5DD5A24432066001E441C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class AccountAuthoricationVM {
+    
+    weak var vc: AccountAuthoricationVC!
+    
+    init(_ vc: AccountAuthoricationVC) {
+        self.vc = vc
+    }
+    
+    func loadData() {
+        
+    }
+    
+}
