@@ -33,7 +33,12 @@ class ViewController: UIViewController {
         
         OAuthAccessTokenNetwork(code: code, state: 0)
             .execute(onSuccess: { (response) in
-                print(response)
+                if let token = response.access_token {
+                    DataManager.shared.setToken(token: token)
+                }
+                if let tokenType = response.token_type {
+                    DataManager.shared.setTokenType(token: tokenType)
+                }
             }, onError: { (error) in
                 print("Error in OAuthAccessTokenNetwork")
             }) { (connectionError) in
