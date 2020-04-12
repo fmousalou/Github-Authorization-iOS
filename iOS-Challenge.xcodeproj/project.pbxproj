@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,10 +15,18 @@
 		608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */; };
 		608D18F623E091DC00BFE7C7 /* iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */; };
 		608D190123E091DC00BFE7C7 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */; };
-		60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */; };
 		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
 		CE9ACAB5E03FBDFE2043F7EF /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AA1B7E69338FA2B3688AA /* Pods_iOS_Challenge.framework */; };
+		F5D5DD4D24431FEB001E441C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD4C24431FEB001E441C /* Constants.swift */; };
+		F5D5DD532443202C001E441C /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD522443202C001E441C /* RequestData.swift */; };
+		F5D5DD552443203D001E441C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD542443203D001E441C /* Enums.swift */; };
+		F5D5DD572443204D001E441C /* ConnError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD562443204D001E441C /* ConnError.swift */; };
+		F5D5DD5A24432066001E441C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD5924432066001E441C /* BaseRequest.swift */; };
+		F5D5DD5C24432088001E441C /* URLSessionNetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD5B24432088001E441C /* URLSessionNetworkDispatcher.swift */; };
+		F5D5DD5F24432108001E441C /* OAuthAuthorizeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD5E24432108001E441C /* OAuthAuthorizeNetwork.swift */; };
+		F5D5DD6124433F15001E441C /* NilRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD6024433F15001E441C /* NilRequest.swift */; };
+		F5D5DD632443404A001E441C /* OAuthAccessTokenNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +64,21 @@
 		608D18FC23E091DC00BFE7C7 /* iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
 		608D190223E091DC00BFE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Decodable.swift"; sourceTree = "<group>"; };
 		60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		6ABBBC8954A85B69F34446E4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F25064E8452F508919CED9A /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61D224421BF5714CEAB7504 /* Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7DA398FC06A0B03443418B7 /* Pods-iOS-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F5D5DD4C24431FEB001E441C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5D5DD522443202C001E441C /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		F5D5DD542443203D001E441C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		F5D5DD562443204D001E441C /* ConnError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnError.swift; sourceTree = "<group>"; };
+		F5D5DD5924432066001E441C /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		F5D5DD5B24432088001E441C /* URLSessionNetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkDispatcher.swift; sourceTree = "<group>"; };
+		F5D5DD5E24432108001E441C /* OAuthAuthorizeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthAuthorizeNetwork.swift; sourceTree = "<group>"; };
+		F5D5DD6024433F15001E441C /* NilRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilRequest.swift; sourceTree = "<group>"; };
+		F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthAccessTokenNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,13 +147,13 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				F5D5DD4924431B02001E441C /* Networking */,
 				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
 				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
 				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
 				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
 				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
 				608D18EC23E091DC00BFE7C7 /* Info.plist */,
-				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
 				60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */,
 			);
 			path = "iOS-Challenge";
@@ -171,6 +187,70 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F5D5DD4924431B02001E441C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD5D244320B5001E441C /* Senarios */,
+				F5D5DD4B24431FD0001E441C /* Implements */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F5D5DD4B24431FD0001E441C /* Implements */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD4E24431FF9001E441C /* Execute */,
+				F5D5DD4C24431FEB001E441C /* Constants.swift */,
+			);
+			path = Implements;
+			sourceTree = "<group>";
+		};
+		F5D5DD4E24431FF9001E441C /* Execute */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD4F2443200A001E441C /* RequestData */,
+				F5D5DD5024432014001E441C /* Enums */,
+				F5D5DD512443201C001E441C /* BaseRequest */,
+				F5D5DD5B24432088001E441C /* URLSessionNetworkDispatcher.swift */,
+			);
+			path = Execute;
+			sourceTree = "<group>";
+		};
+		F5D5DD4F2443200A001E441C /* RequestData */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD522443202C001E441C /* RequestData.swift */,
+				F5D5DD6024433F15001E441C /* NilRequest.swift */,
+			);
+			path = RequestData;
+			sourceTree = "<group>";
+		};
+		F5D5DD5024432014001E441C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD542443203D001E441C /* Enums.swift */,
+				F5D5DD562443204D001E441C /* ConnError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F5D5DD512443201C001E441C /* BaseRequest */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD5924432066001E441C /* BaseRequest.swift */,
+			);
+			path = BaseRequest;
+			sourceTree = "<group>";
+		};
+		F5D5DD5D244320B5001E441C /* Senarios */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD5E24432108001E441C /* OAuthAuthorizeNetwork.swift */,
+				F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */,
+			);
+			path = Senarios;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,7 +262,6 @@
 				608D18D723E091DB00BFE7C7 /* Sources */,
 				608D18D823E091DB00BFE7C7 /* Frameworks */,
 				608D18D923E091DB00BFE7C7 /* Resources */,
-				01A28A84DC7D6AFA0B2C63F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,7 +299,6 @@
 				608D18F823E091DC00BFE7C7 /* Sources */,
 				608D18F923E091DC00BFE7C7 /* Frameworks */,
 				608D18FA23E091DC00BFE7C7 /* Resources */,
-				0FB17E0874F2632207A00F00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,23 +381,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01A28A84DC7D6AFA0B2C63F9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		01AAEBE3DE5FF38A709E756E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,23 +401,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0FB17E0874F2632207A00F00 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		46618528AD9515DF85C79BA9 /* [CP] Check Pods Manifest.lock */ = {
@@ -410,10 +454,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D5DD4D24431FEB001E441C /* Constants.swift in Sources */,
 				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
+				F5D5DD6124433F15001E441C /* NilRequest.swift in Sources */,
+				F5D5DD572443204D001E441C /* ConnError.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
+				F5D5DD5F24432108001E441C /* OAuthAuthorizeNetwork.swift in Sources */,
+				F5D5DD632443404A001E441C /* OAuthAccessTokenNetwork.swift in Sources */,
+				F5D5DD532443202C001E441C /* RequestData.swift in Sources */,
+				F5D5DD552443203D001E441C /* Enums.swift in Sources */,
+				F5D5DD5C24432088001E441C /* URLSessionNetworkDispatcher.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
-				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
+				F5D5DD5A24432066001E441C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VFQ8Q5YZ89;
 				INFOPLIST_FILE = "iOS-Challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VFQ8Q5YZ89;
 				INFOPLIST_FILE = "iOS-Challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
