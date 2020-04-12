@@ -38,6 +38,9 @@
 		F5D5DD8324436B46001E441C /* SBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD8224436B46001E441C /* SBConstants.swift */; };
 		F5D5DD8924436C9D001E441C /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD8824436C9D001E441C /* LaunchScreenVC.swift */; };
 		F5D5DD8B24436DF4001E441C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D5DD8A24436DF4001E441C /* LaunchScreen.storyboard */; };
+		F5F574C524439195009BDDB3 /* SearchRepositoriesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F574C424439195009BDDB3 /* SearchRepositoriesNetwork.swift */; };
+		F5F574C824439455009BDDB3 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F574C724439455009BDDB3 /* RepositoryTableViewCell.xib */; };
+		F5F574CA24439466009BDDB3 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F574C924439466009BDDB3 /* RepositoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		F5D5DD8224436B46001E441C /* SBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBConstants.swift; sourceTree = "<group>"; };
 		F5D5DD8824436C9D001E441C /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		F5D5DD8A24436DF4001E441C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5F574C424439195009BDDB3 /* SearchRepositoriesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoriesNetwork.swift; sourceTree = "<group>"; };
+		F5F574C724439455009BDDB3 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		F5F574C924439466009BDDB3 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +224,8 @@
 		F5D5DD4B24431FD0001E441C /* Implements */ = {
 			isa = PBXGroup;
 			children = (
-				F5D5DD4E24431FF9001E441C /* Execute */,
 				F5D5DD4C24431FEB001E441C /* Constants.swift */,
+				F5D5DD4E24431FF9001E441C /* Execute */,
 			);
 			path = Implements;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			children = (
 				F5D5DD5E24432108001E441C /* OAuthAuthorizeNetwork.swift */,
 				F5D5DD622443404A001E441C /* OAuthAccessTokenNetwork.swift */,
+				F5F574C424439195009BDDB3 /* SearchRepositoriesNetwork.swift */,
 			);
 			path = Senarios;
 			sourceTree = "<group>";
@@ -332,6 +339,7 @@
 		F5D5DD6C2443624F001E441C /* RepositoriesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				F5F574C624439431009BDDB3 /* Cells */,
 				F5D5DD74244362F2001E441C /* RepositoriesSearchVC.swift */,
 				F5D5DD76244362FA001E441C /* RepositoriesSearchVM.swift */,
 			);
@@ -362,6 +370,15 @@
 				F5D5DD8824436C9D001E441C /* LaunchScreenVC.swift */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		F5F574C624439431009BDDB3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F5F574C724439455009BDDB3 /* RepositoryTableViewCell.xib */,
+				F5F574C924439466009BDDB3 /* RepositoryTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F574C824439455009BDDB3 /* RepositoryTableViewCell.xib in Resources */,
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
 				608D18E623E091DB00BFE7C7 /* Home.storyboard in Resources */,
@@ -571,6 +589,7 @@
 				F5D5DD4D24431FEB001E441C /* Constants.swift in Sources */,
 				F5D5DD8324436B46001E441C /* SBConstants.swift in Sources */,
 				F5D5DD7B24436309001E441C /* RepositoryCommitsVM.swift in Sources */,
+				F5F574CA24439466009BDDB3 /* RepositoryTableViewCell.swift in Sources */,
 				F5D5DD73244362E4001E441C /* AccountAuthoricationVM.swift in Sources */,
 				F5D5DD7D24436313001E441C /* ProfileVC.swift in Sources */,
 				F5D5DD6124433F15001E441C /* NilRequest.swift in Sources */,
@@ -584,6 +603,7 @@
 				F5D5DD5F24432108001E441C /* OAuthAuthorizeNetwork.swift in Sources */,
 				F5D5DD632443404A001E441C /* OAuthAccessTokenNetwork.swift in Sources */,
 				F5D5DD532443202C001E441C /* RequestData.swift in Sources */,
+				F5F574C524439195009BDDB3 /* SearchRepositoriesNetwork.swift in Sources */,
 				F5D5DD552443203D001E441C /* Enums.swift in Sources */,
 				F5D5DD5C24432088001E441C /* URLSessionNetworkDispatcher.swift in Sources */,
 				F5D5DD662443521A001E441C /* DataManager.swift in Sources */,
