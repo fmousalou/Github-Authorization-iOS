@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		51ABFA4108193A830D07D8B1 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1472B44674D823777D29C897 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */; };
 		608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */; };
-		608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18E223E091DB00BFE7C7 /* ViewController.swift */; };
-		608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E423E091DB00BFE7C7 /* Main.storyboard */; };
+		608D18E623E091DB00BFE7C7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E423E091DB00BFE7C7 /* Home.storyboard */; };
 		608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E723E091DC00BFE7C7 /* Assets.xcassets */; };
 		608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */; };
 		608D18F623E091DC00BFE7C7 /* iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */; };
@@ -36,6 +35,9 @@
 		F5D5DD7D24436313001E441C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD7C24436313001E441C /* ProfileVC.swift */; };
 		F5D5DD7F2443631B001E441C /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD7E2443631B001E441C /* ProfileVM.swift */; };
 		F5D5DD8124436923001E441C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD8024436923001E441C /* BaseVC.swift */; };
+		F5D5DD8324436B46001E441C /* SBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD8224436B46001E441C /* SBConstants.swift */; };
+		F5D5DD8924436C9D001E441C /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D5DD8824436C9D001E441C /* LaunchScreenVC.swift */; };
+		F5D5DD8B24436DF4001E441C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D5DD8A24436DF4001E441C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +64,7 @@
 		4CF87E523F98E04A4A667417 /* Pods-iOS-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		608D18DB23E091DB00BFE7C7 /* iOS-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		608D18E223E091DB00BFE7C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		608D18E523E091DB00BFE7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		608D18E523E091DB00BFE7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		608D18E723E091DC00BFE7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		608D18EA23E091DC00BFE7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		608D18EC23E091DC00BFE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +98,9 @@
 		F5D5DD7C24436313001E441C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F5D5DD7E2443631B001E441C /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		F5D5DD8024436923001E441C /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		F5D5DD8224436B46001E441C /* SBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBConstants.swift; sourceTree = "<group>"; };
+		F5D5DD8824436C9D001E441C /* LaunchScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		F5D5DD8A24436DF4001E441C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +281,7 @@
 		F5D5DD6724436111001E441C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F5D5DD8224436B46001E441C /* SBConstants.swift */,
 				F5D5DD6824436116001E441C /* Stroyboards */,
 			);
 			path = UI;
@@ -285,7 +290,8 @@
 		F5D5DD6824436116001E441C /* Stroyboards */ = {
 			isa = PBXGroup;
 			children = (
-				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
+				608D18E423E091DB00BFE7C7 /* Home.storyboard */,
+				F5D5DD8A24436DF4001E441C /* LaunchScreen.storyboard */,
 			);
 			path = Stroyboards;
 			sourceTree = "<group>";
@@ -294,11 +300,11 @@
 			isa = PBXGroup;
 			children = (
 				F5D5DD8024436923001E441C /* BaseVC.swift */,
+				F5D5DD8724436C8D001E441C /* LaunchScreen */,
 				F5D5DD6B2443622D001E441C /* AccountAuthorication */,
 				F5D5DD6C2443624F001E441C /* RepositoriesSearch */,
 				F5D5DD6D2443627E001E441C /* RepositoryCommits */,
 				F5D5DD6E2443629E001E441C /* Profile */,
-				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
 			);
 			path = "BusinessLogics(MVVM)";
 			sourceTree = "<group>";
@@ -348,6 +354,14 @@
 				F5D5DD7E2443631B001E441C /* ProfileVM.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F5D5DD8724436C8D001E441C /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5DD8824436C9D001E441C /* LaunchScreenVC.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,7 +473,8 @@
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
-				608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */,
+				608D18E623E091DB00BFE7C7 /* Home.storyboard in Resources */,
+				F5D5DD8B24436DF4001E441C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,10 +569,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D5DD4D24431FEB001E441C /* Constants.swift in Sources */,
+				F5D5DD8324436B46001E441C /* SBConstants.swift in Sources */,
 				F5D5DD7B24436309001E441C /* RepositoryCommitsVM.swift in Sources */,
 				F5D5DD73244362E4001E441C /* AccountAuthoricationVM.swift in Sources */,
 				F5D5DD7D24436313001E441C /* ProfileVC.swift in Sources */,
-				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
 				F5D5DD6124433F15001E441C /* NilRequest.swift in Sources */,
 				F5D5DD75244362F2001E441C /* RepositoriesSearchVC.swift in Sources */,
 				F5D5DD71244362DC001E441C /* AccountAuthoricationVC.swift in Sources */,
@@ -574,6 +589,7 @@
 				F5D5DD662443521A001E441C /* DataManager.swift in Sources */,
 				F5D5DD8124436923001E441C /* BaseVC.swift in Sources */,
 				F5D5DD5A24432066001E441C /* BaseRequest.swift in Sources */,
+				F5D5DD8924436C9D001E441C /* LaunchScreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,12 +625,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		608D18E423E091DB00BFE7C7 /* Main.storyboard */ = {
+		608D18E423E091DB00BFE7C7 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				608D18E523E091DB00BFE7C7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */ = {
@@ -758,7 +774,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digipay.iOS-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -778,7 +794,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.digipay.iOS-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

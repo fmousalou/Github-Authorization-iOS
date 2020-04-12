@@ -12,9 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var deeplinkData: String = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.goToController(goTo: SBConstants.launchScreen, withIdentifier: "LaunchScreenVCID")
         return true
     }
 
@@ -34,12 +36,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController?.present(alert, animated: true, completion: nil)
             
         }else if let code = queryItems?.first(where: { $0.name == "code"}) {
-            (window?.rootViewController as? ViewController)?.getAuthentication(with: code.value)
+            self.deeplinkData = code.value ?? ""
+            let vc = SBConstants.home.instantiateViewController(withIdentifier: "AccountAuthoricationVCID") as! AccountAuthoricationVC
+            vc.setData(code: code.value)
+            vc.modalPresentationStyle = .fullScreen
+            self.window?.rootViewController = vc
         }
-        
         
         return true
         
+    }
+    
+    func goToController(goTo storyboard: UIStoryboard, withIdentifier identifier: String) {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        let controller = storyboard.instantiateViewController(withIdentifier: identifier)
+        self.window?.rootViewController = controller
     }
     
 }
