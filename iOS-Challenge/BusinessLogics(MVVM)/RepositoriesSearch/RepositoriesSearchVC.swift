@@ -16,19 +16,37 @@ class RepositoriesSearchVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = RepositoriesSearchVM(self)
+        tableview.register(UINib(nibName: "RepositoryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "RepositoryTableViewCellID")
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableview.reloadData()
+        }
     }
     
 }
 
 
-extension RepositoriesSearchVC: UITableViewDelegate, UITableViewDataSource {
+extension RepositoriesSearchVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCellID", for: indexPath) as! RepositoryTableViewCell
+        cell.setData(data: viewModel.items[indexPath.row])
+        return cell
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            if !text.isEmpty {
+                viewModel.getData(q: text)
+                view.endEditing(true)
+            }
+        }
     }
     
 }

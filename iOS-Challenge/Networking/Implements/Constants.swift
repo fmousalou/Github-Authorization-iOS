@@ -13,6 +13,7 @@ struct ConstantURLs {
     #if DEBUG
         // Develop State
         static let core = "https://github.com/"
+        static let api = "https://api.github.com/"
         static let clientId = "fbddf1ffb4bc9d2a8124"
         static let clientSecret = "367102c0b6c47f8a3fc80217f43b9edd7a2c4b71"
         static let redirect_url = "challenge://app/callback"
@@ -20,6 +21,7 @@ struct ConstantURLs {
     #else
         // Production State
         static let core = "https://github.com/"
+        static let api = "https://api.github.com/"
         static let clientId = "fbddf1ffb4bc9d2a8124"
         static let clientSecret = "367102c0b6c47f8a3fc80217f43b9edd7a2c4b71"
         static let redirect_url = "challenge://app/callback"

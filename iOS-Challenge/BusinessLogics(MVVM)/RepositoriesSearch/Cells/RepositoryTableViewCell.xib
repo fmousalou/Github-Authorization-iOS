@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RepositoryTableViewCellID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="HCi-xt-oOe" customClass="RepositoryTableViewCell" customModule="iOS_Challenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HCi-xt-oOe" id="pDh-ki-4aY">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9B-kz-m2b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNd-iQ-v6P">
+                                <rect key="frame" x="10" y="22" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VNd-iQ-v6P" firstAttribute="top" secondItem="e9B-kz-m2b" secondAttribute="top" constant="22" id="5pg-Qx-nP3"/>
+                            <constraint firstAttribute="height" constant="100" id="UCu-jz-4oz"/>
+                            <constraint firstItem="VNd-iQ-v6P" firstAttribute="leading" secondItem="e9B-kz-m2b" secondAttribute="leading" constant="10" id="X5n-LD-2dj"/>
+                            <constraint firstAttribute="trailing" secondItem="VNd-iQ-v6P" secondAttribute="trailing" constant="10" id="jDg-8g-Lzq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="e9B-kz-m2b" firstAttribute="top" secondItem="pDh-ki-4aY" secondAttribute="top" id="8ga-PV-6VL"/>
+                    <constraint firstAttribute="bottom" secondItem="e9B-kz-m2b" secondAttribute="bottom" id="XRX-dW-ts3"/>
+                    <constraint firstItem="e9B-kz-m2b" firstAttribute="leading" secondItem="pDh-ki-4aY" secondAttribute="leading" id="aN6-kT-916"/>
+                    <constraint firstAttribute="trailing" secondItem="e9B-kz-m2b" secondAttribute="trailing" id="auE-5P-Nop"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="repoName" destination="VNd-iQ-v6P" id="A17-Pe-LzU"/>
+            </connections>
+            <point key="canvasLocation" x="163.768115942029" y="201.5625"/>
+        </tableViewCell>
+    </objects>
+</document>

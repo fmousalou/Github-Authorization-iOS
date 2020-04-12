@@ -11,6 +11,7 @@ import Foundation
 class RepositoriesSearchVM {
     
     weak var vc: RepositoriesSearchVC!
+    var items: [SearchRepositoriesItemResponse] = []
     
     init(_ vc: RepositoriesSearchVC) {
         self.vc = vc
@@ -18,6 +19,18 @@ class RepositoriesSearchVM {
     
     func loadData() {
         
+    }
+    
+    func getData(q: String) {
+        SearchRepositoriesNetwork(q: q)
+            .execute(onSuccess: { [weak self] (response) in
+                self?.items = response.items
+                self?.vc.reloadData()
+            }, onError: { (error) in
+                print(error)
+            }) { (connectionError) in
+                print(connectionError)
+        }
     }
     
 }
