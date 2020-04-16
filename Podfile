@@ -7,6 +7,11 @@ target 'iOS-Challenge' do
 
   pod 'Alamofire'
   # Pods for iOS-Challenge
+pod 'RxSwift'
+pod 'Apollo'
+ pod 'Moya/RxSwift'  # https://github.com/Moya/Moya
+pod 'Moya-ObjectMapper/RxSwift'
+pod 'RxCocoa'
 
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
