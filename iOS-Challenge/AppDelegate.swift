@@ -36,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else if let code = queryItems?.first(where: { $0.name == "code"}) {
             (window?.rootViewController as? ViewController)?.accessTokenLabel.text = code.value
         }
-        
-        
         return true
         
     }
