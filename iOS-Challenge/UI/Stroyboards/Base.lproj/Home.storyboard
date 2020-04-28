@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Account AuthoricationVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="AccountAuthoricationVCID" id="BYZ-38-t0r" customClass="AccountAuthoricationVC" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-ep-68A">
+                                <rect key="frame" x="16" y="423" width="382" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjL-qw-0Q4"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="8Mu-K1-zzb">
+                                <rect key="frame" x="109" y="213" width="196" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7Lz-6A-e35"/>
+                                    <constraint firstAttribute="width" constant="196" id="9zh-As-Xiq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ghU-ep-68A" secondAttribute="trailing" constant="16" id="3Fa-6J-O8W"/>
+                            <constraint firstItem="ghU-ep-68A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4ws-qY-R90"/>
+                            <constraint firstItem="ghU-ep-68A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="J6K-ye-oEV"/>
+                            <constraint firstItem="ghU-ep-68A" firstAttribute="top" secondItem="8Mu-K1-zzb" secondAttribute="bottom" constant="10" id="aeN-K4-03o"/>
+                            <constraint firstItem="8Mu-K1-zzb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vrU-Io-HJT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+        <!--Repositories SearchVC-->
+        <scene sceneID="bPY-eb-tBw">
+            <objects>
+                <viewController storyboardIdentifier="RepositoriesSearchVCID" id="SjQ-xh-hsW" customClass="RepositoriesSearchVC" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hh7-aB-vHn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="DzL-N3-yrO">
+                                <rect key="frame" x="109" y="44" width="196" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="A1S-Cv-VaL"/>
+                                    <constraint firstAttribute="width" constant="196" id="Kh7-tf-N9E"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-N8-sQb">
+                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" id="m79-Js-38C">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="SjQ-xh-hsW" id="83C-5S-jyi"/>
+                                    </connections>
+                                </searchBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="SjQ-xh-hsW" id="6Sh-22-T1u"/>
+                                    <outlet property="delegate" destination="SjQ-xh-hsW" id="3Op-jH-jCx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sp0-N8-sQb" firstAttribute="top" secondItem="DzL-N3-yrO" secondAttribute="bottom" id="048-iZ-hmJ"/>
+                            <constraint firstItem="mLk-7t-BZ7" firstAttribute="trailing" secondItem="sp0-N8-sQb" secondAttribute="trailing" id="3w7-87-U3g"/>
+                            <constraint firstItem="sp0-N8-sQb" firstAttribute="leading" secondItem="mLk-7t-BZ7" secondAttribute="leading" id="Do0-GW-YgQ"/>
+                            <constraint firstItem="DzL-N3-yrO" firstAttribute="centerX" secondItem="Hh7-aB-vHn" secondAttribute="centerX" id="Knh-cq-3bV"/>
+                            <constraint firstItem="mLk-7t-BZ7" firstAttribute="bottom" secondItem="sp0-N8-sQb" secondAttribute="bottom" id="WZ7-xx-Z01"/>
+                            <constraint firstItem="DzL-N3-yrO" firstAttribute="top" secondItem="mLk-7t-BZ7" secondAttribute="top" id="vFV-GF-8JF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mLk-7t-BZ7"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="sp0-N8-sQb" id="fat-dI-SYK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lyy-Ra-uKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="github" width="225" height="225"/>
+    </resources>
+</document>
