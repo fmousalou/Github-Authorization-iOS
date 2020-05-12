@@ -1,0 +1,15 @@
+//
+//  Result.swift
+//  iOS-Challenge
+//
+//  Created by Emad Beyrami on 1/28/1399 AP.
+//  Copyright © 1399 AP Farshad Mousalou. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+enum Result<T> {
+    case success(value: T)
+    case failure(error: Error)
+}

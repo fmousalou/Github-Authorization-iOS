@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,26 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let prefrence = FirstRunPrefrences()
+        prefrence.keychainSetup()
         return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         print("url => ",url)
+        let keychain = KeychainSwift()
+        let util = Utilities()
         let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
-        
         if queryItems?.contains(where: { $0.name == "error" }) == true  {
-            
-            let alert = UIAlertController(title: queryItems?.first(where: { $0.name == "error" })?.value,
-                              message: queryItems?.first(where: { $0.name == "error_description" })?.value,
-                              preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            
-            window?.rootViewController?.present(alert, animated: true, completion: nil)
-            
+            let message = queryItems?.first(where: { $0.name == "error_description" })?.value ?? "something went wrong. you're not logged in."
+            let title   = queryItems?.first(where: { $0.name == "error" })?.value ?? "error"
+            util.showAlert(message: message, title: title , buttonTitle: "OK")
         }else if let code = queryItems?.first(where: { $0.name == "code"}) {
-            (window?.rootViewController as? ViewController)?.accessTokenLabel.text = code.value
+            keychain.set(code.value ?? "", forKey: "token")
+            Global.token = code.value
+            Router.goTo.mainTabbar()
         }
         return true
         
