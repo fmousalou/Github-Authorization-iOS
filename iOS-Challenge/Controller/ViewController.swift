@@ -70,7 +70,7 @@ class ViewController: UIViewController {
                           parameters: parameters, encoding: JSONEncoding.prettyPrinted,
                           headers: ["Accept":"application/json"])
             .validate()
-            .responseDecodable {[weak self] (response : DataResponse<AccessTokenResponse>) in
+            .responseDecodable {[weak self] (response : DataResponse<AccessTokenResponse , AFError>) in
                 switch response.result {
                 case .success(let accessToken):
                     self?.accessTokenLabel.text = accessToken.accessToken
