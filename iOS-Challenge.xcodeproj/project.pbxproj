@@ -131,14 +131,12 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				87063756248676EE00D2EBF2 /* Resources */,
+				87063755248676DC00D2EBF2 /* Controller */,
+				87063754248676D300D2EBF2 /* View */,
 				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
-				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
-				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
-				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
-				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
-				608D18EC23E091DC00BFE7C7 /* Info.plist */,
-				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
-				60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */,
+				87063753248676C900D2EBF2 /* Model */,
+				87063752248676B300D2EBF2 /* Extensions */,
 			);
 			path = "iOS-Challenge";
 			sourceTree = "<group>";
@@ -159,6 +157,48 @@
 				608D190223E091DC00BFE7C7 /* Info.plist */,
 			);
 			path = "iOS-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		87063752248676B300D2EBF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				60F3961B23E996C000AA2913 /* Alamofire+Decodable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87063753248676C900D2EBF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87063754248676D300D2EBF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87063755248676DC00D2EBF2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		87063756248676EE00D2EBF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
+				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
+				608D18EC23E091DC00BFE7C7 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9E97234477426D684DD9BFA1 /* Frameworks */ = {

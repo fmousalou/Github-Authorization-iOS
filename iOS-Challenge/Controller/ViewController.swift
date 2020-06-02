@@ -66,7 +66,7 @@ class ViewController: UIViewController {
                           "code": code,
                           "state": 0] as [String:Any]
         
-        Alamofire.request(url, method: .post,
+        AF.request(url, method: .post,
                           parameters: parameters, encoding: JSONEncoding.prettyPrinted,
                           headers: ["Accept":"application/json"])
             .validate()
