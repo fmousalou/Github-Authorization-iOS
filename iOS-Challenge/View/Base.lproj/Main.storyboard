@@ -69,15 +69,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="It looks first time you've opened my app." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-S5-enU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It looks first time you've opened my app." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-S5-enU">
                                 <rect key="frame" x="10" y="121" width="394" height="166"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-Pn-zHz">
-                                <rect key="frame" x="155" y="512" width="105" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-Pn-zHz">
+                                <rect key="frame" x="154.5" y="391" width="105" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="7mA-ts-970"/>
+                                    <constraint firstAttribute="height" constant="115" id="FbF-Hd-yKf"/>
+                                </constraints>
                                 <state key="normal" title="Login to Github"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="s17-om-mQp" eventType="touchUpInside" id="aPw-h8-Yjy"/>
@@ -86,10 +89,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="M2O-Cy-3bz" firstAttribute="trailing" secondItem="4CV-S5-enU" secondAttribute="trailing" constant="10" id="7DJ-76-dbv"/>
-                            <constraint firstItem="4CV-S5-enU" firstAttribute="top" secondItem="M2O-Cy-3bz" secondAttribute="top" constant="33" id="QNU-v5-aYN"/>
-                            <constraint firstItem="4CV-S5-enU" firstAttribute="leading" secondItem="M2O-Cy-3bz" secondAttribute="leading" constant="10" id="rTB-zE-rh0"/>
-                            <constraint firstItem="4CV-S5-enU" firstAttribute="width" secondItem="ceg-qa-ZZY" secondAttribute="width" multiplier="0.951691" id="sdL-BG-Td7"/>
+                            <constraint firstItem="NEP-Pn-zHz" firstAttribute="centerX" secondItem="M2O-Cy-3bz" secondAttribute="centerX" id="0XY-jC-h73"/>
+                            <constraint firstItem="4CV-S5-enU" firstAttribute="leading" secondItem="M2O-Cy-3bz" secondAttribute="leading" constant="10" id="2Y3-1G-TLe"/>
+                            <constraint firstItem="M2O-Cy-3bz" firstAttribute="trailing" secondItem="4CV-S5-enU" secondAttribute="trailing" constant="10" id="9Vx-wq-M7R"/>
+                            <constraint firstItem="NEP-Pn-zHz" firstAttribute="centerY" secondItem="M2O-Cy-3bz" secondAttribute="centerY" constant="-4.5" id="P3V-wb-qrX"/>
+                            <constraint firstItem="NEP-Pn-zHz" firstAttribute="top" secondItem="4CV-S5-enU" secondAttribute="bottom" constant="104" id="Sgo-mB-WX3"/>
+                            <constraint firstItem="4CV-S5-enU" firstAttribute="width" secondItem="ceg-qa-ZZY" secondAttribute="width" multiplier="0.951691" id="jRw-Wc-wfh"/>
+                            <constraint firstItem="4CV-S5-enU" firstAttribute="top" secondItem="M2O-Cy-3bz" secondAttribute="top" constant="77" id="kl1-aJ-xDm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M2O-Cy-3bz"/>
                     </view>
