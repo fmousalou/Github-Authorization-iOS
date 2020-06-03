@@ -6,8 +6,10 @@ target 'iOS-Challenge' do
 
 	pod 'Moya'
   pod 'SwiftyJSON'
+  pod 'SwiftMessages'
  	pod 'KeychainAccess'
   pod 'NVActivityIndicatorView'
+  pod 'SnapKit'
 
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
