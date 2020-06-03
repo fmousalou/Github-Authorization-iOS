@@ -10,26 +10,31 @@ import KeychainAccess
 
 class KeychainAPI {
 
-    // MARK:- Private
+    // MARK:- Variables
+    // Private
     private let keychain: Keychain = {
         return Keychain(service: "com.digipay.iOS-Challenge")
     }()
     private let tokenKey = "digipay-token"
     
+    // Public
+    var token: String? {
+        get {
+            guard let token =  try? keychain.get(tokenKey)  else{
+                return nil
+            }
+            return token
+        }
+    }
+    
+    
+    // MARK:- Functions (Token)
     func clearKeychain() {
         if let _ = try? self.keychain.contains(tokenKey) {
             try! self.keychain.removeAll()
         }
     }
     
-    // MARK:- Functions (Token)
-    func getToken() -> String? {
-        if let token = try? keychain.get(tokenKey) {
-            return token
-        }else {
-            return nil
-        }
-    }
     func store(token: String) {
         do {
             try keychain.set(token, key: tokenKey)

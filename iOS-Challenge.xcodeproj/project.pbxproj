@@ -16,6 +16,7 @@
 		608D18F623E091DC00BFE7C7 /* iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */; };
 		608D190123E091DC00BFE7C7 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */; };
 		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
+		870357D42487725D00005070 /* KeychainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357D32487725D00005070 /* KeychainAPI.swift */; };
 		87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B95C89248698A30053C5C9 /* LoginController.swift */; };
 		87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BC1D3B2487692900AA8760 /* GithubService.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
@@ -60,6 +61,7 @@
 		60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
 		6ABBBC8954A85B69F34446E4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F25064E8452F508919CED9A /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		870357D32487725D00005070 /* KeychainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAPI.swift; sourceTree = "<group>"; };
 		87B95C89248698A30053C5C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = "iOS-Challenge/Controller/LoginController.swift"; sourceTree = SOURCE_ROOT; };
 		87BC1D3B2487692900AA8760 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				870357D22487724B00005070 /* Helper */,
 				87BC1D3A248768F300AA8760 /* Network */,
 				87063755248676DC00D2EBF2 /* Controller */,
 				87063754248676D300D2EBF2 /* View */,
@@ -160,6 +163,14 @@
 				608D190223E091DC00BFE7C7 /* Info.plist */,
 			);
 			path = "iOS-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		870357D22487724B00005070 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				870357D32487725D00005070 /* KeychainAPI.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		87063752248676B300D2EBF2 /* Extensions */ = {
@@ -461,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870357D42487725D00005070 /* KeychainAPI.swift in Sources */,
 				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
 				87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
