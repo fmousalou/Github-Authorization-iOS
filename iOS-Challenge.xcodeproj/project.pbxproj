@@ -25,6 +25,7 @@
 		870357E52487D08A00005070 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357E42487D08A00005070 /* ServerError.swift */; };
 		870357E72487D23400005070 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357E62487D23400005070 /* Toast.swift */; };
 		870357E92487FEB600005070 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357E82487FEB600005070 /* User.swift */; };
+		870357ED2488053D00005070 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357EC2488053D00005070 /* UserController.swift */; };
 		87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B95C89248698A30053C5C9 /* LoginController.swift */; };
 		87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BC1D3B2487692900AA8760 /* GithubService.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
@@ -78,6 +79,7 @@
 		870357E42487D08A00005070 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		870357E62487D23400005070 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		870357E82487FEB600005070 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		870357EC2488053D00005070 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		87B95C89248698A30053C5C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = "iOS-Challenge/Controller/LoginController.swift"; sourceTree = SOURCE_ROOT; };
 		87BC1D3B2487692900AA8760 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				87B95C89248698A30053C5C9 /* LoginController.swift */,
+				870357EC2488053D00005070 /* UserController.swift */,
 				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -516,6 +519,7 @@
 				870357DD24878A7000005070 /* Storyboarded.swift in Sources */,
 				87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */,
 				870357E32487CE8500005070 /* URL+queryParameters.swift in Sources */,
+				870357ED2488053D00005070 /* UserController.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
 				870357D9248789C100005070 /* Coordinator.swift in Sources */,
 			);
