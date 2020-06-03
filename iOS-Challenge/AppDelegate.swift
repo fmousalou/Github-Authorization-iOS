@@ -29,16 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("url => ",url)
         let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
 
         if queryItems?.contains(where: { $0.name == "error" }) == true  {
             //Show Error in Toast
         }else if let code = queryItems?.first(where: { $0.name == "code"}) {
-            (window?.rootViewController as? ViewController)?.getAuthentication(with: code.value)
+            coordinator?.resumeAuthentication(with: code.value)
+//            (window?.rootViewController as? LoginController)?.getAuthentication(with: code.value)
         }
         return true
-
     }
 }
 

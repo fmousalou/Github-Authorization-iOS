@@ -16,65 +16,36 @@ let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28"
 let redirect_url = "challenge://app/callback"
 
 class LoginController: UIViewController, Storyboarded {
+    weak var coordinator: MainCoordinator?
+    //MARK: Variable
+    lazy var keychain = KeychainAPI()
     
-    var keychain = KeychainAPI()
-    
-    @IBAction func loginPressed(_ sender: Any) {
-        openGithub()
+    //MARK: Action
+    @IBAction private func loginPressed(_ sender: Any) {
+        let urlStr = "https://github.com/login/oauth/authorize"
+        if let githubAuthURL = urlStr.githubURL {
+            UIApplication.shared.open(githubAuthURL,
+                                      options: [:])
+        }
     }
     
-    private func openGithub() {
-        guard let url = URL(string:"https://github.com/login/oauth/authorize") else {
-            return
-        }
-        
-        guard let urlRequest = try? URLRequest(url: url, method: .get) else {
-            return
-        }
-        
-        let parameters = ["client_id": clientId,
-                          "redirect_uri": redirect_url,
-                          "scope": "repo user",
-                          "state": 0] as [String:Any]
-        
-        guard let requestURL = (try? URLEncoding.default.encode(urlRequest, with:parameters))?.url else {
-            return
-        }
-        
-        UIApplication.shared.open(requestURL,
-                                  options: [:])
-    }
-    
+    //MARK: Network
     func getAuthentication(with code: String?) {
-        
         guard let code = code else { return }
-        
-        
         let gitService = MoyaProvider<GithubService>()
-        gitService.authenticate(code)
-        
-//        guard let url = URL(string:"https://github.com/login/oauth/access_token") else {
-//            return
-//        }
-//
-//        let parameters = ["client_id": clientId,
-//                          "redirect_uri": redirect_url,
-//                          "client_secret": clientSecret,
-//                          "code": code,
-//                          "state": 0] as [String:Any]
-//
-//        AF.request(url, method: .post,
-//                          parameters: parameters, encoding: JSONEncoding.prettyPrinted,
-//                          headers: ["Accept":"application/json"])
-//            .validate()
-//            .responseDecodable {[weak self] (response : DataResponse<AccessTokenResponse , AFError>) in
-//                switch response.result {
-//                case .success(let accessToken):
-//                    print("it's access token \(accessToken)")
-//                    //TODO: Save token in keychain
-//                case .failure(let error):
-//                    print(error)
-//                }
-//        }
+        gitService.request(.authenticate(code: code)) {
+            [weak self]
+            (result) in
+            guard let sSelf = self else { return}
+            switch result {
+            case .success(let response):
+                print("Success response \n\n \(response)")
+                sSelf.keychain.store(token: "aa")
+                // start first screen
+            case .failure:
+                // Show error Toast
+                print("Response  Failed \n\n \(#function)")
+            }
+        }
     }
 }
