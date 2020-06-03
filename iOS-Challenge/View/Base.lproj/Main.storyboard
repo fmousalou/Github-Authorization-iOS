@@ -90,12 +90,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NEP-Pn-zHz" firstAttribute="centerX" secondItem="M2O-Cy-3bz" secondAttribute="centerX" id="0XY-jC-h73"/>
-                            <constraint firstItem="4CV-S5-enU" firstAttribute="leading" secondItem="M2O-Cy-3bz" secondAttribute="leading" constant="10" id="2Y3-1G-TLe"/>
-                            <constraint firstItem="M2O-Cy-3bz" firstAttribute="trailing" secondItem="4CV-S5-enU" secondAttribute="trailing" constant="10" id="9Vx-wq-M7R"/>
+                            <constraint firstItem="4CV-S5-enU" firstAttribute="centerX" secondItem="NEP-Pn-zHz" secondAttribute="centerX" id="KUa-AX-qp2"/>
                             <constraint firstItem="NEP-Pn-zHz" firstAttribute="centerY" secondItem="M2O-Cy-3bz" secondAttribute="centerY" constant="-4.5" id="P3V-wb-qrX"/>
                             <constraint firstItem="NEP-Pn-zHz" firstAttribute="top" secondItem="4CV-S5-enU" secondAttribute="bottom" constant="104" id="Sgo-mB-WX3"/>
-                            <constraint firstItem="4CV-S5-enU" firstAttribute="width" secondItem="ceg-qa-ZZY" secondAttribute="width" multiplier="0.951691" id="jRw-Wc-wfh"/>
                             <constraint firstItem="4CV-S5-enU" firstAttribute="top" secondItem="M2O-Cy-3bz" secondAttribute="top" constant="77" id="kl1-aJ-xDm"/>
+                            <constraint firstItem="4CV-S5-enU" firstAttribute="leading" secondItem="M2O-Cy-3bz" secondAttribute="leading" constant="10" id="zfz-g9-MEG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M2O-Cy-3bz"/>
                     </view>
