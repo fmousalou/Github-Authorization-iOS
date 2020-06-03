@@ -20,6 +20,8 @@ class KeychainAPI {
     // Public
     var token: String? {
         get {
+            // TODO: Correct it
+            return nil
             guard let token =  try? keychain.get(tokenKey)  else{
                 return nil
             }

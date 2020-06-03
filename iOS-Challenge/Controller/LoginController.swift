@@ -1,21 +1,29 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  iOS-Challenge
 //
-//  Created by Farshad Mousalou on 1/28/20.
+//  Created by iMamad on 6/2/20.
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-import SafariServices
+import WebKit
 
-class ViewController: UIViewController {
+//let clientId = "your-clientId"
+let clientId = "04860a64b85b7438bf91"
+let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28"
+let redirect_url = "challenge://app/callback"
 
-    @IBOutlet weak var accessTokenLabel: UILabel!
-
-    @IBAction func loginDidPress(_ sender: Any?) {
-                
+class LoginController: UIViewController, Storyboarded {
+    
+    var keychain = KeychainAPI()
+    
+    @IBAction func loginPressed(_ sender: Any) {
+        openGithub()
+    }
+    
+    private func openGithub() {
         guard let url = URL(string:"https://github.com/login/oauth/authorize") else {
             return
         }
@@ -33,14 +41,12 @@ class ViewController: UIViewController {
             return
         }
         
-
         UIApplication.shared.open(requestURL,
                                   options: [:]) { (result) in
                                     print(result)
         }
-        
     }
-
+    
     func getAuthentication(with code: String?) {
         
         guard let code = code else { return }
@@ -63,14 +69,10 @@ class ViewController: UIViewController {
                 switch response.result {
                 case .success(let accessToken):
                     print("it's access token \(accessToken)")
-                    self?.accessTokenLabel.text = accessToken.accessToken
+                    //TODO: Save token in keychain
                 case .failure(let error):
                     print(error)
                 }
         }
     }
-
 }
-
-
-
