@@ -17,7 +17,6 @@
 		608D190123E091DC00BFE7C7 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */; };
 		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
 		870357D42487725D00005070 /* KeychainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357D32487725D00005070 /* KeychainAPI.swift */; };
-		870357D624877BE400005070 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 870357D524877BE400005070 /* Auth0.plist */; };
 		870357D9248789C100005070 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357D8248789C100005070 /* Coordinator.swift */; };
 		870357DB248789EC00005070 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357DA248789EC00005070 /* MainCoordinator.swift */; };
 		870357DD24878A7000005070 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357DC24878A7000005070 /* Storyboarded.swift */; };
@@ -66,7 +65,6 @@
 		6ABBBC8954A85B69F34446E4 /* Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge-iOS-ChallengeUITests/Pods-iOS-Challenge-iOS-ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F25064E8452F508919CED9A /* Pods-iOS-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Challenge.release.xcconfig"; path = "Target Support Files/Pods-iOS-Challenge/Pods-iOS-Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		870357D32487725D00005070 /* KeychainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAPI.swift; sourceTree = "<group>"; };
-		870357D524877BE400005070 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Auth0.plist; path = Resources/Auth0.plist; sourceTree = "<group>"; };
 		870357D8248789C100005070 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		870357DA248789EC00005070 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		870357DC24878A7000005070 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				87063752248676B300D2EBF2 /* Extensions */,
 				87063756248676EE00D2EBF2 /* Resources */,
 				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
-				870357D524877BE400005070 /* Auth0.plist */,
 			);
 			path = "iOS-Challenge";
 			sourceTree = "<group>";
@@ -364,7 +361,6 @@
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
-				870357D624877BE400005070 /* Auth0.plist in Resources */,
 				608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

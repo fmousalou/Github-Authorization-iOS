@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import WebKit
+import Moya
 
 //let clientId = "your-clientId"
 let clientId = "04860a64b85b7438bf91"
@@ -42,37 +42,39 @@ class LoginController: UIViewController, Storyboarded {
         }
         
         UIApplication.shared.open(requestURL,
-                                  options: [:]) { (result) in
-                                    print(result)
-        }
+                                  options: [:])
     }
     
     func getAuthentication(with code: String?) {
         
         guard let code = code else { return }
         
-        guard let url = URL(string:"https://github.com/login/oauth/access_token") else {
-            return
-        }
         
-        let parameters = ["client_id": clientId,
-                          "redirect_uri": redirect_url,
-                          "client_secret": clientSecret,
-                          "code": code,
-                          "state": 0] as [String:Any]
+        let gitService = MoyaProvider<GithubService>()
+        gitService.authenticate(code)
         
-        AF.request(url, method: .post,
-                          parameters: parameters, encoding: JSONEncoding.prettyPrinted,
-                          headers: ["Accept":"application/json"])
-            .validate()
-            .responseDecodable {[weak self] (response : DataResponse<AccessTokenResponse , AFError>) in
-                switch response.result {
-                case .success(let accessToken):
-                    print("it's access token \(accessToken)")
-                    //TODO: Save token in keychain
-                case .failure(let error):
-                    print(error)
-                }
-        }
+//        guard let url = URL(string:"https://github.com/login/oauth/access_token") else {
+//            return
+//        }
+//
+//        let parameters = ["client_id": clientId,
+//                          "redirect_uri": redirect_url,
+//                          "client_secret": clientSecret,
+//                          "code": code,
+//                          "state": 0] as [String:Any]
+//
+//        AF.request(url, method: .post,
+//                          parameters: parameters, encoding: JSONEncoding.prettyPrinted,
+//                          headers: ["Accept":"application/json"])
+//            .validate()
+//            .responseDecodable {[weak self] (response : DataResponse<AccessTokenResponse , AFError>) in
+//                switch response.result {
+//                case .success(let accessToken):
+//                    print("it's access token \(accessToken)")
+//                    //TODO: Save token in keychain
+//                case .failure(let error):
+//                    print(error)
+//                }
+//        }
     }
 }
