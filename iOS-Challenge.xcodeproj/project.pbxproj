@@ -22,6 +22,7 @@
 		870357DD24878A7000005070 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357DC24878A7000005070 /* Storyboarded.swift */; };
 		870357DF2487A19C00005070 /* String+GithubURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357DE2487A19C00005070 /* String+GithubURL.swift */; };
 		870357E32487CE8500005070 /* URL+queryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357E22487CE8500005070 /* URL+queryParameters.swift */; };
+		870357E52487D08A00005070 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357E42487D08A00005070 /* ServerError.swift */; };
 		87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B95C89248698A30053C5C9 /* LoginController.swift */; };
 		87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BC1D3B2487692900AA8760 /* GithubService.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
@@ -72,6 +73,7 @@
 		870357DC24878A7000005070 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		870357DE2487A19C00005070 /* String+GithubURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+GithubURL.swift"; sourceTree = "<group>"; };
 		870357E22487CE8500005070 /* URL+queryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+queryParameters.swift"; sourceTree = "<group>"; };
+		870357E42487D08A00005070 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		87B95C89248698A30053C5C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = "iOS-Challenge/Controller/LoginController.swift"; sourceTree = SOURCE_ROOT; };
 		87BC1D3B2487692900AA8760 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				87BC1D3B2487692900AA8760 /* GithubService.swift */,
+				870357E42487D08A00005070 /* ServerError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
 				870357DF2487A19C00005070 /* String+GithubURL.swift in Sources */,
 				87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */,
+				870357E52487D08A00005070 /* ServerError.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
 				870357DD24878A7000005070 /* Storyboarded.swift in Sources */,
 				87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */,

@@ -9,13 +9,14 @@
 import UIKit
 import Alamofire
 import Moya
+import NVActivityIndicatorView
 
 //let clientId = "your-clientId"
 let clientId = "04860a64b85b7438bf91"
 let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28"
 let redirect_url = "challenge://app/callback"
 
-class LoginController: UIViewController, Storyboarded {
+class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewable{
     weak var coordinator: MainCoordinator?
     //MARK: Variable
     lazy var keychain = KeychainAPI()
@@ -28,6 +29,7 @@ class LoginController: UIViewController, Storyboarded {
     //MARK: Network
     func getAuthentication(with code: String?) {
         guard let code = code else { return }
+        startAnimating(message: "Connecting to the server", type: .lineScalePulseOutRapid)
         let gitService = MoyaProvider<GithubService>()
         gitService.request(.authenticate(code: code)) {
             [weak self]
@@ -39,11 +41,11 @@ class LoginController: UIViewController, Storyboarded {
                 if let tokenObj = try? response.map(AccessTokenResponse.self),
                     let accessToken = tokenObj.accessToken {
                     sSelf.keychain.store(token: accessToken)
+                    sSelf.stopAnimating()
                     sSelf.coordinator?.main()
                 }
             case .failure:
-                // Show error Toast
-                print("Response  Failed \n\n \(#function)")
+                sSelf.stopAnimating()
             }
         }
     }
