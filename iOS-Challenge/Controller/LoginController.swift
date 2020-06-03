@@ -22,11 +22,7 @@ class LoginController: UIViewController, Storyboarded {
     
     //MARK: Action
     @IBAction private func loginPressed(_ sender: Any) {
-        let urlStr = "https://github.com/login/oauth/authorize"
-        if let githubAuthURL = urlStr.githubURL {
-            UIApplication.shared.open(githubAuthURL,
-                                      options: [:])
-        }
+        coordinator?.openGithub()
     }
     
     //MARK: Network
@@ -37,11 +33,14 @@ class LoginController: UIViewController, Storyboarded {
             [weak self]
             (result) in
             guard let sSelf = self else { return}
+            
             switch result {
             case .success(let response):
-                print("Success response \n\n \(response)")
-                sSelf.keychain.store(token: "aa")
-                // start first screen
+                if let tokenObj = try? response.map(AccessTokenResponse.self),
+                    let accessToken = tokenObj.accessToken {
+                    sSelf.keychain.store(token: accessToken)
+                    sSelf.coordinator?.main()
+                }
             case .failure:
                 // Show error Toast
                 print("Response  Failed \n\n \(#function)")

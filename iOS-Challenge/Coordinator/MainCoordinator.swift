@@ -44,6 +44,14 @@ extension MainCoordinator {
         navigationController.pushViewController(loginVC, animated: false)
     }
     
+    func openGithub() {
+        let urlStr = "https://github.com/login/oauth/authorize"
+        if let githubAuthURL = urlStr.githubURL {
+            UIApplication.shared.open(githubAuthURL,
+                                      options: [:])
+        }
+    }
+    
     // Come from deep link
     func resumeAuthentication(with code: String?) {
         guard let loginVC = navigationController.topViewController as? LoginController else {

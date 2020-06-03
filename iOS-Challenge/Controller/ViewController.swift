@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,Storyboarded {
 
     @IBOutlet weak var accessTokenLabel: UILabel!
 

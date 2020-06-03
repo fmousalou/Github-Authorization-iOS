@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if queryItems?.contains(where: { $0.name == "error" }) == true  {
             //Show Error in Toast
         }else if let code = queryItems?.first(where: { $0.name == "code"}) {
+            print("I've got the code! \(code.value!)")
             coordinator?.resumeAuthentication(with: code.value)
 //            (window?.rootViewController as? LoginController)?.getAuthentication(with: code.value)
         }

@@ -43,12 +43,12 @@ extension GithubService: TargetType {
                                                    "client_secret": clientSecret,
                                                    "code": code,
                                                    "state": 0],
-                                      encoding: JSONEncoding.default)
+                                      encoding: JSONEncoding.prettyPrinted)
         }
     }
     
     var headers: [String : String]? {
-        let header = ["Content-Type" : "application/json"]
+        let header = ["Accept" : "application/json"]
         switch self {
         case .authenticate:
             return header

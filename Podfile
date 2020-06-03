@@ -5,6 +5,7 @@ target 'iOS-Challenge' do
   use_frameworks!
 
 	pod 'Moya'
+  pod 'SwiftyJSON'
  	pod 'KeychainAccess'
   pod 'NVActivityIndicatorView'
 
