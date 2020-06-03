@@ -21,7 +21,8 @@ class KeychainAPI {
     var token: String? {
         get {
             // TODO: Correct it
-            return nil
+//            return nil
+//            return "6ebb4e5a6f8c5e260531ccbdbbb0c1a5e498cc84"
             guard let token =  try? keychain.get(tokenKey)  else{
                 return nil
             }

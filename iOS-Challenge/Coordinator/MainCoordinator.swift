@@ -22,6 +22,10 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        
+        login()
+        return
+        
         let kc = KeychainAPI()
         if let token = kc.token {
             print("Token: \(token)")

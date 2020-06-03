@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Moya
 import NVActivityIndicatorView
+import SwiftyJSON
 
 //let clientId = "your-clientId"
 let clientId = "04860a64b85b7438bf91"
@@ -23,12 +24,12 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
     
     //MARK: Action
     @IBAction private func loginPressed(_ sender: Any) {
+        // ios 10 and lower
         coordinator?.openGithub()
     }
     
     //MARK: Network
     func getAuthentication(with parameters: QueryParameters) {
-        
         if parameters.keys.contains("error") {
             Toast.shared.showConnectionError()
             self.stopAnimating()
@@ -36,7 +37,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
         }
         
         guard let code = parameters["code"] else { return }
-        startAnimating(message: "Connecting to the server", type: .lineScalePulseOutRapid)
+        startAnimating(message: "Connecting to the server")
         let gitService = MoyaProvider<GithubService>()
         gitService.request(.authenticate(code: code)) {
             [weak self]
@@ -48,13 +49,12 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
                     let accessToken = tokenObj.accessToken {
                     print(accessToken)
                     sSelf.keychain.store(token: accessToken)
-                    sSelf.stopAnimating()
                     sSelf.coordinator?.main()
                 }
             case .failure:
                 Toast.shared.showConnectionError()
-                sSelf.stopAnimating()
             }
+            sSelf.stopAnimating()
         }
     }
 }

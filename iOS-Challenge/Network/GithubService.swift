@@ -10,17 +10,26 @@ import Moya
 
 enum GithubService {
     case authenticate(code: String)
+    case userInfo
 }
 
 extension GithubService: TargetType {
+    
     var baseURL: URL {
-        return URL(string: "https://github.com")!
+        switch self {
+        case .authenticate:
+            return URL(string: "https://github.com")!
+        case .userInfo:
+             return URL(string: "https://api.github.com")!
+        }
     }
     
     var path: String {
         switch self {
         case .authenticate:
             return "/login/oauth/access_token"
+        case .userInfo:
+            return "/user"
         }
     }
     
@@ -28,6 +37,8 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return .post
+        case .userInfo:
+            return .get
         }
     }
     
@@ -38,20 +49,29 @@ extension GithubService: TargetType {
     var task: Task {
         switch self {
         case .authenticate(let code):
-            return .requestParameters(parameters: ["client_id": clientId,
-                                                   "redirect_uri": redirect_url,
-                                                   "client_secret": clientSecret,
-                                                   "code": code,
-                                                   "state": 0],
+            let params = ["client_id": clientId,
+                          "redirect_uri": redirect_url,
+                          "client_secret": clientSecret,
+                          "code": code,
+                          "state": 0] as [String : Any]
+            return .requestParameters(parameters: params,
                                       encoding: JSONEncoding.prettyPrinted)
+        case .userInfo:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         let header = ["Accept" : "application/json"]
         switch self {
-        case .authenticate:
+        case .authenticate, .userInfo:
             return header
         }
+    }
+}
+
+extension GithubService: AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType? {
+        return .bearer
     }
 }
