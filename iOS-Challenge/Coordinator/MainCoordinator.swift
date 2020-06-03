@@ -53,11 +53,11 @@ extension MainCoordinator {
     }
     
     // Come from deep link
-    func resumeAuthentication(with code: String?) {
+    func resumeAuthentication(with parameters: QueryParameters) {
         guard let loginVC = navigationController.topViewController as? LoginController else {
             return
         }
-        loginVC.getAuthentication(with: code)
+        loginVC.getAuthentication(with: parameters)
     }
 }
 

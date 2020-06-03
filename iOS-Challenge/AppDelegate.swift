@@ -30,15 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let parameters = url.absoluteURL.queryParameters else { return true}
-        if parameters.keys.contains("error") {
-            // Show error
-            return true
-        }
-        
-        if let code = parameters["code"] {
-            coordinator?.resumeAuthentication(with: code)
-            return true
-        }
+        coordinator?.resumeAuthentication(with: parameters)
         return true
     }
 }
+
+typealias QueryParameters = [String : String]

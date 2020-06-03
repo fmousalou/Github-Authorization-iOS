@@ -7,6 +7,7 @@
 //
 
 import SwiftMessages
+import SnapKit
 
 class Toast {
     static let shared = Toast()

@@ -27,24 +27,32 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
     }
     
     //MARK: Network
-    func getAuthentication(with code: String?) {
-        guard let code = code else { return }
+    func getAuthentication(with parameters: QueryParameters) {
+        
+        if parameters.keys.contains("error") {
+            Toast.shared.showConnectionError()
+            self.stopAnimating()
+            return
+        }
+        
+        guard let code = parameters["code"] else { return }
         startAnimating(message: "Connecting to the server", type: .lineScalePulseOutRapid)
         let gitService = MoyaProvider<GithubService>()
         gitService.request(.authenticate(code: code)) {
             [weak self]
             (result) in
             guard let sSelf = self else { return}
-            
             switch result {
             case .success(let response):
                 if let tokenObj = try? response.map(AccessTokenResponse.self),
                     let accessToken = tokenObj.accessToken {
+                    print(accessToken)
                     sSelf.keychain.store(token: accessToken)
                     sSelf.stopAnimating()
                     sSelf.coordinator?.main()
                 }
             case .failure:
+                Toast.shared.showConnectionError()
                 sSelf.stopAnimating()
             }
         }
