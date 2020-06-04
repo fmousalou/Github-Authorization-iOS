@@ -11,6 +11,7 @@ target 'iOS-Challenge' do
   pod 'NVActivityIndicatorView'
   pod 'SnapKit'
   pod 'SDWebImage'
+  pod "Pulsator"
   
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
