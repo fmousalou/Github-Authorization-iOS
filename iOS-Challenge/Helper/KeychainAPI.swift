@@ -9,7 +9,7 @@
 import KeychainAccess
 
 class KeychainAPI {
-
+    //TODO: Make it singleton
     // MARK:- Variables
     // Private
     private let keychain: Keychain = {

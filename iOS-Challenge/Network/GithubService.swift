@@ -11,6 +11,7 @@ import Moya
 enum GithubService {
     case authenticate(code: String)
     case userInfo
+    case search(subject: String)
 }
 
 extension GithubService: TargetType {
@@ -19,7 +20,7 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return URL(string: "https://github.com")!
-        case .userInfo:
+        case .userInfo, .search:
              return URL(string: "https://api.github.com")!
         }
     }
@@ -30,6 +31,8 @@ extension GithubService: TargetType {
             return "/login/oauth/access_token"
         case .userInfo:
             return "/user"
+        case .search:
+            return "/search/repositories"
         }
     }
     
@@ -37,7 +40,7 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return .post
-        case .userInfo:
+        case .userInfo, .search:
             return .get
         }
     }
@@ -58,13 +61,16 @@ extension GithubService: TargetType {
                                       encoding: JSONEncoding.prettyPrinted)
         case .userInfo:
             return .requestPlain
+        case .search(let q):
+            return .requestParameters(parameters: ["q" : q],
+                                      encoding: URLEncoding())
         }
     }
     
     var headers: [String : String]? {
         let header = ["Accept" : "application/json"]
         switch self {
-        case .authenticate, .userInfo:
+        case .authenticate, .userInfo, .search:
             return header
         }
     }

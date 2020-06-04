@@ -22,6 +22,9 @@ class SearchView: UIView {
     
     //MARK:- Setups
     private func setupViews() {
+        tblView.tableFooterView = UIView()
+        addSubview(tblBackground)
+        tblView.backgroundView = tblBackground
         addSubview(tblView)
         tblView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -31,11 +34,21 @@ class SearchView: UIView {
     //MARK:- Views
     let tblView: UITableView = {
         let tbl = UITableView()
+        tbl.rowHeight = 70
         if #available(iOS 13.0, *) {
             tbl.backgroundColor = .systemBackground
         } else {
             tbl.backgroundColor = .white
         }
         return tbl
+    }()
+    
+    let tblBackground: UILabel = {
+        let backgroundViewLabel = UILabel(frame: .zero)
+        backgroundViewLabel.textColor = .darkGray
+        backgroundViewLabel.numberOfLines = 0
+        backgroundViewLabel.textAlignment = .center
+        backgroundViewLabel.text = "Use the top sarch bar \nand find your favorite Repo 😍"
+        return backgroundViewLabel
     }()
 }

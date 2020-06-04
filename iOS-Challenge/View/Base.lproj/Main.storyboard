@@ -150,30 +150,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iGh-xv-5hF">
-                                <rect key="frame" x="20" y="547" width="354.5" height="52.5"/>
+                                <rect key="frame" x="20" y="547" width="424" height="87.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="290" translatesAutoresizingMaskIntoConstraints="NO" id="nsW-NB-oGw">
-                                        <rect key="frame" x="0.0" y="0.0" width="354.5" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="424" height="67"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="following_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6Bz-vF-SUe">
-                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="32"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="following_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6Bz-vF-SUe">
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="67"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="follower_icon" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-8D-aAO">
-                                                <rect key="frame" x="322.5" y="0.0" width="32" height="32"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follower_icon" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-8D-aAO">
+                                                <rect key="frame" x="357" y="0.0" width="67" height="67"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="201" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-5W-ocM">
-                                        <rect key="frame" x="0.0" y="32" width="354.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="67" width="424" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fl-1F-jup">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fl-1F-jup">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n12-8C-HAg">
-                                                <rect key="frame" x="273.5" y="0.0" width="81" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Followings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n12-8C-HAg">
+                                                <rect key="frame" x="343" y="0.0" width="81" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -198,7 +198,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="follower_icon" width="16" height="16"/>
-        <image name="following_icon" width="16" height="16"/>
+        <image name="follower_icon" width="67" height="67"/>
+        <image name="following_icon" width="67" height="67"/>
     </resources>
 </document>
