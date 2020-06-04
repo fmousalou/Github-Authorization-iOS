@@ -22,14 +22,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        
-//        let url2 = "https://api.github.com/repos/gkaimakas/SwiftValidators/commits{/sha}"
-//        commits(for: url2)
-//        return
-        
         let kc = KeychainAPI()
-        if let token = kc.token {
-            print("Token: \(token)")
+        if kc.token != nil {
             search()
         }else {
             login()
@@ -48,7 +42,6 @@ class MainCoordinator: Coordinator {
     }
     
     func commits(url: String) {
-        
         let commitsVC = CommitsController(url: url.commitsURLPath!)
         navigationController.pushViewController(commitsVC, animated: false)
     }
