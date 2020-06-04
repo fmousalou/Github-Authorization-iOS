@@ -23,7 +23,7 @@ class MainCoordinator: Coordinator {
     
     func start() {
         
-        userInfo()
+        main()
         return
         
         let kc = KeychainAPI()
@@ -37,6 +37,8 @@ class MainCoordinator: Coordinator {
     
     func main() {
         print("I'm going to open main page!!!")
+        let searchVC = SearchController()
+        navigationController.pushViewController(searchVC, animated: false)
     }
     
     func userInfo() {

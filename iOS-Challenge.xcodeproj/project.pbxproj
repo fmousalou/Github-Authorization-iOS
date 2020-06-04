@@ -27,7 +27,10 @@
 		870357E92487FEB600005070 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357E82487FEB600005070 /* User.swift */; };
 		870357ED2488053D00005070 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870357EC2488053D00005070 /* UserController.swift */; };
 		870D8A58248809530028E806 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D8A57248809530028E806 /* UserView.swift */; };
+		87437F8C2488D87A00733C20 /* RepoTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87437F8B2488D87A00733C20 /* RepoTableviewCell.swift */; };
 		876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21712488CD1400AD7180 /* UIImageview+round.swift */; };
+		876F21742488D0B600AD7180 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21732488D0B600AD7180 /* SearchController.swift */; };
+		876F21762488D1AB00AD7180 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21752488D1AB00AD7180 /* SearchView.swift */; };
 		87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B95C89248698A30053C5C9 /* LoginController.swift */; };
 		87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BC1D3B2487692900AA8760 /* GithubService.swift */; };
 		B933F4A3A804540C277A2A0E /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */; };
@@ -83,7 +86,10 @@
 		870357E82487FEB600005070 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		870357EC2488053D00005070 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		870D8A57248809530028E806 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		87437F8B2488D87A00733C20 /* RepoTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableviewCell.swift; sourceTree = "<group>"; };
 		876F21712488CD1400AD7180 /* UIImageview+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+round.swift"; sourceTree = "<group>"; };
+		876F21732488D0B600AD7180 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		876F21752488D1AB00AD7180 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		87B95C89248698A30053C5C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = "iOS-Challenge/Controller/LoginController.swift"; sourceTree = SOURCE_ROOT; };
 		87BC1D3B2487692900AA8760 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		DA0DAD90B1F967F35F4428C8 /* Pods_iOS_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +235,7 @@
 		87063754248676D300D2EBF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87437F8D2488D88400733C20 /* Search */,
 				870D8A57248809530028E806 /* UserView.swift */,
 				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
 			);
@@ -240,6 +247,7 @@
 			children = (
 				87B95C89248698A30053C5C9 /* LoginController.swift */,
 				870357EC2488053D00005070 /* UserController.swift */,
+				876F21732488D0B600AD7180 /* SearchController.swift */,
 				608D18E223E091DB00BFE7C7 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -253,6 +261,15 @@
 				608D18EC23E091DC00BFE7C7 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		87437F8D2488D88400733C20 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				876F21752488D1AB00AD7180 /* SearchView.swift */,
+				87437F8B2488D87A00733C20 /* RepoTableviewCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		87BC1D3A248768F300AA8760 /* Network */ = {
@@ -514,18 +531,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				870357E72487D23400005070 /* Toast.swift in Sources */,
+				876F21762488D1AB00AD7180 /* SearchView.swift in Sources */,
 				870357D42487725D00005070 /* KeychainAPI.swift in Sources */,
 				870357DB248789EC00005070 /* MainCoordinator.swift in Sources */,
 				876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */,
 				870D8A58248809530028E806 /* UserView.swift in Sources */,
 				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
 				870357DF2487A19C00005070 /* String+GithubURL.swift in Sources */,
+				876F21742488D0B600AD7180 /* SearchController.swift in Sources */,
 				87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */,
 				870357E92487FEB600005070 /* User.swift in Sources */,
 				870357E52487D08A00005070 /* ServerError.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
 				870357DD24878A7000005070 /* Storyboarded.swift in Sources */,
 				87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */,
+				87437F8C2488D87A00733C20 /* RepoTableviewCell.swift in Sources */,
 				870357E32487CE8500005070 /* URL+queryParameters.swift in Sources */,
 				870357ED2488053D00005070 /* UserController.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,

@@ -139,7 +139,7 @@ class UserView: UIView {
     }()
 }
 
-//TODO: Followers view Object
+//TODO: Follow(er)(ing)s view Object
 class UserFollowsView: UIView {
     //MARK:- Init
     override init(frame: CGRect) {
