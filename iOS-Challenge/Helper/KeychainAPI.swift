@@ -16,33 +16,55 @@ class KeychainAPI {
         return Keychain(service: "com.digipay.iOS-Challenge")
     }()
     private let tokenKey = "digipay-token"
+    private let userKey = "digipay-userObj"
     
     // Public
     var token: String? {
         get {
-            // TODO: Correct it
-//            return nil
-//            return "6ebb4e5a6f8c5e260531ccbdbbb0c1a5e498cc84"
             guard let token =  try? keychain.get(tokenKey)  else{
                 return nil
             }
             return token
         }
+        
+        set {
+            do {
+                if newValue == nil { return}
+                try keychain.set(newValue!, key: tokenKey)
+            } catch let err {
+                print("\(err) in \(#function)")
+            }
+        }
     }
+    
+     // Public
+        var user: User? {
+            get {
+                let decoder = JSONDecoder()
+                if let userData = try? keychain.getData(userKey),
+                    let user = try? decoder.decode(User.self, from: userData){
+                    return user
+                }
+                return nil
+            }
+            
+            set {
+                do {
+                    let encoder = JSONEncoder()
+                    let user = try? encoder.encode(newValue)
+                    if user == nil { return}
+                    try keychain.set(user!, key: userKey)
+                } catch let err {
+                    print("\(err) in \(#function)")
+                }
+            }
+        }
     
     
     // MARK:- Functions (Token)
     func clearKeychain() {
         if let _ = try? self.keychain.contains(tokenKey) {
             try! self.keychain.removeAll()
-        }
-    }
-    
-    func store(token: String) {
-        do {
-            try keychain.set(token, key: tokenKey)
-        } catch let err {
-            print("\(err) in \(#function)")
         }
     }
 }

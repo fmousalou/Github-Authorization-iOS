@@ -40,7 +40,7 @@ class MainCoordinator: Coordinator {
     }
     
     func userInfo() {
-        let userVC = UserController()
+        let userVC = UserController(keychain: KeychainAPI())
         navigationController.pushViewController(userVC, animated: false)
     }
 }

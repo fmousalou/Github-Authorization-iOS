@@ -19,7 +19,7 @@ let redirect_url = "challenge://app/callback"
 
 class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewable{
     weak var coordinator: MainCoordinator?
-    //MARK: Variable
+    //MARK: Dependency
     lazy var keychain = KeychainAPI()
     
     //MARK: Action
@@ -48,7 +48,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
                 if let tokenObj = try? response.map(AccessTokenResponse.self),
                     let accessToken = tokenObj.accessToken {
                     print(accessToken)
-                    sSelf.keychain.store(token: accessToken)
+                    sSelf.keychain.token = accessToken
                     sSelf.coordinator?.main()
                 }
             case .failure:

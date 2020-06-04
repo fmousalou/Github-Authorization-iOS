@@ -7,49 +7,59 @@
 //
 
 import UIKit
+import KeychainAccess
+import Moya
+import NVActivityIndicatorView
 
-@IBDesignable
-class UserController: UIViewController {
-
+class UserController: UIViewController, NVActivityIndicatorViewable {
+    
+    //MARK:- Dependency
+    private let keychain: KeychainAPI
+    
+    //MARK:- Init
+    init(keychain: KeychainAPI) {
+        self.keychain = keychain
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK:- LifeCycle
     override func loadView() {
-        let user = User(name: "imamad",
-             company: "kabok",
-             location: "iran",
-             email: "aa.cc.cc",
-             bio: "is it",
-             public_repos: nil,
-             followers: nil,
-             following: nil,
-             avatar_url: nil)
-        self.view = UserView(user: user)
-        print("instan")
+        self.view = UserView(user: keychain.user)
     }
     
-//    let token = keychain.token!
-//    let authPlugin = AccessTokenPlugin { _ in token }
-//    let gitService = MoyaProvider<GithubService>(plugins: [authPlugin])
-//    startAnimating(message: "Connecting to the server")
-//    
-//    gitService.request(.userInfo) {
-//        [weak self]
-//        (result) in
-//        guard let sSelf = self else { return}
-//        switch result {
-//        case .success(let response):
-//            if let user = try? response.map(User.self){
-//                print(user)
-//            }
-//        case .failure:
-//            Toast.shared.showConnectionError()
-//        }
-//        sSelf.stopAnimating()
-//    }
-    
-    
-    private func getUser() {
-        // if in keychain return
-        
-        // if not request
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Profile"
+        getUserInfo()
     }
-
+    
+    //MARK:- Functions
+    private func getUserInfo() {
+        if keychain.user == nil, let token = keychain.token { // It's first time
+            
+            let authPlugin = AccessTokenPlugin { _ in token }
+            let gitService = MoyaProvider<GithubService>(plugins: [authPlugin])
+            startAnimating(message: "Connecting to the server")
+            
+            gitService.request(.userInfo) {
+                [weak self]
+                (result) in
+                guard let sSelf = self else { return}
+                switch result {
+                case .success(let response):
+                    if let user = try? response.map(User.self){
+                        print(user)
+                        sSelf.keychain.user = user
+                        sSelf.view = UserView(user: user)
+                    }
+                case .failure:
+                    Toast.shared.showConnectionError()
+                }
+                sSelf.stopAnimating()
+            }
+        }
+    }
 }

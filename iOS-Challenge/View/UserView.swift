@@ -11,10 +11,10 @@ import SnapKit
 import SDWebImage
 
 class UserView: UIView {
-    private let user: User
+    private let user: User?
     
     //MARK:- Init
-    init(user: User) {
+    init(user: User?) {
         self.user = user
         super.init(frame: .zero)
         setupView()
@@ -24,16 +24,21 @@ class UserView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.imageView.roundedImage()
+    }
+    
     //MARK:- Setups
     private func setupView() {
         backgroundColor = .white
-        nameLabel.text = user.name
-        companyLabel.text = user.company
-        locationLabel.text = user.location
-        bioLabel.text = user.bio
+        nameLabel.text = user?.name
+        companyLabel.text = user?.company
+        locationLabel.text = user?.location
+        bioLabel.text = user?.bio
         
         // Assign user avatar
-        self.imageView.sd_setImage(with: user.avatar_url)
+        self.imageView.sd_setImage(with: user?.avatar_url)
     }
     
     private func addViews() {
@@ -76,6 +81,7 @@ class UserView: UIView {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "user_placeholder")
         imgView.contentMode = .scaleAspectFit
+        imgView.clipsToBounds = true
         return imgView
     }()
     
@@ -83,7 +89,7 @@ class UserView: UIView {
         let stackView = UIStackView()
         stackView.alignment = .leading
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.distribution = .equalSpacing
         return stackView
     }()
     
@@ -124,10 +130,10 @@ class UserView: UIView {
     //bio Label
     private lazy var bioLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.italicSystemFont(ofSize: 18)
         label.numberOfLines = 0
         label.text = "No bio"
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.sizeToFit()
         return label
     }()
@@ -213,4 +219,6 @@ class UserFollowsView: UIView {
     }()
     
 }
+
+
 

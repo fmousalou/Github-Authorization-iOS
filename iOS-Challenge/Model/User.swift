@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-struct User: Decodable {
+struct User: Codable {
     let name: String?
     let company: String?
     let location: String?
