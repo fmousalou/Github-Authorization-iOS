@@ -14,11 +14,13 @@ struct GitRepo: Codable {
     var name: String?
     var stars: Int?
     var owner: GitOwner?
+    var commitsURL: String?
     
     private enum CodingKeys: String, CodingKey {
         case
-        name,
         stars = "stargazers_count",
+        commitsURL = "commits_url",
+        name,
         owner
     }
     
@@ -27,6 +29,7 @@ struct GitRepo: Codable {
         name = try container.decode(String.self, forKey: .name)
         stars = try container.decode(Int.self, forKey: .stars)
         owner = try container.decode(GitOwner.self, forKey: .owner)
+        commitsURL = try container.decode(String.self, forKey: .commitsURL)
     }
 }
 struct GitOwner: Codable {

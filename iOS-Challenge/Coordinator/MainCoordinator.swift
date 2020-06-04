@@ -23,27 +23,34 @@ class MainCoordinator: Coordinator {
     
     func start() {
         
-        main()
-        return
+//        let url2 = "https://api.github.com/repos/gkaimakas/SwiftValidators/commits{/sha}"
+//        commits(for: url2)
+//        return
         
         let kc = KeychainAPI()
         if let token = kc.token {
             print("Token: \(token)")
-            main()
+            search()
         }else {
             login()
         }
     }
     
-    func main() {
-        print("I'm going to open main page!!!")
+    func search() {
         let searchVC = SearchController()
+        searchVC.coordinator = self
         navigationController.pushViewController(searchVC, animated: false)
     }
     
     func userInfo() {
         let userVC = UserController(keychain: KeychainAPI())
         navigationController.pushViewController(userVC, animated: false)
+    }
+    
+    func commits(url: String) {
+        
+        let commitsVC = CommitsController(url: url.commitsURLPath!)
+        navigationController.pushViewController(commitsVC, animated: false)
     }
 }
 

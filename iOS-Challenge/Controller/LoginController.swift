@@ -49,7 +49,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
                     let accessToken = tokenObj.accessToken {
                     print(accessToken)
                     sSelf.keychain.token = accessToken
-                    sSelf.coordinator?.main()
+                    sSelf.coordinator?.search()
                 }
             case .failure:
                 Toast.shared.showConnectionError()

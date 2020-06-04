@@ -8,10 +8,16 @@
 
 import Moya
 
+struct committer {
+    var ownerName: String?
+    var projectName: String?
+}
+
 enum GithubService {
     case authenticate(code: String)
     case userInfo
     case search(subject: String)
+    case commits(commitPath: String)
 }
 
 extension GithubService: TargetType {
@@ -20,7 +26,7 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return URL(string: "https://github.com")!
-        case .userInfo, .search:
+        case .userInfo, .search, .commits:
              return URL(string: "https://api.github.com")!
         }
     }
@@ -33,6 +39,8 @@ extension GithubService: TargetType {
             return "/user"
         case .search:
             return "/search/repositories"
+        case .commits(let commitPath):
+            return commitPath
         }
     }
     
@@ -40,7 +48,7 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return .post
-        case .userInfo, .search:
+        case .userInfo, .search, .commits:
             return .get
         }
     }
@@ -59,7 +67,7 @@ extension GithubService: TargetType {
                           "state": 0] as [String : Any]
             return .requestParameters(parameters: params,
                                       encoding: JSONEncoding.prettyPrinted)
-        case .userInfo:
+        case .userInfo, .commits:
             return .requestPlain
         case .search(let q):
             return .requestParameters(parameters: ["q" : q],
@@ -70,7 +78,7 @@ extension GithubService: TargetType {
     var headers: [String : String]? {
         let header = ["Accept" : "application/json"]
         switch self {
-        case .authenticate, .userInfo, .search:
+        case .authenticate, .userInfo, .search, .commits:
             return header
         }
     }

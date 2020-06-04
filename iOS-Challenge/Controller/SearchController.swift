@@ -12,8 +12,9 @@ import NVActivityIndicatorView
 import SwiftyJSON
 
 class SearchController: UIViewController, NVActivityIndicatorViewable, UITableViewDelegate, UISearchBarDelegate {
-    
+    //TODO: Handle zero responses
     //MARK:- Variables
+    weak var coordinator: MainCoordinator?
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchView = SearchView()
     private lazy var viewModel: ReposViewModel = {
@@ -30,7 +31,7 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
     
     //MARK:- Setups
     private func setupViews() {
-        self.title = "Repos"
+        self.title = "Search"
         searchView.tblView.delegate = self as UITableViewDelegate
         searchView.tblView.dataSource = self as UITableViewDataSource
         searchView.tblView.register(RepoTableviewCell.self, forCellReuseIdentifier: "cell")
@@ -108,9 +109,18 @@ extension SearchController:  UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cellVM = viewModel.getCellViewModel( at: indexPath )
+        let cellVM = viewModel.getRowViewModel( at: indexPath )
         cell.repoViewModel = cellVM
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowVM = viewModel.getRowViewModel( at: indexPath )
+        if let commitsURL = rowVM.commitsURL {
+            coordinator?.commits(url: commitsURL)
+        }else {
+            Toast.shared.showIn(body: "There isn't commits")
+        }
     }
 }

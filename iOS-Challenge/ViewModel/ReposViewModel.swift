@@ -49,6 +49,7 @@ class ReposViewModel {
     }
     
     //MARK:- Functions
+    // Send request to search
     func search(subject: String) {
         self.isLoading = true
         githubService.request(.search(subject: subject)) {
@@ -69,7 +70,7 @@ class ReposViewModel {
         }
     }
     
-    func getCellViewModel( at indexPath: IndexPath ) -> RepoViewModel {
+    func getRowViewModel( at indexPath: IndexPath ) -> RepoViewModel {
         return repoViewModels[indexPath.row]
     }
     
@@ -79,7 +80,8 @@ class ReposViewModel {
             let repoObj = try! JSONDecoder().decode(GitRepo.self, from: repo.rawData())
             let newRepo = RepoViewModel(nameText: repoObj.name ?? "No Name",
                                         imageUrl: repoObj.owner?.avatar_url,
-                                        starsCount: String(repoObj.stars ?? 0))
+                                        starsCount: String(repoObj.stars ?? 0),
+                                        commitsURL: repoObj.commitsURL)
             gits.append(newRepo)
         }
         repoViewModels = gits
@@ -91,4 +93,5 @@ struct RepoViewModel {
     let nameText: String
     let imageUrl: URL?
     let starsCount: String
+    let commitsURL: String?
 }
