@@ -10,7 +10,8 @@ target 'iOS-Challenge' do
  	pod 'KeychainAccess'
   pod 'NVActivityIndicatorView'
   pod 'SnapKit'
-
+  pod 'SDWebImage'
+  
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
   end

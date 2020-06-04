@@ -10,7 +10,6 @@ import Foundation
 
 
 struct User: Decodable {
-    
     let name: String?
     let company: String?
     let location: String?
