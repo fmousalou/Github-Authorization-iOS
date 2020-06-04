@@ -59,17 +59,25 @@ class RepoTableviewCell: UITableViewCell {
         }
         
     }
+    
+    var repoViewModel : RepoViewModel? {
+        didSet {
+            nameLabel.text = repoViewModel?.nameText
+            starCountLabel.text = repoViewModel?.starsCount
+            imgView.sd_setImage(with: repoViewModel?.imageUrl)
+        }
+    }
 
     //MARK:- Views
     //MARK: ImageViews
-    lazy var imgView: UIImageView = {
+    private lazy var imgView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "user_placeholder")
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
         return imgView
     }()
-    lazy var starIgView: UIImageView = {
+    private lazy var starIgView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "star")
         imgView.contentMode = .scaleAspectFit
@@ -78,7 +86,7 @@ class RepoTableviewCell: UITableViewCell {
     }()
     
     //MARK: Labels
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -86,7 +94,7 @@ class RepoTableviewCell: UITableViewCell {
         label.text = "نام ندارد."
         return label
     }()
-    lazy var starCountLabel: UILabel = {
+    private lazy var starCountLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0

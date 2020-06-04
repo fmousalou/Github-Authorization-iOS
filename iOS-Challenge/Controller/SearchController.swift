@@ -11,24 +11,21 @@ import Moya
 import NVActivityIndicatorView
 import SwiftyJSON
 
-class SearchController: UIViewController, NVActivityIndicatorViewable, UITableViewDelegate {
+class SearchController: UIViewController, NVActivityIndicatorViewable, UITableViewDelegate, UISearchBarDelegate {
     
     //MARK:- Variables
     private let searchController = UISearchController(searchResultsController: nil)
-    private var searchResults = [GitRepo]() {
-        didSet {
-            searchView.tblView.backgroundView = nil
-            searchView.tblView.reloadData()
-        }
-    }
-    // Search Variables
     private var searchView = SearchView()
+    private lazy var viewModel: ReposViewModel = {
+        return ReposViewModel()
+    }()
     
     //MARK:- LifeCycle
     override func loadView() {
         self.view = searchView
         setupViews()
         setupSearchBar()
+        initVM()
     }
     
     //MARK:- Setups
@@ -45,12 +42,60 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
         definesPresentationContext = true
         searchView.tblView.tableHeaderView = searchController.searchBar
     }
+    private func initVM() {
+        // TODO: Do it with RXSwift
+        
+        // Dear visitor 👋🏼 I know RXSwift is better and easier but
+        // usage of RXSwift is a little bit tricky
+        // and I don't risk because It might got stuck in bugs
+        // and loose time for debugging
+        
+        
+        // Naive binding
+        
+        // Show AlertMessage
+        viewModel.showAlertClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                if let message = self?.viewModel.alertMessage {
+                    Toast.shared.showIn(body: message)
+                }
+            }
+        }
+        
+        // Stop and Start animation
+        viewModel.updateLoadingStatus = { [weak self] () in
+            DispatchQueue.main.async {
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.startAnimating(message: "Connecting to the server")
+                }else {
+                    self?.stopAnimating()
+                }
+            }
+        }
+        
+        // Reload Table
+        viewModel.reloadTableViewClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.searchView.tblView.backgroundView = nil
+                self?.searchView.tblView.reloadData()
+                self?.searchController.dismiss(animated: true)
+            }
+        }
+    }
+    
+    // Search
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            guard let searchFor = searchBar.text else { return}
+            // Call mvvm fetch
+            viewModel.search(subject: searchFor)
+        }
 }
 
 // Tableview
 extension SearchController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return viewModel.numberOfCells
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,49 +108,9 @@ extension SearchController:  UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.nameLabel.text = searchResults[indexPath.item].name
-        cell.imgView.sd_setImage(with: searchResults[indexPath.item].owner?.avatar_url)
-        cell.starCountLabel.text = String(searchResults[indexPath.item].stars!)
-
-        return cell
-    }
-}
-
-// Search
-extension SearchController: UISearchBarDelegate {
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchFor = searchBar.text else { return}
-        // Call mvvm fetch
-        fetchResults(for: searchFor)
-    }
-    
-    func fetchResults(for aim: String) {
-        let gitService = MoyaProvider<GithubService>()
-        startAnimating(message: "Connecting to the server")
+        let cellVM = viewModel.getCellViewModel( at: indexPath )
+        cell.repoViewModel = cellVM
         
-        gitService.request(.search(subject: aim)) {
-            [weak self]
-            (result) in
-            guard let sSelf = self else { return}
-            switch result {
-            case .success(let response):
-                if let items = JSON(response.data)["items"].array {
-                    var gits = [GitRepo]()
-                    items.forEach { (json) in
-                        let result = try! JSONDecoder().decode(GitRepo.self, from: json.rawData())
-                        gits.append(result)
-                    }
-                    sSelf.searchResults = gits
-                }
-            case .failure:
-                Toast.shared.showConnectionError()
-            }
-            sSelf.stopAnimating()
-        }
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchResults.removeAll()
+        return cell
     }
 }

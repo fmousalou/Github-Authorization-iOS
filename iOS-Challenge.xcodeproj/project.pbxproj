@@ -29,6 +29,7 @@
 		870D8A58248809530028E806 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D8A57248809530028E806 /* UserView.swift */; };
 		87437F8C2488D87A00733C20 /* RepoTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87437F8B2488D87A00733C20 /* RepoTableviewCell.swift */; };
 		875FC09B24893BC2009B2FE1 /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875FC09A24893BC2009B2FE1 /* Git.swift */; };
+		875FC09E24893DAB009B2FE1 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875FC09D24893DAB009B2FE1 /* ReposViewModel.swift */; };
 		876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21712488CD1400AD7180 /* UIImageview+round.swift */; };
 		876F21742488D0B600AD7180 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21732488D0B600AD7180 /* SearchController.swift */; };
 		876F21762488D1AB00AD7180 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21752488D1AB00AD7180 /* SearchView.swift */; };
@@ -89,6 +90,7 @@
 		870D8A57248809530028E806 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		87437F8B2488D87A00733C20 /* RepoTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableviewCell.swift; sourceTree = "<group>"; };
 		875FC09A24893BC2009B2FE1 /* Git.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
+		875FC09D24893DAB009B2FE1 /* ReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
 		876F21712488CD1400AD7180 /* UIImageview+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+round.swift"; sourceTree = "<group>"; };
 		876F21732488D0B600AD7180 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		876F21752488D1AB00AD7180 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				875FC09C24893D68009B2FE1 /* ViewModel */,
 				870357D7248789B200005070 /* Coordinator */,
 				87BC1D3A248768F300AA8760 /* Network */,
 				87063755248676DC00D2EBF2 /* Controller */,
@@ -273,6 +276,14 @@
 				87437F8B2488D87A00733C20 /* RepoTableviewCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		875FC09C24893D68009B2FE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				875FC09D24893DAB009B2FE1 /* ReposViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		87BC1D3A248768F300AA8760 /* Network */ = {
@@ -533,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875FC09E24893DAB009B2FE1 /* ReposViewModel.swift in Sources */,
 				870357E72487D23400005070 /* Toast.swift in Sources */,
 				876F21762488D1AB00AD7180 /* SearchView.swift in Sources */,
 				870357D42487725D00005070 /* KeychainAPI.swift in Sources */,

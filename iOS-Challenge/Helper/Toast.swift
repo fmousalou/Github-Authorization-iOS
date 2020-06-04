@@ -45,7 +45,7 @@ class Toast {
         self.showToast(title: "", body: "اتصال با سرور برقرار نشد.", theme: .error, iconTxt: "🙁")
     }
     
-    func showIn(body: String, icon: String, theme: Theme = .warning) {
+    func showIn(body: String, icon: String = "🙂", theme: Theme = .warning) {
         self.showToast(title: "", body: body, theme: theme, iconTxt: icon)
     }
     
