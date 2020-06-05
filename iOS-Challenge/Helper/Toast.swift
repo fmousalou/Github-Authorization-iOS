@@ -74,8 +74,9 @@ class Toast {
     }
 }
 
-//MARK:- Show
+//MARK:- Show functions
 extension Toast {
+    //MARK: Notice
     func showToast(title:String, body: String, theme: Theme, iconTxt:String){
         SwiftMessages.hide()
         let view = MessageView.viewFromNib(layout: .cardView)

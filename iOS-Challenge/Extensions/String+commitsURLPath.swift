@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension String {
     var commitsURLPath: String? {
         let pureAdrs = self.replacingOccurrences(of: "{/sha}", with: "")
