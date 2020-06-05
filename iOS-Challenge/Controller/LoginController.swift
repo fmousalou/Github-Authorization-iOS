@@ -56,7 +56,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
         
         guard let code = parameters["code"] else { return }
         startAnimating(message: "Connecting to the server")
-        let gitService = MoyaProvider<GithubService>()
+        let gitService = githubService()
         gitService.request(.authenticate(code: code)) {
             [weak self]
             (result) in

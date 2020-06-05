@@ -13,7 +13,7 @@ import Reachability
 
 class ReposViewModel {
     // Dependencies
-    private let githubService: MoyaProvider<GithubService>
+    private let githubService: githubService
     private let reachability: Reachability
     // MARK:- Init
     init(service: githubService = MoyaProvider<GithubService>()) {

@@ -41,7 +41,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
     private func getUserInfo() {
         if user == nil, let token = KeychainAPI.shared.token { // It's first time
             let authPlugin = AccessTokenPlugin { _ in token }
-            let gitService = MoyaProvider<GithubService>(plugins: [authPlugin])
+            let gitService = githubService(plugins: [authPlugin])
             startAnimating(message: "Connecting to the server")
             
             gitService.request(.userInfo) {
