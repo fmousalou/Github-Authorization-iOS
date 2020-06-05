@@ -11,7 +11,7 @@ import SDWebImage
 
 class RepoTableviewCell: UITableViewCell {
 
-    //MARK:- Init
+    //MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -25,7 +25,7 @@ class RepoTableviewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK:- Setup
+    //MARK: Setup
     private func setupViews() {
         // 30 + 30 + 10
         // Owner Image

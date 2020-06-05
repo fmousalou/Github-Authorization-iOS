@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchView: UIView {
-    //MARK:- Init
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -19,7 +19,7 @@ class SearchView: UIView {
         setupViews()
     }
     
-    //MARK:- Setups
+    //MARK: Setups
     private func setupViews() {
         tblView.tableFooterView = UIView()
         addSubview(tblBackground)

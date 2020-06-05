@@ -11,7 +11,7 @@ import UIKit
 class UserView: UIView {
     private let user: User?
     
-    //MARK:- Init
+    //MARK: Init
     init(user: User?) {
         self.user = user
         super.init(frame: .zero)
@@ -26,7 +26,7 @@ class UserView: UIView {
         self.imageView.roundedImage()
     }
     
-    //MARK:- Setups
+    //MARK: Setups
     private func setupView() {
         backgroundColor = .white
         nameLabel.text = user?.name
@@ -73,7 +73,6 @@ class UserView: UIView {
     }
     
     //MARK:- Views
-    //MARK:- Imageviews
     private lazy var imageView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "user_placeholder")
@@ -138,7 +137,7 @@ class UserView: UIView {
 
 //TODO: Follow(er)(ing)s view Object
 class UserFollowsView: UIView {
-    //MARK:- Init
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -147,7 +146,7 @@ class UserFollowsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK:- Setups
+    //MARK: Setups
     private func setupView() {
         backgroundColor = .white
         

@@ -12,7 +12,7 @@ import SwiftyJSON
 import Reachability
 
 class ReposViewModel {
-    // Dependency
+    // Dependencies
     private let githubService: MoyaProvider<GithubService>
     private let reachability: Reachability
     // MARK:- Init
@@ -36,8 +36,6 @@ class ReposViewModel {
         }
     }
     
-    var suspendedRequestQ: String?
-    
     var alertMessage: String? {
         didSet {
             self.showAlertClosure?()
@@ -54,8 +52,9 @@ class ReposViewModel {
         return repoViewModels.count
     }
     
+    var suspendedRequestQ: String?
+    
     //MARK:- Functions
-    //MARK: Reachability
     private func initReachability() {
         reachability.whenReachable = {
             [weak self] _ in

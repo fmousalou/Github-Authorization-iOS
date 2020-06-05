@@ -9,7 +9,7 @@
 import UIKit
 
 class CommitsView: UIView {
-    //MARK:- Init
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -19,7 +19,7 @@ class CommitsView: UIView {
         setupViews()
     }
     
-    //MARK:- Setups
+    //MARK: Setups
     private func setupViews() {
         addSubview(tblView)
         tblView.snp.makeConstraints { (make) in
