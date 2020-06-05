@@ -15,11 +15,7 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
     
     //MARK:- Variables
     private let url: String
-    private var commits = [Commit]() {
-        didSet {
-            (view as! CommitsView).tblView.reloadData()
-        }
-    }
+    private let dataSource = CommitsTableViewDataSource()
     
     //MARK:- Init
     init(url: String) {
@@ -46,7 +42,7 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
     private func setupViews(view: CommitsView) {
         self.title = "Commits"
         view.tblView.delegate = self as UITableViewDelegate
-        view.tblView.dataSource = self as UITableViewDataSource
+        view.tblView.dataSource = dataSource
         view.tblView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -79,26 +75,7 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
             let commitObj = try! JSONDecoder().decode(Commit.self, from: commitJsonObj.rawData())
             commits.append(commitObj)
         }
-        self.commits = commits
-    }
-}
-
-// Tableview
-extension CommitsController:  UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commits.count
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    // Rows
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Make custom class
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = commits[indexPath.row].committer?.name
-        cell.detailTextLabel?.text = commits[indexPath.row].message
-        return cell
+        self.dataSource.commits = commits
+        (view as! CommitsView).tblView.reloadData()
     }
 }

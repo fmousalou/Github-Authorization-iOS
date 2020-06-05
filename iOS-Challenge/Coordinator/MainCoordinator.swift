@@ -22,8 +22,6 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        login()
-        return
         let kc = KeychainAPI()
         if kc.token != nil {
             search()

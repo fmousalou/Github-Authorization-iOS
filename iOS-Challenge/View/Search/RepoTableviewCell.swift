@@ -60,7 +60,7 @@ class RepoTableviewCell: UITableViewCell {
         
     }
     
-    var repoViewModel : RepoViewModel? {
+    var repoViewModel : RepoRowViewModel? {
         didSet {
             nameLabel.text = repoViewModel?.nameText
             starCountLabel.text = repoViewModel?.starsCount

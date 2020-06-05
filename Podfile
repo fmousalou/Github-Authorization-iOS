@@ -15,6 +15,8 @@ target 'iOS-Challenge' do
   
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'iOS-ChallengeUITests' do

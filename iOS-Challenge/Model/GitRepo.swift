@@ -31,7 +31,13 @@ struct GitRepo: Codable {
         owner = try container.decode(GitOwner.self, forKey: .owner)
         commitsURL = try container.decode(String.self, forKey: .commitsURL)
     }
+    
+    func customInit() {
+        
+    }
 }
 struct GitOwner: Codable {
     var avatar_url: URL?
 }
+
+

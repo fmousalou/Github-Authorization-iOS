@@ -32,6 +32,8 @@
 		874FA5CC2489653C002F96A9 /* CommitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874FA5CB2489653C002F96A9 /* CommitsView.swift */; };
 		875FC09B24893BC2009B2FE1 /* GitRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875FC09A24893BC2009B2FE1 /* GitRepo.swift */; };
 		875FC09E24893DAB009B2FE1 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875FC09D24893DAB009B2FE1 /* ReposViewModel.swift */; };
+		876E6E1B248A0DD60098FCFC /* GitRepo.json in Resources */ = {isa = PBXBuildFile; fileRef = 876E6E1A248A0DD60098FCFC /* GitRepo.json */; };
+		876E6E1E248A197E0098FCFC /* CommitsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E6E1D248A197E0098FCFC /* CommitsTableViewDataSource.swift */; };
 		876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21712488CD1400AD7180 /* UIImageview+round.swift */; };
 		876F21742488D0B600AD7180 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21732488D0B600AD7180 /* SearchController.swift */; };
 		876F21762488D1AB00AD7180 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21752488D1AB00AD7180 /* SearchView.swift */; };
@@ -96,6 +98,8 @@
 		874FA5CB2489653C002F96A9 /* CommitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommitsView.swift; path = "iOS-Challenge/View/CommitsView.swift"; sourceTree = SOURCE_ROOT; };
 		875FC09A24893BC2009B2FE1 /* GitRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepo.swift; sourceTree = "<group>"; };
 		875FC09D24893DAB009B2FE1 /* ReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
+		876E6E1A248A0DD60098FCFC /* GitRepo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GitRepo.json; sourceTree = "<group>"; };
+		876E6E1D248A197E0098FCFC /* CommitsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsTableViewDataSource.swift; sourceTree = "<group>"; };
 		876F21712488CD1400AD7180 /* UIImageview+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+round.swift"; sourceTree = "<group>"; };
 		876F21732488D0B600AD7180 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		876F21752488D1AB00AD7180 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -260,10 +264,10 @@
 		87063755248676DC00D2EBF2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				876E6E1C248A19680098FCFC /* Commits */,
 				87B95C89248698A30053C5C9 /* LoginController.swift */,
 				870357EC2488053D00005070 /* UserController.swift */,
 				876F21732488D0B600AD7180 /* SearchController.swift */,
-				874FA5C92489652D002F96A9 /* CommitsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +275,7 @@
 		87063756248676EE00D2EBF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				876E6E1A248A0DD60098FCFC /* GitRepo.json */,
 				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
 				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
 				608D18EC23E091DC00BFE7C7 /* Info.plist */,
@@ -293,6 +298,15 @@
 				875FC09D24893DAB009B2FE1 /* ReposViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		876E6E1C248A19680098FCFC /* Commits */ = {
+			isa = PBXGroup;
+			children = (
+				874FA5C92489652D002F96A9 /* CommitsController.swift */,
+				876E6E1D248A197E0098FCFC /* CommitsTableViewDataSource.swift */,
+			);
+			path = Commits;
 			sourceTree = "<group>";
 		};
 		87BC1D3A248768F300AA8760 /* Network */ = {
@@ -344,6 +358,7 @@
 				608D18ED23E091DC00BFE7C7 /* Sources */,
 				608D18EE23E091DC00BFE7C7 /* Frameworks */,
 				608D18EF23E091DC00BFE7C7 /* Resources */,
+				B032B0FBFC55ABCC0458FA43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,6 +440,7 @@
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
+				876E6E1B248A0DD60098FCFC /* GitRepo.json in Resources */,
 				608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +562,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B032B0FBFC55ABCC0458FA43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -557,6 +590,7 @@
 				875FC09E24893DAB009B2FE1 /* ReposViewModel.swift in Sources */,
 				870357E72487D23400005070 /* Toast.swift in Sources */,
 				876F21762488D1AB00AD7180 /* SearchView.swift in Sources */,
+				876E6E1E248A197E0098FCFC /* CommitsTableViewDataSource.swift in Sources */,
 				870357D42487725D00005070 /* KeychainAPI.swift in Sources */,
 				870357DB248789EC00005070 /* MainCoordinator.swift in Sources */,
 				876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */,
