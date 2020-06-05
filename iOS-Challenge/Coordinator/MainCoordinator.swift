@@ -33,7 +33,7 @@ class MainCoordinator: Coordinator {
     func search() {
         let searchVC = SearchController()
         searchVC.coordinator = self
-        navigationController.pushViewController(searchVC, animated: false)
+        navigationController.pushViewController(searchVC, animated: true)
     }
     
     func userInfo() {
@@ -43,7 +43,7 @@ class MainCoordinator: Coordinator {
     
     func commits(url: String) {
         let commitsVC = CommitsController(url: url.commitsURLPath!)
-        navigationController.pushViewController(commitsVC, animated: false)
+        navigationController.pushViewController(commitsVC, animated: true)
     }
 }
 
