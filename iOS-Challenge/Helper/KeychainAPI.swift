@@ -9,8 +9,8 @@
 import KeychainAccess
 
 class KeychainAPI {
-    //TODO: Make it singleton
     // MARK:- Variables
+    static let shared = KeychainAPI()
     // Private
     private let keychain: Keychain = {
         return Keychain(service: "com.digipay.iOS-Challenge")

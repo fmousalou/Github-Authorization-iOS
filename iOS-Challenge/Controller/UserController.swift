@@ -8,26 +8,22 @@
 
 import UIKit
 import Moya
-import KeychainAccess
 import NVActivityIndicatorView
 
 class UserController: UIViewController, NVActivityIndicatorViewable {
     
-    //MARK:- Dependency
-    private let keychain: KeychainAPI
-    
-    //MARK:- Init
-    init(keychain: KeychainAPI) {
-        self.keychain = keychain
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private var user: User? {
+        get {
+            return KeychainAPI.shared.user
+        }
+        set {
+            KeychainAPI.shared.user = newValue
+        }
     }
     
     //MARK:- LifeCycle
     override func loadView() {
-        if let user = keychain.user {
+        if user != nil {
             self.view = UserView(user: user)
         }else {
             self.view = UserView(user: nil)
@@ -42,7 +38,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
     
     //MARK:- Functions
     private func getUserInfo() {
-        if keychain.user == nil, let token = keychain.token { // It's first time
+        if user == nil, let token = KeychainAPI.shared.token { // It's first time
             let authPlugin = AccessTokenPlugin { _ in token }
             let gitService = MoyaProvider<GithubService>(plugins: [authPlugin])
             startAnimating(message: "Connecting to the server")
@@ -55,7 +51,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
                 case .success(let response):
                     if let user = try? response.map(User.self){
                         print(user)
-                        sSelf.keychain.user = user
+                        sSelf.user = user
                         sSelf.view = UserView(user: user)
                     }
                 case .failure:

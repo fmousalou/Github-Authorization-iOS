@@ -20,7 +20,6 @@ let redirect_url = "challenge://app/callback" // Deeplink
 class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewable{
     
     //MARK: Variables
-    lazy var keychain = KeychainAPI()
     weak var coordinator: MainCoordinator?
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -66,7 +65,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
             case .success(let response):
                 if let tokenObj = try? response.map(AccessTokenResponse.self),
                     let accessToken = tokenObj.accessToken {
-                    sSelf.keychain.token = accessToken
+                    KeychainAPI.shared.token = accessToken
                     sSelf.coordinator?.search()
                 }else {
                     Toast.shared.showIn(body: "I can't authorize")

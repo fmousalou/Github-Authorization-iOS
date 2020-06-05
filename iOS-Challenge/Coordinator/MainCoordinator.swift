@@ -21,8 +21,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let kc = KeychainAPI()
-        if kc.token != nil {
+        let token = KeychainAPI.shared.token
+        if token != nil {
             search()
         }else {
             login()
@@ -36,7 +36,7 @@ class MainCoordinator: Coordinator {
     }
     
     func userInfo() {
-        let userVC = UserController(keychain: KeychainAPI())
+        let userVC = UserController()
         navigationController.pushViewController(userVC, animated: true)
     }
     

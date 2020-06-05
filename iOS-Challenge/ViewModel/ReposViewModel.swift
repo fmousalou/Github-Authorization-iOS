@@ -60,7 +60,6 @@ class ReposViewModel {
         reachability.whenReachable = {
             [weak self] _ in
             guard let sSelf = self else { return}
-            print("It's reachable")
             // If there is a suspended request
             guard let q = sSelf.suspendedRequestQ else { return}
             // Send request again
