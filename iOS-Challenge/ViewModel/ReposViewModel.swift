@@ -11,8 +11,6 @@ import Moya
 import SwiftyJSON
 import Reachability
 
-typealias githubService = MoyaProvider<GithubService>
-
 class ReposViewModel {
     // Dependency
     private let githubService: MoyaProvider<GithubService>

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO: future implementing
 enum ServerError: Error {
     case serverError(msg: String)
 }

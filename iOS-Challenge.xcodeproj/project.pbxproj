@@ -40,6 +40,7 @@
 		876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21712488CD1400AD7180 /* UIImageview+round.swift */; };
 		876F21742488D0B600AD7180 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21732488D0B600AD7180 /* SearchController.swift */; };
 		876F21762488D1AB00AD7180 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21752488D1AB00AD7180 /* SearchView.swift */; };
+		878D4E03248A8BBB003C4302 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878D4E02248A8BBB003C4302 /* Typealias.swift */; };
 		87B95C8A248698A30053C5C9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B95C89248698A30053C5C9 /* LoginController.swift */; };
 		87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BC1D3B2487692900AA8760 /* GithubService.swift */; };
 		87E903D82489782B0044DFEE /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E903D72489782B0044DFEE /* Commit.swift */; };
@@ -105,6 +106,7 @@
 		876F21712488CD1400AD7180 /* UIImageview+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+round.swift"; sourceTree = "<group>"; };
 		876F21732488D0B600AD7180 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		876F21752488D1AB00AD7180 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		878D4E02248A8BBB003C4302 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		87B95C89248698A30053C5C9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = "iOS-Challenge/Controller/LoginController.swift"; sourceTree = SOURCE_ROOT; };
 		87BC1D3B2487692900AA8760 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		87E903D72489782B0044DFEE /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Commit.swift; path = "iOS-Challenge/Model/Commit.swift"; sourceTree = SOURCE_ROOT; };
@@ -230,6 +232,7 @@
 				870357D32487725D00005070 /* KeychainAPI.swift */,
 				870357DC24878A7000005070 /* Storyboarded.swift */,
 				870357E62487D23400005070 /* Toast.swift */,
+				878D4E02248A8BBB003C4302 /* Typealias.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				874FA5C8248963A9002F96A9 /* String+commitsURLPath.swift in Sources */,
+				878D4E03248A8BBB003C4302 /* Typealias.swift in Sources */,
 				875FC09E24893DAB009B2FE1 /* ReposViewModel.swift in Sources */,
 				870357E72487D23400005070 /* Toast.swift in Sources */,
 				876F21762488D1AB00AD7180 /* SearchView.swift in Sources */,

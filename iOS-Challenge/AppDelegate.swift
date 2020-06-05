@@ -34,5 +34,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
-typealias QueryParameters = [String : String]
