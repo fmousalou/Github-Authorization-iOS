@@ -35,6 +35,12 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
         searchView.tblView.delegate = self as UITableViewDelegate
         searchView.tblView.dataSource = self as UITableViewDataSource
         searchView.tblView.register(RepoTableviewCell.self, forCellReuseIdentifier: "cell")
+        
+        // Config Left bar button
+        let leftBarBtn = searchView.leftBarBtn
+        leftBarBtn.target = self
+        self.navigationItem.leftBarButtonItem = leftBarBtn
+        navigationItem.leftBarButtonItem?.title = nil
     }
     private func setupSearchBar() {
         searchController.searchBar.delegate = self as UISearchBarDelegate
@@ -91,6 +97,9 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
             // Call mvvm fetch
             viewModel.search(subject: searchFor)
         }
+    @objc func showUserInfoPage() {
+        coordinator?.userInfo()
+    }
 }
 
 // Tableview

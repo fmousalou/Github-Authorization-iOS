@@ -154,10 +154,47 @@ Please login to the app using your Github Account.🙏🏼</string>
             </objects>
             <point key="canvasLocation" x="1524.6376811594205" y="132.58928571428572"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="JUG-7F-yMB">
+            <objects>
+                <viewController id="dLy-8B-jxN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wiH-Pt-nmd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="oYZ-1N-cma"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iHY-9t-9vM">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="user_placeholder" id="Hma-gI-3we"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xe-U7-AnK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3572.4637681159425" y="136.60714285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DLv-sd-9QG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vz9-UW-aR5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NP1-X3-8xz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dLy-8B-jxN" kind="relationship" relationship="rootViewController" id="EpO-aI-oKm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1h-0K-FM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2662.3188405797105" y="136.60714285714286"/>
+        </scene>
     </scenes>
     <resources>
         <image name="follower_icon" width="67" height="67"/>
         <image name="following_icon" width="67" height="67"/>
         <image name="githubIcon" width="267" height="222"/>
+        <image name="user_placeholder" width="171" height="171"/>
     </resources>
 </document>

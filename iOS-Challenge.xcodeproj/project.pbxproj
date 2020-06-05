@@ -268,8 +268,8 @@
 		87063754248676D300D2EBF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				874FA5CB2489653C002F96A9 /* CommitsView.swift */,
 				87437F8D2488D88400733C20 /* Search */,
+				874FA5CB2489653C002F96A9 /* CommitsView.swift */,
 				870D8A57248809530028E806 /* UserView.swift */,
 				608D18E423E091DB00BFE7C7 /* Main.storyboard */,
 			);
