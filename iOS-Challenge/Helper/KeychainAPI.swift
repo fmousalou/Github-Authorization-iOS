@@ -58,7 +58,7 @@ class KeychainAPI {
         }
     }
     
-    // MARK:- Functions
+    // MARK: Functions
     func clearKeychain() {
         if let _ = try? self.keychain.contains(tokenKey) {
             try! self.keychain.removeAll()

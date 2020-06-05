@@ -107,12 +107,13 @@ class ReposViewModel {
     func processFetched( repos: [JSON] ) {
         var gits = [RepoRowViewModel]()
         repos.forEach { (repo) in
-            let repoObj = try! JSONDecoder().decode(GitRepo.self, from: repo.rawData())
-            let newRepo = RepoRowViewModel(nameText: repoObj.name ?? "No Name",
-                                        imageUrl: repoObj.owner?.avatar_url,
-                                        starsCount: String(repoObj.stars ?? 0),
-                                        commitsURL: repoObj.commitsURL)
-            gits.append(newRepo)
+            if let repoObj = try? JSONDecoder().decode(GitRepo.self, from: repo.rawData()) {
+                let newRepo = RepoRowViewModel(nameText: repoObj.name ?? "No Name",
+                                               imageUrl: repoObj.owner?.avatar_url,
+                                               starsCount: String(repoObj.stars ?? 0),
+                                               commitsURL: repoObj.commitsURL)
+                gits.append(newRepo)
+            }
         }
         repoViewModels = gits
         if gits.count == 0 { alertMessage = "No result\n Please search something else..."}

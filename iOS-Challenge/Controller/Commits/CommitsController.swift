@@ -73,10 +73,10 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
     func processFetched( jsonCommits: [JSON] ) {
         var commits = [Commit]()
         jsonCommits.forEach { (commit) in
-            // TODO: Solve Force TRY! in all source code
             let commitJsonObj = commit["commit"]
-            let commitObj = try! JSONDecoder().decode(Commit.self, from: commitJsonObj.rawData())
-            commits.append(commitObj)
+            if let commitObj = try? JSONDecoder().decode(Commit.self, from: commitJsonObj.rawData()) {
+                commits.append(commitObj)
+            }
         }
         self.dataSource.commits = commits
         (view as! CommitsView).tblView.reloadData()
