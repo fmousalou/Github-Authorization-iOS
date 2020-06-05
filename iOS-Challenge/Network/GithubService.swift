@@ -8,11 +8,6 @@
 
 import Moya
 
-struct committer {
-    var ownerName: String?
-    var projectName: String?
-}
-
 enum GithubService {
     case authenticate(code: String)
     case userInfo

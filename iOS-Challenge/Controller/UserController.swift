@@ -27,11 +27,15 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
     
     //MARK:- LifeCycle
     override func loadView() {
-        self.view = UserView(user: keychain.user)
+        if let user = keychain.user {
+            self.view = UserView(user: user)
+        }else {
+            self.view = UserView(user: nil)
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.title = "Profile"
         getUserInfo()
     }
@@ -39,7 +43,6 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
     //MARK:- Functions
     private func getUserInfo() {
         if keychain.user == nil, let token = keychain.token { // It's first time
-            
             let authPlugin = AccessTokenPlugin { _ in token }
             let gitService = MoyaProvider<GithubService>(plugins: [authPlugin])
             startAnimating(message: "Connecting to the server")

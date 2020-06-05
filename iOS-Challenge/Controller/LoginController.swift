@@ -13,9 +13,9 @@ import Pulsator
 
 //let clientId = "your-clientId"
 //TODO: Move it in secure place
-let clientId = "04860a64b85b7438bf91"
-let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28"
-let redirect_url = "challenge://app/callback"
+let clientId = "04860a64b85b7438bf91" // Related to Digipay
+let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28" // Related to Digipay
+let redirect_url = "challenge://app/callback" // Deeplink
 
 class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewable{
     
@@ -68,6 +68,8 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
                     let accessToken = tokenObj.accessToken {
                     sSelf.keychain.token = accessToken
                     sSelf.coordinator?.search()
+                }else {
+                    Toast.shared.showIn(body: "I can't authorize")
                 }
             case .failure:
                 Toast.shared.showServerConnectionError()

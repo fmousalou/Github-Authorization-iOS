@@ -37,7 +37,7 @@ class MainCoordinator: Coordinator {
     
     func userInfo() {
         let userVC = UserController(keychain: KeychainAPI())
-        navigationController.present(userVC, animated: true)
+        navigationController.pushViewController(userVC, animated: true)
     }
     
     func commits(url: String) {
