@@ -17,7 +17,6 @@ target 'iOS-Challenge' do
   
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
-    
   end
 
   target 'iOS-ChallengeUITests' do

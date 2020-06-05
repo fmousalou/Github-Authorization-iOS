@@ -35,6 +35,7 @@
 		876E6E1B248A0DD60098FCFC /* GitRepo.json in Resources */ = {isa = PBXBuildFile; fileRef = 876E6E1A248A0DD60098FCFC /* GitRepo.json */; };
 		876E6E1E248A197E0098FCFC /* CommitsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E6E1D248A197E0098FCFC /* CommitsTableViewDataSource.swift */; };
 		876E6E20248A1DF70098FCFC /* Commits.json in Resources */ = {isa = PBXBuildFile; fileRef = 876E6E1F248A1DF70098FCFC /* Commits.json */; };
+		876E6E24248A24750098FCFC /* CommitsDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876E6E23248A24750098FCFC /* CommitsDataSourceTest.swift */; };
 		876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21712488CD1400AD7180 /* UIImageview+round.swift */; };
 		876F21742488D0B600AD7180 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21732488D0B600AD7180 /* SearchController.swift */; };
 		876F21762488D1AB00AD7180 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F21752488D1AB00AD7180 /* SearchView.swift */; };
@@ -102,6 +103,7 @@
 		876E6E1A248A0DD60098FCFC /* GitRepo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GitRepo.json; sourceTree = "<group>"; };
 		876E6E1D248A197E0098FCFC /* CommitsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsTableViewDataSource.swift; sourceTree = "<group>"; };
 		876E6E1F248A1DF70098FCFC /* Commits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Commits.json; sourceTree = "<group>"; };
+		876E6E23248A24750098FCFC /* CommitsDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsDataSourceTest.swift; sourceTree = "<group>"; };
 		876F21712488CD1400AD7180 /* UIImageview+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+round.swift"; sourceTree = "<group>"; };
 		876F21732488D0B600AD7180 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		876F21752488D1AB00AD7180 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		608D18F423E091DC00BFE7C7 /* iOS-ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				876E6E23248A24750098FCFC /* CommitsDataSourceTest.swift */,
 				608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */,
 				608D18F723E091DC00BFE7C7 /* Info.plist */,
 			);
@@ -606,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				608D18F623E091DC00BFE7C7 /* iOS_ChallengeTests.swift in Sources */,
+				876E6E24248A24750098FCFC /* CommitsDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
