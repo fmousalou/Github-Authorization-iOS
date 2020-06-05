@@ -6,7 +6,6 @@
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
-
 import UIKit
 import Moya
 

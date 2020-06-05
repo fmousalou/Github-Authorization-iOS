@@ -6,11 +6,10 @@
 //  Copyright © 2020 Farshad Mousalou. All rights reserved.
 //
 
-import Alamofire
-
+import Moya
 
 extension String {
-    //TODO Make it better
+    //TODO: Make it better
     var githubURL: URL? {
         let parameters = ["client_id": clientId,
         "redirect_uri": redirect_url,

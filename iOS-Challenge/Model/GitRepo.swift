@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // Model
 struct GitRepo: Codable {
     var name: String?
@@ -30,10 +29,6 @@ struct GitRepo: Codable {
         stars = try container.decode(Int.self, forKey: .stars)
         owner = try container.decode(GitOwner.self, forKey: .owner)
         commitsURL = try container.decode(String.self, forKey: .commitsURL)
-    }
-    
-    func customInit() {
-        
     }
 }
 struct GitOwner: Codable {

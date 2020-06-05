@@ -9,7 +9,6 @@
 import UIKit
 import Moya
 import NVActivityIndicatorView
-import SwiftyJSON
 
 class SearchController: UIViewController, NVActivityIndicatorViewable, UITableViewDelegate, UISearchBarDelegate {
     //TODO: Handle zero responses
@@ -91,7 +90,7 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
         }
     }
     
-    // Search
+    //MARK:- Functions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             guard let searchFor = searchBar.text else { return}
             // Call mvvm fetch

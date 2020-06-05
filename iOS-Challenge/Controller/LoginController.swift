@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import Alamofire
 import Moya
 import NVActivityIndicatorView
-import SwiftyJSON
 import Pulsator
 
 //let clientId = "your-clientId"

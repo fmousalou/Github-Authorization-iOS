@@ -19,5 +19,4 @@ struct AccessTokenResponse: Decodable {
         case tokenType = "token_type"
         case scope = "scope"
     }
-    
 }

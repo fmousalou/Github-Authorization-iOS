@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SnapKit
-import SDWebImage
 
 class UserView: UIView {
     private let user: User?
@@ -23,7 +21,6 @@ class UserView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.imageView.roundedImage()

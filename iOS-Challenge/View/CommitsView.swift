@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class CommitsView: UIView {
     //MARK:- Init
     override init(frame: CGRect) {

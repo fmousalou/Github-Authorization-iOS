@@ -36,32 +36,29 @@ class KeychainAPI {
             }
         }
     }
-    
-     // Public
-        var user: User? {
-            get {
-                let decoder = JSONDecoder()
-                if let userData = try? keychain.getData(userKey),
-                    let user = try? decoder.decode(User.self, from: userData){
-                    return user
-                }
-                return nil
+    var user: User? {
+        get {
+            let decoder = JSONDecoder()
+            if let userData = try? keychain.getData(userKey),
+                let user = try? decoder.decode(User.self, from: userData){
+                return user
             }
-            
-            set {
-                do {
-                    let encoder = JSONEncoder()
-                    let user = try? encoder.encode(newValue)
-                    if user == nil { return}
-                    try keychain.set(user!, key: userKey)
-                } catch let err {
-                    print("\(err) in \(#function)")
-                }
+            return nil
+        }
+        
+        set {
+            do {
+                let encoder = JSONEncoder()
+                let user = try? encoder.encode(newValue)
+                if user == nil { return}
+                try keychain.set(user!, key: userKey)
+            } catch let err {
+                print("\(err) in \(#function)")
             }
         }
+    }
     
-    
-    // MARK:- Functions (Token)
+    // MARK:- Functions
     func clearKeychain() {
         if let _ = try? self.keychain.contains(tokenKey) {
             try! self.keychain.removeAll()

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import KeychainAccess
 import Moya
+import KeychainAccess
 import NVActivityIndicatorView
 
 class UserController: UIViewController, NVActivityIndicatorViewable {

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension URL {
     public var queryParameters: [String: String]? {
         guard

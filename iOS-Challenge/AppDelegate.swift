@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // DeepLink
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         guard let parameters = url.absoluteURL.queryParameters else { return true}
         coordinator?.resumeAuthentication(with: parameters)

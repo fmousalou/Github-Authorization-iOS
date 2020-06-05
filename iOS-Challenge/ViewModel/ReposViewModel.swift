@@ -119,11 +119,3 @@ class ReposViewModel {
         repoViewModels = gits
     }
 }
-
-
-struct RepoRowViewModel {
-    let nameText: String
-    let imageUrl: URL?
-    let starsCount: String
-    let commitsURL: String?
-}
