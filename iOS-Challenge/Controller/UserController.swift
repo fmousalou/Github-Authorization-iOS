@@ -37,6 +37,10 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
         getUserInfo()
     }
     
+    deinit {
+        print("There isn't retain cycle in \(#file)")
+    }
+    
     //MARK: Functions
     private func getUserInfo() {
         if user == nil, let token = KeychainAPI.shared.token { // It's first time

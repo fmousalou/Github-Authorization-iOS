@@ -29,6 +29,12 @@ class MainCoordinator: Coordinator {
     }
     
     func search() {
+        if navigationController.loggedInRecently {
+            // Logged in successfully
+            // So Remove LoginController from stack
+            navigationController.viewControllers.removeLast()
+        }
+        
         let searchVC = SearchController()
         searchVC.coordinator = self
         navigationController.pushViewController(searchVC, animated: true)

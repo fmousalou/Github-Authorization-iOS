@@ -32,7 +32,9 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
         loginBtn.layer.addSublayer(pulsator)
         pulsator.start()
     }
-    
+    deinit {
+        print("There isn't retain cycle in \(#file)")
+    }
     //MARK: Action
     @IBAction private func loginPressed(_ sender: Any) {
         // ios 10 and lower

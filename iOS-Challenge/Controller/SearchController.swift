@@ -28,6 +28,10 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
         initVM()
     }
     
+    deinit {
+        print("There isn't retain cycle in \(#file)")
+    }
+    
     //MARK:- Setups
     private func setupViews() {
         self.title = "Search"
