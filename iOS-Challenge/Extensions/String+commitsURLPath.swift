@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     var commitsURLPath: String? {
+        // TODO: Check if it's valid string
         let pureAdrs = self.replacingOccurrences(of: "{/sha}", with: "")
         let purePath = pureAdrs.replacingOccurrences(of: "https://api.github.com", with: "")
         return purePath

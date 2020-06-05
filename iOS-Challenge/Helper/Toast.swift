@@ -24,7 +24,7 @@ class Toast {
     private var config = SwiftMessages.defaultConfig
     
     // MARK:- Modal
-    //TODO: Use it to show commits info
+    //TODO: Use it to show commits or repo info
     private lazy var modalConfig: SwiftMessages.Config = {
         var config = SwiftMessages().defaultConfig
         config.duration = .forever

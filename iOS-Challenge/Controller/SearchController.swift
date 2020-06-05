@@ -11,7 +11,7 @@ import Moya
 import NVActivityIndicatorView
 
 class SearchController: UIViewController, NVActivityIndicatorViewable, UITableViewDelegate, UISearchBarDelegate {
-    //TODO: Handle zero responses
+
     //MARK:- Variables
     weak var coordinator: MainCoordinator?
     private let searchController = UISearchController(searchResultsController: nil)
@@ -57,8 +57,8 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
         
         // Dear visitor 👋🏼 I know RXSwift is better and easier but
         // usage of RXSwift is a little bit tricky
-        // and I don't risk because It might got stuck in bugs
-        // and loose time for debugging
+        // and I don't risk, because It might got stuck in bugs
+        // and I'll loose the time for debugging
         
         
         // Naive binding

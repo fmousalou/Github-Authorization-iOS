@@ -153,7 +153,7 @@ class UserFollowsView: UIView {
     }
     
     //MARK:- Views
-    //MARK:- Stacks
+    //MARK: Stacks
     private var iconStack: UIStackView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -176,7 +176,7 @@ class UserFollowsView: UIView {
         return stackView
     }
     
-    //MARK:- Imageviews
+    //MARK: Imageviews
     private lazy var followerImg: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "follower_icon")
