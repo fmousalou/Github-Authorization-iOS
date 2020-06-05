@@ -11,12 +11,6 @@ import Moya
 import NVActivityIndicatorView
 import Pulsator
 
-//let clientId = "your-clientId"
-//TODO: Move it in secure place
-let clientId = "04860a64b85b7438bf91" // Related to Digipay
-let clientSecret = "13342aaf3eb01b5498fc16b1bad90e1ab0e64a28" // Related to Digipay
-let redirect_url = "challenge://app/callback" // Deeplink
-
 class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewable{
     
     //MARK: Variables

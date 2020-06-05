@@ -11,8 +11,9 @@ import Moya
 extension String {
     //TODO: Make it better
     var githubURL: URL? {
-        let parameters = ["client_id": clientId,
-        "redirect_uri": redirect_url,
+        let secrets = Secrets()
+        let parameters = ["client_id": secrets.clientID,
+        "redirect_uri": secrets.redirect_url,
         "scope": "repo user",
         "state": 0] as [String:Any]
         

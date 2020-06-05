@@ -56,9 +56,10 @@ extension GithubService: TargetType {
     var task: Task {
         switch self {
         case .authenticate(let code):
-            let params = ["client_id": clientId,
-                          "redirect_uri": redirect_url,
-                          "client_secret": clientSecret,
+            let secrets = Secrets()
+            let params = ["client_id": secrets.clientID,
+                          "redirect_uri": secrets.redirect_url,
+                          "client_secret": secrets.clientSecret,
                           "code": code,
                           "state": 0] as [String : Any]
             return .requestParameters(parameters: params,
