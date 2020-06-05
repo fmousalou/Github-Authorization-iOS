@@ -10,13 +10,10 @@ import XCTest
 import SwiftyJSON
 import Quick
 import Nimble
-import Nimble_Snapshots
+
 @testable import iOS_Challenge
 
 class iOS_ChallengeTests: XCTestCase {
-    
-    
-
     func testRepoViewModel() { // Without Library
         //TODO: Make it dynamic
         //Read sample json from bundle
@@ -39,33 +36,36 @@ class iOS_ChallengeTests: XCTestCase {
 class CommitsDatasourceTest: QuickSpec {
     
     override func spec() {
-        
-        var myDelegateDatasource: CommitsTableViewDataSource!
+        var commitsDataSource: CommitsTableViewDataSource!
+        var commitsController: CommitsController!
         var tableView: UITableView!
         
-        describe("MyDelegateDatasource") {
+        describe("commitsDataSource") {
             
+            // Prepare
             beforeEach {
-                let data = ["Rodrigo", "Cavalcante", "Testing", "Delegate", "Datasource"]
-                myDelegateDatasource = MyDelegateDatasource()
+                let path = Bundle.main.path(forResource: "Commits", ofType: "json")
+                let jsonData = try! String(contentsOfFile: path!).data(using: .utf8)!
+                let commits = JSON(jsonData).array
                 
-                myDelegateDatasource.data = data
+                commitsController = CommitsController(url: "")
+                commitsController.processFetched(jsonCommits: commits!)
+                commitsDataSource = commitsController.dataSource
                 
                 tableView = UITableView()
                 tableView.register(UITableViewCell.self,
                                    forCellReuseIdentifier: "Cell")
-                tableView.dataSource = myDelegateDatasource
-                tableView.delegate = myDelegateDatasource
+                tableView.dataSource = commitsController.dataSource
+                tableView.delegate = commitsController
             }
             
-            //MARK: Datasource
-            
+            // Start DataSource Test
             it("should return the right number of rows") {
-                expect(myDelegateDatasource.tableView(tableView, numberOfRowsInSection: 0)) == 5
+                expect(commitsDataSource.tableView(tableView, numberOfRowsInSection: 0)) == commitsDataSource.commits.count
             }
             
             it("should return the right number of sections") {
-                expect(myDelegateDatasource.numberOfSections(in: tableView)) == 1
+                expect(commitsDataSource.numberOfSections(in: tableView)) == 1
             }
         }
     }

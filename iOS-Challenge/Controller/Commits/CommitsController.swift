@@ -15,7 +15,8 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
     
     //MARK:- Variables
     private let url: String
-    private let dataSource = CommitsTableViewDataSource()
+    //Made it internal in order to access from testCase
+    let dataSource = CommitsTableViewDataSource()
     
     //MARK:- Init
     init(url: String) {
@@ -67,7 +68,8 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
         }
     }
     
-    private func processFetched( jsonCommits: [JSON] ) {
+    //Made it internal in order to access from testCase
+    func processFetched( jsonCommits: [JSON] ) {
         var commits = [Commit]()
         jsonCommits.forEach { (commit) in
             // TODO: Solve Force TRY! in all source code
