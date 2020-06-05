@@ -12,6 +12,7 @@ target 'iOS-Challenge' do
   pod 'SnapKit'
   pod 'SDWebImage'
   pod "Pulsator"
+  pod 'ReachabilitySwift'
   
   target 'iOS-ChallengeTests' do
     inherit! :search_paths

@@ -33,7 +33,7 @@ class Toast {
         (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
         
         
-        view.button?.setTitle("باشه!", for: .normal)
+        view.button?.setTitle("OK!", for: .normal)
         let btnAction : (((UIButton) -> Void)?) = { _ in
             SwiftMessages.hide()
         }
@@ -42,7 +42,10 @@ class Toast {
     }
     
     func showConnectionError() {
-        self.showToast(title: "", body: "اتصال با سرور برقرار نشد.", theme: .error, iconTxt: "🙁")
+        self.showToast(title: "", body: "I can't connect to the server!", theme: .error, iconTxt: "🙁")
+    }
+    func showInternetConnectionError(){
+        self.showToast(title: "", body: "Please connect the internet!", theme: .error, iconTxt: "🙁")
     }
     
     func showIn(body: String, icon: String = "🙂", theme: Theme = .warning) {

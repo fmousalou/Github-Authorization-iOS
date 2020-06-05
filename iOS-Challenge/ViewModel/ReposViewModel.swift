@@ -9,14 +9,19 @@
 import UIKit
 import Moya
 import SwiftyJSON
+import Reachability
 
 typealias githubService = MoyaProvider<GithubService>
+
 class ReposViewModel {
     // Dependency
     private let githubService: MoyaProvider<GithubService>
+    private let reachability: Reachability
     // MARK:- Init
     init(service: githubService = MoyaProvider<GithubService>()) {
         self.githubService = service
+        self.reachability = try! Reachability()
+        initReachability()
     }
     
     //MARK:- Variables
@@ -32,6 +37,8 @@ class ReposViewModel {
             self.reloadTableViewClosure?()
         }
     }
+    
+    var suspendedRequestQ: String?
     
     var alertMessage: String? {
         didSet {
@@ -50,8 +57,32 @@ class ReposViewModel {
     }
     
     //MARK:- Functions
+    //MARK: Reachability
+    private func initReachability() {
+        reachability.whenReachable = {
+            [weak self] _ in
+            guard let sSelf = self else { return}
+            print("It's reachable")
+            // If there is a suspended request
+            guard let q = sSelf.suspendedRequestQ else { return}
+            // Send request again
+            sSelf.search(subject: q)
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Error in \(#function)")
+        }
+    }
+    
     // Send request to search
     func search(subject: String) {
+        guard reachability.connection != .unavailable else {
+            Toast.shared.showInternetConnectionError()
+            self.suspendedRequestQ = subject
+            return
+        }
+        
         self.isLoading = true
         githubService.request(.search(subject: subject)) {
             [weak self]
@@ -61,6 +92,7 @@ class ReposViewModel {
             case .success(let response):
                 if let items = JSON(response.data)["items"].array {
                     sSelf.processFetched(repos: items)
+                    sSelf.suspendedRequestQ = nil
                 }else {
                     sSelf.alertMessage = "Try Again"
                 }
