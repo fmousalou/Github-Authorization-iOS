@@ -115,5 +115,6 @@ class ReposViewModel {
             gits.append(newRepo)
         }
         repoViewModels = gits
+        if gits.count == 0 { alertMessage = "No result\n Please search something else..."}
     }
 }
