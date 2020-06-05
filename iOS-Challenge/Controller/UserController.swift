@@ -56,7 +56,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
                         sSelf.view = UserView(user: user)
                     }
                 case .failure:
-                    Toast.shared.showConnectionError()
+                    Toast.shared.showServerConnectionError()
                 }
                 sSelf.stopAnimating()
             }

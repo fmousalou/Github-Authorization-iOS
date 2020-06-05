@@ -62,7 +62,7 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
                     sSelf.processFetched(jsonCommits: json)
                 }
             case .failure:
-                Toast.shared.showConnectionError()
+                Toast.shared.showServerConnectionError()
             }
             sSelf.stopAnimating()
         }

@@ -50,7 +50,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
     //MARK: Network
     func getAuthentication(with parameters: QueryParameters) {
         if parameters.keys.contains("error") {
-            Toast.shared.showConnectionError()
+            Toast.shared.showServerConnectionError()
             self.stopAnimating()
             return
         }
@@ -70,7 +70,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
                     sSelf.coordinator?.search()
                 }
             case .failure:
-                Toast.shared.showConnectionError()
+                Toast.shared.showServerConnectionError()
             }
             sSelf.stopAnimating()
         }

@@ -101,7 +101,7 @@ extension Toast {
     }
     
     //MARK: Errors
-    func showConnectionError() {
+    func showServerConnectionError() {
         self.showToast(title: "", body: "I can't connect to the server!", theme: .error, iconTxt: "🙁")
     }
     func showInternetConnectionError(){
