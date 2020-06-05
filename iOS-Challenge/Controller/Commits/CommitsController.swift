@@ -47,7 +47,8 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
         view.tblView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    //MARK:- Network Functions
+    //MARK:- Functions
+    //MARK: Network
     private func fetchCommits() {
         let service = githubService.init()
         let path = url.commitsURLPath!

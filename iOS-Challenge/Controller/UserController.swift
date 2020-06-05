@@ -12,6 +12,7 @@ import NVActivityIndicatorView
 
 class UserController: UIViewController, NVActivityIndicatorViewable {
     
+    //MARK: Variables
     private var user: User? {
         get {
             return KeychainAPI.shared.user
@@ -21,7 +22,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
         }
     }
     
-    //MARK:- LifeCycle
+    //MARK: LifeCycle
     override func loadView() {
         if user != nil {
             self.view = UserView(user: user)
@@ -36,7 +37,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
         getUserInfo()
     }
     
-    //MARK:- Functions
+    //MARK: Functions
     private func getUserInfo() {
         if user == nil, let token = KeychainAPI.shared.token { // It's first time
             let authPlugin = AccessTokenPlugin { _ in token }

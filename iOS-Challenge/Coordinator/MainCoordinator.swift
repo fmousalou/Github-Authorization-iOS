@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Moya
 
 class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
@@ -15,16 +14,16 @@ class MainCoordinator: Coordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        navigationController.navigationBar.barTintColor = .blue
+        navigationController.navigationBar.barTintColor = .systemBlue
         navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController.navigationBar.tintColor = .white
     }
     
     func start() {
         let token = KeychainAPI.shared.token
-        if token != nil {
+        if token != nil { // Logged on once
             search()
-        }else {
+        }else { // It's first time
             login()
         }
     }
@@ -54,6 +53,7 @@ extension MainCoordinator {
         navigationController.pushViewController(loginVC, animated: false)
     }
     
+    // Start authorize
     func openGithub() {
         let urlStr = "https://github.com/login/oauth/authorize"
         if let githubAuthURL = urlStr.githubURL {

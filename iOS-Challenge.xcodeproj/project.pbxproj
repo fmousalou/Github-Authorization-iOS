@@ -262,10 +262,10 @@
 		87063753248676C900D2EBF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87E903D72489782B0044DFEE /* Commit.swift */,
 				60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */,
-				870357E82487FEB600005070 /* User.swift */,
 				875FC09A24893BC2009B2FE1 /* GitRepo.swift */,
+				87E903D72489782B0044DFEE /* Commit.swift */,
+				870357E82487FEB600005070 /* User.swift */,
 				878D4E04248A8C48003C4302 /* RepoViewModel.swift */,
 			);
 			path = Model;

@@ -101,7 +101,8 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
     }
 }
 
-// Tableview
+// Tableview DataSource
+// TODO: Move it to another class and write test
 extension SearchController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells
