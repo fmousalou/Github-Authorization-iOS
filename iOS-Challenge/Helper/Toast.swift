@@ -10,8 +10,6 @@ import SwiftMessages
 import SnapKit
 
 class Toast {
-    static let shared = Toast()
-    private var config = SwiftMessages.defaultConfig
     init() {
         config.presentationStyle = .top
         config.presentationContext = .window(windowLevel: .alert)
@@ -21,39 +19,12 @@ class Toast {
         config.ignoreDuplicates = false
     }
     
-    func showToast(title:String, body: String, theme: Theme, iconTxt:String){
-        SwiftMessages.hide()
-        let view = MessageView.viewFromNib(layout: .cardView)
-        view.configureTheme(theme)
-        view.configureDropShadow()
-        view.bodyLabel?.textColor = (theme == .warning) ? .black : .white
-        view.configureContent(title: title, body: body, iconText: iconTxt)
-        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        
-        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
-        
-        
-        view.button?.setTitle("OK!", for: .normal)
-        let btnAction : (((UIButton) -> Void)?) = { _ in
-            SwiftMessages.hide()
-        }
-        view.buttonTapHandler = btnAction
-        SwiftMessages.show(config: config, view: view)
-    }
-    
-    func showConnectionError() {
-        self.showToast(title: "", body: "I can't connect to the server!", theme: .error, iconTxt: "🙁")
-    }
-    func showInternetConnectionError(){
-        self.showToast(title: "", body: "Please connect the internet!", theme: .error, iconTxt: "🙁")
-    }
-    
-    func showIn(body: String, icon: String = "🙂", theme: Theme = .warning) {
-        self.showToast(title: "", body: body, theme: theme, iconTxt: icon)
-    }
-    
+    // Singleton
+    static let shared = Toast()
+    private var config = SwiftMessages.defaultConfig
     
     // MARK:- Modal
+    //TODO: Use it to show commits info
     private lazy var modalConfig: SwiftMessages.Config = {
         var config = SwiftMessages().defaultConfig
         config.duration = .forever
@@ -82,7 +53,7 @@ class Toast {
             SwiftMessages.hide()
         }
         modealView.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
-        modealView.configureContent(title: "توضیحات", body: nil, iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "بستن", buttonTapHandler: btnAction)
+        modealView.configureContent(title: "Description", body: nil, iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "Close", buttonTapHandler: btnAction)
         (modealView.backgroundView as? CornerRoundingView)?.cornerRadius = 10
         
         modealView.addSubview(self.descriptionTxtView)
@@ -103,3 +74,36 @@ class Toast {
     }
 }
 
+//MARK:- Show
+extension Toast {
+    func showToast(title:String, body: String, theme: Theme, iconTxt:String){
+        SwiftMessages.hide()
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(theme)
+        view.configureDropShadow()
+        view.bodyLabel?.textColor = (theme == .warning) ? .black : .white
+        view.configureContent(title: title, body: body, iconText: iconTxt)
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+        
+        
+        view.button?.setTitle("OK!", for: .normal)
+        let btnAction : (((UIButton) -> Void)?) = { _ in
+            SwiftMessages.hide()
+        }
+        view.buttonTapHandler = btnAction
+        SwiftMessages.show(config: config, view: view)
+    }
+    func showIn(body: String, icon: String = "🙂", theme: Theme = .warning) {
+        self.showToast(title: "", body: body, theme: theme, iconTxt: icon)
+    }
+    
+    //MARK: Errors
+    func showConnectionError() {
+        self.showToast(title: "", body: "I can't connect to the server!", theme: .error, iconTxt: "🙁")
+    }
+    func showInternetConnectionError(){
+        self.showToast(title: "", body: "Please check your internet connection!", theme: .warning, iconTxt: "🙁")
+    }
+}
