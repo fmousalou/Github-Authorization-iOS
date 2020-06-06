@@ -38,16 +38,25 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
         navigationItem.rightBarButtonItem = editButtonItem
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-//        (view as! ProfileView).nameLabel.text = "Editmode"
-    }
-    
     deinit {
         print("There isn't retain cycle in \(#file)")
     }
     
     //MARK: Functions
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        let profileView = (view as! ProfileView)
+        let tfStack = profileView.textFieldsStack
+        tfStack.arrangedSubviews.forEach {
+            if let tf = $0 as? UITextField {
+                tf.isUserInteractionEnabled = editing
+                tf.becomeFirstResponder()
+            }
+        }
+        profileView.bioTV.isEditable = editing
+    }
+    
+    //MARK: Network
     private func getUserInfo() {
         if user == nil,
             let token = KeychainAPI.shared.token { // It's first time

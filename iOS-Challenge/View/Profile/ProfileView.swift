@@ -92,7 +92,7 @@ class ProfileView: UIView {
         return imgView
     }()
     
-    private let textFieldsStack: UIStackView = {
+    let textFieldsStack: UIStackView = {
         let stackView = UIStackView()
         stackView.backgroundColor = .green
         stackView.alignment = .fill
@@ -101,19 +101,18 @@ class ProfileView: UIView {
         return stackView
     }()
     
-    //MARK:- TextFields
+    // MARK:- TextFields
+    // TODO: Use Factory Pattern
     // Name TextField
     private weak var nameTF: UITextField? = {
         let tf =  UITextField()
         tf.isUserInteractionEnabled = false
         tf.placeholder = "Name"
+        tf.returnKeyType = .done
+        tf.autocorrectionType = .no
         tf.font = UIFont.boldSystemFont(ofSize: 18)
         tf.borderStyle = .roundedRect
-        tf.autocorrectionType = .no
-        tf.keyboardType = .default
-        tf.returnKeyType = .done
         tf.clearButtonMode = .whileEditing
-        tf.contentVerticalAlignment = .center
         return tf
     }()
     // Company TextField
@@ -121,13 +120,11 @@ class ProfileView: UIView {
         let tf =  UITextField()
         tf.isUserInteractionEnabled = false
         tf.placeholder = "Company"
+        tf.returnKeyType = .done
+        tf.autocorrectionType = .no
         tf.font = UIFont.boldSystemFont(ofSize: 18)
         tf.borderStyle = .roundedRect
-        tf.autocorrectionType = .no
-        tf.keyboardType = .default
-        tf.returnKeyType = .done
         tf.clearButtonMode = .whileEditing
-        tf.contentVerticalAlignment = .center
         return tf
     }()
     
@@ -136,28 +133,26 @@ class ProfileView: UIView {
         let tf =  UITextField()
         tf.isUserInteractionEnabled = false
         tf.placeholder = "Location"
+        tf.returnKeyType = .done
+        tf.autocorrectionType = .no
         tf.font = UIFont.boldSystemFont(ofSize: 18)
         tf.borderStyle = .roundedRect
-        tf.autocorrectionType = .no
-        tf.keyboardType = .default
-        tf.returnKeyType = .done
         tf.clearButtonMode = .whileEditing
-        tf.contentVerticalAlignment = .center
         return tf
     }()
     
     // Bio TextView
-    private let bioTV: UITextView = {
+    let bioTV: UITextView = {
         let tv =  UITextView()
         tv.text = "Biography"
+        tv.font = UIFont.italicSystemFont(ofSize: 18)
+        tv.returnKeyType = .done
+        // Round it
         tv.layer.borderWidth = 1
         tv.layer.cornerRadius = 10
         tv.clipsToBounds = true
-        tv.font = UIFont.italicSystemFont(ofSize: 18)
-        tv.autocorrectionType = .no
-        tv.keyboardType = .default
-        tv.returnKeyType = .done
-        tv.isEditable = true
+        tv.isEditable = false
+        tv.isSelectable = false
         return tv
     }()
 }

@@ -16,6 +16,7 @@ target 'iOS-Challenge' do
   # System
   pod 'ReachabilitySwift'
   pod 'KeychainAccess'
+  pod 'IQKeyboardManagerSwift'
 
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
