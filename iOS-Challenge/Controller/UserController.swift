@@ -25,7 +25,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
     //MARK: LifeCycle
     override func loadView() {
         if user != nil {
-            self.view = UserView(user: user)
+            self.view = UserView(user: user!)
         }else {
             self.view = UserView(user: nil)
         }
