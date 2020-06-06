@@ -27,7 +27,10 @@ class RepoTableviewCell: UITableViewCell {
     
     //MARK: Setup
     private func setupViews() {
-        // 30 + 30 + 10
+        // Whole cell height is 70
+        
+        self.accessoryType = .disclosureIndicator
+        
         // Owner Image
         self.addSubview(imgView)
         imgView.snp.makeConstraints { (make) in
@@ -39,8 +42,8 @@ class RepoTableviewCell: UITableViewCell {
         self.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalTo(imgView.snp_rightMargin).offset(20)
-            make.right.equalToSuperview().offset(-10)
             make.top.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
             make.height.equalTo(30)
         }
         // Star Imageview
