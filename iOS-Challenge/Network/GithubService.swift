@@ -13,6 +13,7 @@ enum GithubService {
     case userInfo
     case search(subject: String)
     case commits(commitPath: String)
+    case update(user: User)
 }
 
 extension GithubService: TargetType {
@@ -21,7 +22,7 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return URL(string: "https://github.com")!
-        case .userInfo, .search, .commits:
+        case .userInfo, .search, .commits, .update:
              return URL(string: "https://api.github.com")!
         }
     }
@@ -30,7 +31,7 @@ extension GithubService: TargetType {
         switch self {
         case .authenticate:
             return "/login/oauth/access_token"
-        case .userInfo:
+        case .userInfo, .update:
             return "/user"
         case .search:
             return "/search/repositories"
@@ -45,6 +46,8 @@ extension GithubService: TargetType {
             return .post
         case .userInfo, .search, .commits:
             return .get
+        case .update:
+            return .patch
         }
     }
     
@@ -61,7 +64,7 @@ extension GithubService: TargetType {
                           "redirect_uri": secrets.redirect_url,
                           "client_secret": secrets.clientSecret,
                           "code": code,
-                          "state": 0] as [String : Any]
+                          "state": 0] as Params
             return .requestParameters(parameters: params,
                                       encoding: JSONEncoding.prettyPrinted)
         case .userInfo, .commits:
@@ -69,13 +72,21 @@ extension GithubService: TargetType {
         case .search(let q):
             return .requestParameters(parameters: ["q" : q],
                                       encoding: URLEncoding())
+        case .update(let user):
+            // TODO: Solve force unwraps
+            let params = ["name": user.name!,
+                          "company": user.company!,
+                          "location": user.location!,
+                          "bio": user.bio!] as Params
+            return .requestParameters(parameters: params,
+                                      encoding: JSONEncoding.prettyPrinted)
         }
     }
     
     var headers: [String : String]? {
         let header = ["Accept" : "application/json"]
         switch self {
-        case .authenticate, .userInfo, .search, .commits:
+        case .authenticate, .userInfo, .search, .commits, .update:
             return header
         }
     }
@@ -86,3 +97,5 @@ extension GithubService: AccessTokenAuthorizable {
         return .bearer
     }
 }
+
+

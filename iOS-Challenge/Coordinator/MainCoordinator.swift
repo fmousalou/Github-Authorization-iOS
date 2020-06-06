@@ -20,6 +20,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        profile()
+        return
         let token = KeychainAPI.shared.token
         if token != nil { // Logged on once
             search()
@@ -40,9 +42,9 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(searchVC, animated: true)
     }
     
-    func userInfo() {
-        let userVC = ProfileController()
-        navigationController.pushViewController(userVC, animated: true)
+    func profile() {
+        let profileVC = ProfileController()
+        navigationController.pushViewController(profileVC, animated: true)
     }
     
     func commits(urlPath: String) {

@@ -11,3 +11,4 @@ import Moya
 
 typealias QueryParameters = [String : String]
 typealias githubService = MoyaProvider<GithubService>
+typealias Params = [String : Any]

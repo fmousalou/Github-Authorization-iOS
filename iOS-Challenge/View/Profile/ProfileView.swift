@@ -28,10 +28,10 @@ class ProfileView: UIView {
     //MARK: Setups
     private func setupView() {
         backgroundColor = .white
-        nameLabel.text = user?.name
-        companyLabel.text = user?.company
-        locationLabel.text = user?.location
-        bioLabel.text = user?.bio
+        nameTF!.text = user?.name
+        companyTF!.text = user?.company
+        locationTF!.text = user?.location
+        bioTV.text = user?.bio
         
         // Assign user avatar
         self.imageView.sd_setImage(with: user?.avatar_url)
@@ -46,9 +46,9 @@ class ProfileView: UIView {
             make.leading.equalToSuperview().offset(20)
         }
         // Labels
-        self.addSubview(labelStack)
+        self.addSubview(textFieldsStack)
         setupLabelStack()
-        labelStack.snp.makeConstraints { (make) in
+        textFieldsStack.snp.makeConstraints { (make) in
             make.leading.equalTo(self.imageView.snp.trailing).offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(self.imageView.snp.height)
@@ -56,11 +56,11 @@ class ProfileView: UIView {
         }
         
         // Bio Label
-        self.addSubview(bioLabel)
-        bioLabel.snp.makeConstraints { (make) in
+        self.addSubview(bioTV)
+        bioTV.snp.makeConstraints { (make) in
             make.leading.equalTo(imageView.snp.leading)
             make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.trailing.equalTo(self.labelStack.snp.trailing)
+            make.trailing.equalTo(self.textFieldsStack.snp.trailing)
             make.height.equalTo(120)
         }
         
@@ -69,18 +69,18 @@ class ProfileView: UIView {
                                       following: user?.following)
         self.addSubview(followsView)
         followsView.snp.makeConstraints { (make) in
-            make.top.equalTo(bioLabel.snp_bottomMargin)
+            make.top.equalTo(bioTV.snp_bottomMargin)
             make.height.equalTo(100)
-            make.leading.equalTo(bioLabel.snp_leadingMargin)
-            make.trailing.equalTo(bioLabel.snp_trailingMargin)
+            make.leading.equalTo(bioTV.snp_leadingMargin)
+            make.trailing.equalTo(bioTV.snp_trailingMargin)
             make.centerX.equalToSuperview()
         }
     }
     
     private func setupLabelStack() {
-        labelStack.addArrangedSubview(nameLabel)
-        labelStack.addArrangedSubview(companyLabel)
-        labelStack.addArrangedSubview(locationLabel)
+        textFieldsStack.addArrangedSubview(nameTF!)
+        textFieldsStack.addArrangedSubview(companyTF!)
+        textFieldsStack.addArrangedSubview(locationTF!)
     }
     
     //MARK:- Views
@@ -92,56 +92,72 @@ class ProfileView: UIView {
         return imgView
     }()
     
-    private let labelStack: UIStackView = {
+    private let textFieldsStack: UIStackView = {
         let stackView = UIStackView()
-        stackView.alignment = .leading
+        stackView.backgroundColor = .green
+        stackView.alignment = .fill
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         return stackView
     }()
     
-    //MARK:- Labels
-    //Name Label
-    private lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.numberOfLines = 0
-        label.text = "No Name"
-        label.textAlignment = .center
-        label.sizeToFit()
-        return label
+    //MARK:- TextFields
+    // Name TextField
+    private weak var nameTF: UITextField? = {
+        let tf =  UITextField()
+        tf.isUserInteractionEnabled = false
+        tf.placeholder = "Name"
+        tf.font = UIFont.boldSystemFont(ofSize: 18)
+        tf.borderStyle = .roundedRect
+        tf.autocorrectionType = .no
+        tf.keyboardType = .default
+        tf.returnKeyType = .done
+        tf.clearButtonMode = .whileEditing
+        tf.contentVerticalAlignment = .center
+        return tf
+    }()
+    // Company TextField
+    private weak var companyTF: UITextField? = {
+        let tf =  UITextField()
+        tf.isUserInteractionEnabled = false
+        tf.placeholder = "Company"
+        tf.font = UIFont.boldSystemFont(ofSize: 18)
+        tf.borderStyle = .roundedRect
+        tf.autocorrectionType = .no
+        tf.keyboardType = .default
+        tf.returnKeyType = .done
+        tf.clearButtonMode = .whileEditing
+        tf.contentVerticalAlignment = .center
+        return tf
     }()
     
-    //company Label
-    private lazy var companyLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.numberOfLines = 0
-        label.text = "No Company"
-        label.textAlignment = .center
-        label.sizeToFit()
-        return label
+    // Location TextField
+    private weak var locationTF: UITextField? = {
+        let tf =  UITextField()
+        tf.isUserInteractionEnabled = false
+        tf.placeholder = "Location"
+        tf.font = UIFont.boldSystemFont(ofSize: 18)
+        tf.borderStyle = .roundedRect
+        tf.autocorrectionType = .no
+        tf.keyboardType = .default
+        tf.returnKeyType = .done
+        tf.clearButtonMode = .whileEditing
+        tf.contentVerticalAlignment = .center
+        return tf
     }()
     
-    //location Label
-    private lazy var locationLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.numberOfLines = 0
-        label.text = "No location"
-        label.textAlignment = .center
-        label.sizeToFit()
-        return label
-    }()
-    
-    //bio Label
-    private lazy var bioLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.italicSystemFont(ofSize: 18)
-        label.numberOfLines = 0
-        label.text = "No bio"
-        label.textAlignment = .left
-        label.sizeToFit()
-        return label
+    // Bio TextView
+    private let bioTV: UITextView = {
+        let tv =  UITextView()
+        tv.text = "Biography"
+        tv.layer.borderWidth = 1
+        tv.layer.cornerRadius = 10
+        tv.clipsToBounds = true
+        tv.font = UIFont.italicSystemFont(ofSize: 18)
+        tv.autocorrectionType = .no
+        tv.keyboardType = .default
+        tv.returnKeyType = .done
+        tv.isEditable = true
+        return tv
     }()
 }

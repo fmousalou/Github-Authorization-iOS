@@ -101,7 +101,7 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
             viewModel.search(subject: searchFor)
         }
     @objc func showUserInfoPage() {
-        coordinator?.userInfo()
+        coordinator?.profile()
     }
 }
 

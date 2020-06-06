@@ -35,6 +35,12 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
         super.viewDidLoad()
         self.title = "Profile"
         getUserInfo()
+        navigationItem.rightBarButtonItem = editButtonItem
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+//        (view as! ProfileView).nameLabel.text = "Editmode"
     }
     
     deinit {
@@ -43,7 +49,9 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
     
     //MARK: Functions
     private func getUserInfo() {
-        if user == nil, let token = KeychainAPI.shared.token { // It's first time
+        if user == nil,
+            let token = KeychainAPI.shared.token { // It's first time
+            
             let authPlugin = AccessTokenPlugin { _ in token }
             let gitService = githubService(plugins: [authPlugin])
             startAnimating(message: "Connecting to the server")
@@ -55,7 +63,6 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
                 switch result {
                 case .success(let response):
                     if let user = try? response.map(User.self){
-                        print(user)
                         sSelf.user = user
                         sSelf.view = ProfileView(user: user)
                     }
@@ -64,6 +71,30 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
                 }
                 sSelf.stopAnimating()
             }
+        }
+    }
+    
+    private func updateUser() {
+        let authPlugin = AccessTokenPlugin { _ in KeychainAPI.shared.token! }
+        let gitService = githubService(plugins: [authPlugin])
+        startAnimating(message: "Connecting to the server")
+        gitService.request(.update(user: User())) {
+            [weak self]
+            (result) in
+            guard let sSelf = self else { return}
+            switch result {
+            case .success(let response):
+                if let updatedUser = try? response.map(User.self) {
+                    print("User Updated \n \(updatedUser)")
+                    KeychainAPI.shared.user = updatedUser
+                }else {
+                    Toast.shared.showIn(body: "Can't update your profile!")
+                }
+            //                sSelf.processUpdated(user: json)
+            case .failure:
+                Toast.shared.showServerConnectionError()
+            }
+            sSelf.stopAnimating()
         }
     }
 }
