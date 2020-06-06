@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserView: UIView {
+class ProfileView: UIView {
     private let user: User?
     //MARK: Init
     init(user: User?) {

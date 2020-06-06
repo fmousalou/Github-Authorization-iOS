@@ -10,7 +10,7 @@ import UIKit
 import Moya
 import NVActivityIndicatorView
 
-class UserController: UIViewController, NVActivityIndicatorViewable {
+class ProfileController: UIViewController, NVActivityIndicatorViewable {
     
     //MARK: Variables
     private var user: User? {
@@ -25,9 +25,9 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
     //MARK: LifeCycle
     override func loadView() {
         if user != nil {
-            self.view = UserView(user: user!)
+            self.view = ProfileView(user: user!)
         }else {
-            self.view = UserView(user: nil)
+            self.view = ProfileView(user: nil)
         }
     }
     
@@ -57,7 +57,7 @@ class UserController: UIViewController, NVActivityIndicatorViewable {
                     if let user = try? response.map(User.self){
                         print(user)
                         sSelf.user = user
-                        sSelf.view = UserView(user: user)
+                        sSelf.view = ProfileView(user: user)
                     }
                 case .failure:
                     Toast.shared.showServerConnectionError()

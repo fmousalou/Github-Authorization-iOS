@@ -41,7 +41,7 @@ class MainCoordinator: Coordinator {
     }
     
     func userInfo() {
-        let userVC = UserController()
+        let userVC = ProfileController()
         navigationController.pushViewController(userVC, animated: true)
     }
     
