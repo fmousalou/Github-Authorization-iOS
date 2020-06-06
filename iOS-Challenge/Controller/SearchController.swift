@@ -130,10 +130,14 @@ extension SearchController:  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowVM = viewModel.getRowViewModel( at: indexPath )
-        if let commitsURL = rowVM.commitsURL {
-            coordinator?.commits(url: commitsURL)
-        }else {
-            Toast.shared.showIn(body: "There isn't commits")
+        
+        guard let commitsURL = rowVM.commitsURL,
+            let commitsPath = commitsURL.commitsURLPath // If has valid commits path
+            else {
+                Toast.shared.showIn(body: "There isn't commits")
+                return }
+        if viewModel.isAllowSegue { // If internet connected
+            coordinator?.commits(urlPath: commitsPath)
         }
     }
 }

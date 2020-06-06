@@ -52,7 +52,17 @@ class ReposViewModel {
         return repoViewModels.count
     }
     
+    //MARK: Simple
     var suspendedRequestQ: String?
+    var isAllowSegue: Bool {
+        get {
+            if reachability.isConnected {
+                return true
+            }
+            alertMessage = "Please check your internet connection!"
+            return false
+        }
+    }
     
     //MARK:- Functions
     private func initReachability() {
@@ -73,7 +83,7 @@ class ReposViewModel {
     
     // Send request to search
     func search(subject: String) {
-        guard reachability.connection != .unavailable else {
+        guard reachability.isConnected else {
             Toast.shared.showInternetConnectionError()
             self.suspendedRequestQ = subject
             return
@@ -116,6 +126,6 @@ class ReposViewModel {
             }
         }
         repoViewModels = gits
-        if gits.count == 0 { alertMessage = "No result\n Please search something else..."}
+        if gits.count == 0 { alertMessage = "No result\n Please search something else"}
     }
 }

@@ -16,7 +16,7 @@ class Toast {
         config.duration = .seconds(seconds: 5)
         config.dimMode = .none
         config.preferredStatusBarStyle = .default
-        config.ignoreDuplicates = false
+        config.ignoreDuplicates = true
     }
     
     // Singleton

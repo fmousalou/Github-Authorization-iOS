@@ -45,8 +45,8 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(userVC, animated: true)
     }
     
-    func commits(url: String) {
-        let commitsVC = CommitsController(url: url.commitsURLPath!)
+    func commits(urlPath: String) {
+        let commitsVC = CommitsController(url: urlPath)
         navigationController.pushViewController(commitsVC, animated: true)
     }
 }
