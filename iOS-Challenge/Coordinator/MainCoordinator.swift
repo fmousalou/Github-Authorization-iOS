@@ -20,8 +20,6 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        profile()
-        return
         let token = KeychainAPI.shared.token
         if token != nil { // Logged on once
             search()
