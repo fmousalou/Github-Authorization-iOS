@@ -1,20 +1,30 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
-
 target 'iOS-Challenge' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Alamofire'
-  # Pods for iOS-Challenge
+  # Network
+  pod 'Moya'
+  pod 'SwiftyJSON'
+  pod 'SDWebImage'
+
+  # View
+  pod 'SnapKit'
+  pod 'SwiftMessages'
+  pod 'NVActivityIndicatorView'
+  pod "Pulsator"
+
+  # System
+  pod 'ReachabilitySwift'
+  pod 'KeychainAccess'
+  pod 'IQKeyboardManagerSwift'
 
   target 'iOS-ChallengeTests' do
     inherit! :search_paths
-    # Pods for testing
+    # Test
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'iOS-ChallengeUITests' do
-    # Pods for testing
   end
-
 end

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Controller-->
+        <scene sceneID="bna-qU-CkU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tru-Li-HbT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="LoginController" id="s17-om-mQp" customClass="LoginController" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ceg-qa-ZZY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="02V-TI-xau">
+                                <rect key="frame" x="20" y="44" width="374" height="199"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="4Lr-Vc-ISb"/>
+                                </constraints>
+                                <string key="text">
+Hi dear user 👋🏼😍
+It seems it's first time that you've opened the app.
+
+Please login to the app using your Github Account.🙏🏼</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEP-Pn-zHz">
+                                <rect key="frame" x="117" y="363" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="mOm-kR-TM4"/>
+                                    <constraint firstAttribute="height" constant="180" id="vD4-bL-wHQ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="githubIcon"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="s17-om-mQp" eventType="touchUpInside" id="aPw-h8-Yjy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="02V-TI-xau" firstAttribute="top" secondItem="M2O-Cy-3bz" secondAttribute="top" id="JKy-MO-Yum"/>
+                            <constraint firstItem="NEP-Pn-zHz" firstAttribute="centerX" secondItem="M2O-Cy-3bz" secondAttribute="centerX" id="RxQ-DR-ULI"/>
+                            <constraint firstItem="02V-TI-xau" firstAttribute="leading" secondItem="M2O-Cy-3bz" secondAttribute="leading" constant="20" id="j8T-sb-HMK"/>
+                            <constraint firstItem="M2O-Cy-3bz" firstAttribute="trailing" secondItem="02V-TI-xau" secondAttribute="trailing" constant="20" id="sDY-lF-l90"/>
+                            <constraint firstItem="NEP-Pn-zHz" firstAttribute="centerY" secondItem="M2O-Cy-3bz" secondAttribute="centerY" id="y23-pM-F6T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M2O-Cy-3bz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lD7-Wl-TcG"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="NEP-Pn-zHz" id="sbf-G0-UQj"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="698.55072463768124" y="132.58928571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="githubIcon" width="267" height="222"/>
+    </resources>
+</document>

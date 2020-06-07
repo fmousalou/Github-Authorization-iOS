@@ -7,40 +7,35 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    var coordinator: MainCoordinator?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
+        
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(navigationController: navController)
+        coordinator?.start()
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("url => ",url)
-        let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems
-        
-        if queryItems?.contains(where: { $0.name == "error" }) == true  {
-            
-            let alert = UIAlertController(title: queryItems?.first(where: { $0.name == "error" })?.value,
-                              message: queryItems?.first(where: { $0.name == "error_description" })?.value,
-                              preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-            
-            window?.rootViewController?.present(alert, animated: true, completion: nil)
-            
-        }else if let code = queryItems?.first(where: { $0.name == "code"}) {
-            (window?.rootViewController as? ViewController)?.getAuthentication(with: code.value)
-        }
-        
-        
+        // create a basic UIWindow and activate it
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+        // Prevent keyboard covers the ProfileView
+        // for small iPhones
+        IQKeyboardManager.shared.enable = true
+
         return true
-        
     }
     
+    // DeepLink
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        guard let parameters = url.absoluteURL.queryParameters else { return true}
+        coordinator?.resumeAuthentication(with: parameters)
+        return true
+    }
 }
-
