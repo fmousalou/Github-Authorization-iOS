@@ -26,9 +26,11 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
         super.viewWillAppear(animated)
         // Animate login button
         let pulsator = Pulsator()
-        pulsator.position = CGPoint(x: loginBtn.layer.bounds.midX, y: loginBtn.layer.bounds.midY)
-        pulsator.radius = 240.0
-        pulsator.pulseInterval = 1
+        pulsator.position = CGPoint(x: loginBtn.layer.bounds.midX,
+                                    y: loginBtn.layer.bounds.midY)
+        pulsator.radius = 240
+        pulsator.pulseInterval = 0.05
+        pulsator.animationDuration = 0.8
         loginBtn.layer.addSublayer(pulsator)
         pulsator.start()
     }
