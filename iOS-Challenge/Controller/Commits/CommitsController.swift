@@ -64,6 +64,8 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
             case .success(let response):
                 if let json = JSON(response.data).array {
                     sSelf.processFetched(jsonCommits: json)
+                }else {
+                    Toast.shared.showIn(body: "I can't show commits")
                 }
             case .failure:
                 Toast.shared.showServerConnectionError()
