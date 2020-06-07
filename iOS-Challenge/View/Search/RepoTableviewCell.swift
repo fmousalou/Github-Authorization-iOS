@@ -76,14 +76,14 @@ class RepoTableviewCell: UITableViewCell {
     
     //MARK:- Views
     //MARK: ImageViews
-    private lazy var imgView: UIImageView = {
+    private let imgView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "user_placeholder")
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
         return imgView
     }()
-    private lazy var starIgView: UIImageView = {
+    private let starIgView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "star")
         imgView.contentMode = .scaleAspectFit
@@ -92,7 +92,7 @@ class RepoTableviewCell: UITableViewCell {
     }()
     
     //MARK: Labels
-    private lazy var nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -100,7 +100,7 @@ class RepoTableviewCell: UITableViewCell {
         label.text = "نام ندارد."
         return label
     }()
-    private lazy var starCountLabel: UILabel = {
+    private let starCountLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
