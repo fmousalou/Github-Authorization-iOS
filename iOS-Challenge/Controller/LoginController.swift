@@ -35,6 +35,7 @@ class LoginController: UIViewController, Storyboarded, NVActivityIndicatorViewab
     deinit {
         print("There isn't retain cycle in \(#file)")
     }
+    
     //MARK: Action
     @IBAction private func loginPressed(_ sender: Any) {
         // ios 10 and lower

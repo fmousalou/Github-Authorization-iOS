@@ -26,39 +26,6 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK:- LifeCycle
-    override func loadView() {
-        self.view = searchView
-        setupViews()
-        setupSearchBar()
-        initVM()
-    }
-    
-    deinit {
-        print("There isn't retain cycle in \(#file)")
-    }
-    
-    //MARK:- Setups
-    private func setupViews() {
-        self.title = "Search"
-        searchView.tblView.delegate = self as UITableViewDelegate
-        searchView.tblView.dataSource = self as UITableViewDataSource
-        searchView.tblView.register(RepoTableviewCell.self, forCellReuseIdentifier: "cell")
-        
-        // Config Left bar button
-        let leftBarBtn = searchView.leftBarBtn
-        leftBarBtn.target = self
-        self.navigationItem.leftBarButtonItem = leftBarBtn
-        navigationItem.leftBarButtonItem?.title = nil
-    }
-    private func setupSearchBar() {
-        searchController.searchBar.delegate = self as UISearchBarDelegate
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Github.com"
-        definesPresentationContext = true
-        searchView.tblView.tableHeaderView = searchController.searchBar
-    }
     private func initVM() {
         // TODO: Do it with RXSwift
         
@@ -100,6 +67,38 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
             }
         }
     }
+    deinit {
+        print("There isn't retain cycle in \(#file)")
+    }
+    
+    //MARK:- LifeCycle
+    override func loadView() {
+        self.view = searchView
+        setupViews()
+        setupSearchBar()
+        initVM()
+    }
+    
+    //MARK:- Setups
+    private func setupViews() {
+        self.title = "Search"
+        searchView.tblView.delegate = self as UITableViewDelegate
+        searchView.tblView.dataSource = self as UITableViewDataSource
+        searchView.tblView.register(RepoTableviewCell.self, forCellReuseIdentifier: "cell")
+        
+        // Config Left bar button
+        let leftBarBtn = searchView.leftBarBtn
+        leftBarBtn.target = self
+        self.navigationItem.leftBarButtonItem = leftBarBtn
+        navigationItem.leftBarButtonItem?.title = nil
+    }
+    private func setupSearchBar() {
+        searchController.searchBar.delegate = self as UISearchBarDelegate
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Github.com"
+        definesPresentationContext = true
+        searchView.tblView.tableHeaderView = searchController.searchBar
+    }
     
     //MARK:- Functions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -114,6 +113,7 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
 
 // Tableview DataSource
 // TODO: Move it to another class and write test
+// MARK:- TableView Datasource
 extension SearchController:  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells

@@ -10,9 +10,9 @@ import Moya
 
 enum GithubService {
     case authenticate(code: String)
-    case userInfo
     case search(subject: String)
     case commits(commitPath: String)
+    case userInfo
     case update(user: User)
 }
 

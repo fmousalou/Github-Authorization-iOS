@@ -40,14 +40,14 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(searchVC, animated: true)
     }
     
-    func profile() {
-        let profileVC = ProfileController()
-        navigationController.pushViewController(profileVC, animated: true)
-    }
-    
     func commits(urlPath: String) {
         let commitsVC = CommitsController(url: urlPath)
         navigationController.pushViewController(commitsVC, animated: true)
+    }
+    
+    func profile() {
+        let profileVC = ProfileController()
+        navigationController.pushViewController(profileVC, animated: true)
     }
 }
 

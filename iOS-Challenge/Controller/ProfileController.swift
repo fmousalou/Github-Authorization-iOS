@@ -13,6 +13,7 @@ import Reachability
 
 class ProfileController: UIViewController, NVActivityIndicatorViewable {
     // TODO: Make ViewModel
+    
     //MARK:- Variables
     private let reachability: Reachability
     private let profileView = ProfileView()

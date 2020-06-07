@@ -12,7 +12,7 @@ import SwiftyJSON
 import Reachability
 
 class ReposViewModel {
-    // Dependencies
+    // MARK:- Dependencies
     private let githubService: githubService
     private let reachability: Reachability
     // MARK:- Init
@@ -22,13 +22,13 @@ class ReposViewModel {
         initReachability()
     }
     
-    //MARK:- Variables
+    //MARK:- Properties
     //MARK: Closures
     var reloadTableViewClosure: (()->())?
     var updateLoadingStatus: (()->())?
     var showAlertClosure: (()->())?
     
-    //MARK: Computed Properties
+    //MARK: Computed
     //Made it internal in order to access from testCase
     var repoViewModels: [RepoRowViewModel] = [RepoRowViewModel]() {
         didSet {
@@ -81,6 +81,10 @@ class ReposViewModel {
         }
     }
     
+    func getRowViewModel( at indexPath: IndexPath ) -> RepoRowViewModel {
+        return repoViewModels[indexPath.row]
+    }
+    
     // Send request to search
     func search(subject: String) {
         guard reachability.isConnected else {
@@ -107,10 +111,6 @@ class ReposViewModel {
             }
             sSelf.isLoading = false
         }
-    }
-    
-    func getRowViewModel( at indexPath: IndexPath ) -> RepoRowViewModel {
-        return repoViewModels[indexPath.row]
     }
     
     //Made it internal in order to access from testCase

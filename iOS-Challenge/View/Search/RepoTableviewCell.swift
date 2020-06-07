@@ -14,15 +14,15 @@ import SDWebImage
 class RepoTableviewCell: UITableViewCell {
     
     //MARK: Init
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-    }
     init(repo: GitRepo) {
         super.init(style: .default, reuseIdentifier: nil)
         setupViews()
         nameLabel.text = repo.name
         self.selectionStyle = .none
+    }
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -110,7 +110,7 @@ class RepoTableviewCell: UITableViewCell {
     }()
 }
 
-//MARK: Selection Style
+//MARK:- Selection Style
 extension RepoTableviewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
