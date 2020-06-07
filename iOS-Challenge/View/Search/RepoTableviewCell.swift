@@ -115,7 +115,8 @@ extension RepoTableviewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            self.contentView.backgroundColor = UIColor(hex: "#c3f1ff")
+            //                       #ffe700ff
+            self.contentView.backgroundColor = UIColor(hex: "#c3f1ffff")
         }else {
             self.contentView.backgroundColor = .clear
         }
@@ -123,7 +124,7 @@ extension RepoTableviewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if highlighted {
             UIView.animate(withDuration: 0.3) {
-                self.contentView.backgroundColor = UIColor(hex: "#c3f1ff")
+                self.contentView.backgroundColor = UIColor(hex: "#c3f1ffff")
             }
             self.shake()
         }
