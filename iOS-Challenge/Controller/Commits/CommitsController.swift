@@ -77,8 +77,8 @@ class CommitsController: UIViewController, NVActivityIndicatorViewable, UITableV
     //Made it internal in order to access from testCase
     func processFetched( jsonCommits: [JSON] ) {
         var commits = [Commit]()
-        jsonCommits.forEach { (commit) in
-            let commitJsonObj = commit["commit"]
+        jsonCommits.forEach {
+            let commitJsonObj = $0["commit"]
             if let commitObj = try? JSONDecoder().decode(Commit.self, from: commitJsonObj.rawData()) {
                 commits.append(commitObj)
             }

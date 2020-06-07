@@ -116,8 +116,8 @@ class ReposViewModel {
     //Made it internal in order to access from testCase
     func processFetched( repos: [JSON] ) {
         var gits = [RepoRowViewModel]()
-        repos.forEach { (repo) in
-            if let repoObj = try? JSONDecoder().decode(GitRepo.self, from: repo.rawData()) {
+        repos.forEach {
+            if let repoObj = try? JSONDecoder().decode(GitRepo.self, from: $0.rawData()) {
                 let newRepo = RepoRowViewModel(nameText: repoObj.name ?? "No Name",
                                                imageUrl: repoObj.owner?.avatar_url,
                                                starsCount: String(repoObj.stars ?? 0),
