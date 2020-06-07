@@ -11,7 +11,7 @@ import Moya
 import NVActivityIndicatorView
 
 class SearchController: UIViewController, NVActivityIndicatorViewable, UITableViewDelegate, UISearchBarDelegate {
-
+    
     //MARK:- Variables
     weak var coordinator: MainCoordinator?
     private let searchController = UISearchController(searchResultsController: nil)
@@ -88,7 +88,7 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
         viewModel.reloadTableViewClosure = { [weak self] () in
             DispatchQueue.main.async {
                 self?.searchView.tblView.backgroundView = nil
-                self?.searchView.tblView.reloadData()
+                self?.searchView.tblView.reloadData(effect: .roll)
                 self?.searchController.dismiss(animated: true)
             }
         }
@@ -96,10 +96,10 @@ class SearchController: UIViewController, NVActivityIndicatorViewable, UITableVi
     
     //MARK:- Functions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            guard let searchFor = searchBar.text else { return}
-            // Call mvvm fetch
-            viewModel.search(subject: searchFor)
-        }
+        guard let searchFor = searchBar.text else { return}
+        // Call mvvm fetch
+        viewModel.search(subject: searchFor)
+    }
     @objc func showUserInfoPage() {
         coordinator?.profile()
     }
@@ -127,10 +127,10 @@ extension SearchController:  UITableViewDataSource {
         
         return cell
     }
-    
+    // Select -> Commits
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let rowVM = viewModel.getRowViewModel( at: indexPath )
         
+        let rowVM = viewModel.getRowViewModel( at: indexPath )
         guard let commitsURL = rowVM.commitsURL,
             let commitsPath = commitsURL.commitsURLPath // If has valid commits path
             else {

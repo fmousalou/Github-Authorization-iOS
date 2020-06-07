@@ -51,6 +51,9 @@
 		87DF8FB1248B501000150316 /* Reachability+isConnected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF8FB0248B501000150316 /* Reachability+isConnected.swift */; };
 		87DF8FB3248B646A00150316 /* UserFollows.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DF8FB2248B646A00150316 /* UserFollows.xib */; };
 		87E4A644248BE20300CA3596 /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E4A643248BE20300CA3596 /* UIViewController+showAlert.swift */; };
+		87E4A648248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E4A647248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift */; };
+		87E4A64A248CC31600CA3596 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E4A649248CC31600CA3596 /* UIColor.swift */; };
+		87E4A64C248CC3D500CA3596 /* UIView+Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E4A64B248CC3D500CA3596 /* UIView+Shake.swift */; };
 		87E903D82489782B0044DFEE /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E903D72489782B0044DFEE /* Commit.swift */; };
 		BD553381D66687D8201C1137 /* Pods_iOS_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82816289C9E45F0FEED24B3B /* Pods_iOS_Challenge.framework */; };
 /* End PBXBuildFile section */
@@ -125,6 +128,9 @@
 		87DF8FB0248B501000150316 /* Reachability+isConnected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+isConnected.swift"; sourceTree = "<group>"; };
 		87DF8FB2248B646A00150316 /* UserFollows.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserFollows.xib; sourceTree = "<group>"; };
 		87E4A643248BE20300CA3596 /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+showAlert.swift"; path = "iOS-Challenge/Extensions/UIViewController+showAlert.swift"; sourceTree = SOURCE_ROOT; };
+		87E4A647248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+reloadDataAnimation.swift"; sourceTree = "<group>"; };
+		87E4A649248CC31600CA3596 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		87E4A64B248CC3D500CA3596 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
 		87E903D72489782B0044DFEE /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Commit.swift; path = "iOS-Challenge/Model/Commit.swift"; sourceTree = SOURCE_ROOT; };
 		8AC30C1A717ED60DFC3AE3B8 /* Pods_iOS_Challenge_iOS_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Challenge_iOS_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4D8E26B5FD8BCE799FD257 /* Pods-iOS-ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-ChallengeTests/Pods-iOS-ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +277,9 @@
 				874FA5C7248963A9002F96A9 /* String+commitsURLPath.swift */,
 				870F4B26248AD03300425335 /* UINavigationController+isRecentlyLoggedIn.swift */,
 				87DF8FB0248B501000150316 /* Reachability+isConnected.swift */,
+				87E4A647248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift */,
+				87E4A649248CC31600CA3596 /* UIColor.swift */,
+				87E4A64B248CC3D500CA3596 /* UIView+Shake.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -639,6 +648,7 @@
 				870F4B27248AD03300425335 /* UINavigationController+isRecentlyLoggedIn.swift in Sources */,
 				870357D42487725D00005070 /* KeychainAPI.swift in Sources */,
 				870357DB248789EC00005070 /* MainCoordinator.swift in Sources */,
+				87E4A64C248CC3D500CA3596 /* UIView+Shake.swift in Sources */,
 				876F21722488CD1400AD7180 /* UIImageview+round.swift in Sources */,
 				875FC09B24893BC2009B2FE1 /* GitRepo.swift in Sources */,
 				870D8A58248809530028E806 /* ProfileView.swift in Sources */,
@@ -653,11 +663,13 @@
 				87E903D82489782B0044DFEE /* Commit.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
 				870357DD24878A7000005070 /* Storyboarded.swift in Sources */,
+				87E4A648248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift in Sources */,
 				878D4E09248AC91D003C4302 /* Secrets.swift in Sources */,
 				87BC1D3C2487692900AA8760 /* GithubService.swift in Sources */,
 				874FA5CA2489652D002F96A9 /* CommitsController.swift in Sources */,
 				87437F8C2488D87A00733C20 /* RepoTableviewCell.swift in Sources */,
 				870357E32487CE8500005070 /* URL+queryParameters.swift in Sources */,
+				87E4A64A248CC31600CA3596 /* UIColor.swift in Sources */,
 				870357ED2488053D00005070 /* ProfileController.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
 				87DF8FB1248B501000150316 /* Reachability+isConnected.swift in Sources */,

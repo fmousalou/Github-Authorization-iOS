@@ -9,8 +9,10 @@
 import UIKit
 import SDWebImage
 
-class RepoTableviewCell: UITableViewCell {
 
+
+class RepoTableviewCell: UITableViewCell {
+    
     //MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,6 +22,7 @@ class RepoTableviewCell: UITableViewCell {
         super.init(style: .default, reuseIdentifier: nil)
         setupViews()
         nameLabel.text = repo.name
+        self.selectionStyle = .none
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -70,7 +73,7 @@ class RepoTableviewCell: UITableViewCell {
             imgView.sd_setImage(with: repoViewModel?.imageUrl)
         }
     }
-
+    
     //MARK:- Views
     //MARK: ImageViews
     private lazy var imgView: UIImageView = {
@@ -106,3 +109,25 @@ class RepoTableviewCell: UITableViewCell {
         return label
     }()
 }
+
+//MARK: Selection Style
+extension RepoTableviewCell {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            self.contentView.backgroundColor = UIColor(hex: "#c3f1ff")
+        }else {
+            self.contentView.backgroundColor = .clear
+        }
+    }
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            UIView.animate(withDuration: 0.3) {
+                self.contentView.backgroundColor = UIColor(hex: "#c3f1ff")
+            }
+            self.shake()
+        }
+    }
+}
+
+
