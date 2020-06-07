@@ -12,7 +12,7 @@
 		608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E423E091DB00BFE7C7 /* Main.storyboard */; };
 		608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E723E091DC00BFE7C7 /* Assets.xcassets */; };
 		608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */; };
-		608D18F623E091DC00BFE7C7 /* iOS_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */; };
+		608D18F623E091DC00BFE7C7 /* RepoVieModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D18F523E091DC00BFE7C7 /* RepoVieModelTest.swift */; };
 		608D190123E091DC00BFE7C7 /* iOS_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */; };
 		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
 		61CE16F93507B0F950BD0FE5 /* Pods_iOS_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DE82178DD6DCD184E7AD45 /* Pods_iOS_ChallengeTests.framework */; };
@@ -86,7 +86,7 @@
 		608D18EA23E091DC00BFE7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		608D18EC23E091DC00BFE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		608D18F123E091DC00BFE7C7 /* iOS-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeTests.swift; sourceTree = "<group>"; };
+		608D18F523E091DC00BFE7C7 /* RepoVieModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoVieModelTest.swift; sourceTree = "<group>"; };
 		608D18F723E091DC00BFE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		608D18FC23E091DC00BFE7C7 /* iOS-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		608D190023E091DC00BFE7C7 /* iOS_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ChallengeUITests.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				876E6E23248A24750098FCFC /* CommitsDataSourceTest.swift */,
-				608D18F523E091DC00BFE7C7 /* iOS_ChallengeTests.swift */,
+				608D18F523E091DC00BFE7C7 /* RepoVieModelTest.swift */,
 				608D18F723E091DC00BFE7C7 /* Info.plist */,
 			);
 			path = "iOS-ChallengeTests";
@@ -315,12 +315,11 @@
 		87063756248676EE00D2EBF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				876E6E1A248A0DD60098FCFC /* GitRepo.json */,
-				876E6E1F248A1DF70098FCFC /* Commits.json */,
+				87E4A64F248CDDF600CA3596 /* json */,
+				878D4E06248AC37A003C4302 /* Secrets.plist */,
 				608D18E723E091DC00BFE7C7 /* Assets.xcassets */,
 				608D18E923E091DC00BFE7C7 /* LaunchScreen.storyboard */,
 				608D18EC23E091DC00BFE7C7 /* Info.plist */,
-				878D4E06248AC37A003C4302 /* Secrets.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -392,6 +391,15 @@
 				87DF8FB0248B501000150316 /* Reachability+isConnected.swift */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		87E4A64F248CDDF600CA3596 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				876E6E1A248A0DD60098FCFC /* GitRepo.json */,
+				876E6E1F248A1DF70098FCFC /* Commits.json */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -698,7 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				608D18F623E091DC00BFE7C7 /* iOS_ChallengeTests.swift in Sources */,
+				608D18F623E091DC00BFE7C7 /* RepoVieModelTest.swift in Sources */,
 				876E6E24248A24750098FCFC /* CommitsDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,7 +884,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -896,7 +904,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

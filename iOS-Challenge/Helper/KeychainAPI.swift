@@ -12,9 +12,7 @@ class KeychainAPI {
     // MARK:- Variables
     static let shared = KeychainAPI()
     // Private
-    private let keychain: Keychain = {
-        return Keychain(service: "com.digipay.iOS-Challenge")
-    }()
+    private let keychain: Keychain = { Keychain(service: "com.digipay.iOS-Challenge") }()
     private let tokenKey = "digipay-token"
     private let userKey = "digipay-userObj"
     

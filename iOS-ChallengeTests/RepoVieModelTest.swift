@@ -12,7 +12,7 @@ import Quick
 import Nimble
 @testable import iOS_Challenge
 
-class iOS_ChallengeTests: XCTestCase {
+class RepoVieModelTest: XCTestCase {
     func testRepoViewModel() { // Without Library
         //TODO: Make it dynamic
         //Read sample json from bundle
