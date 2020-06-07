@@ -127,7 +127,7 @@
 		87BC1D3B2487692900AA8760 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		87DF8FB0248B501000150316 /* Reachability+isConnected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+isConnected.swift"; sourceTree = "<group>"; };
 		87DF8FB2248B646A00150316 /* UserFollows.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserFollows.xib; sourceTree = "<group>"; };
-		87E4A643248BE20300CA3596 /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+showAlert.swift"; path = "iOS-Challenge/Extensions/UIViewController+showAlert.swift"; sourceTree = SOURCE_ROOT; };
+		87E4A643248BE20300CA3596 /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+showAlert.swift"; path = "iOS-Challenge/Extensions/View/UIViewController+showAlert.swift"; sourceTree = SOURCE_ROOT; };
 		87E4A647248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+reloadDataAnimation.swift"; sourceTree = "<group>"; };
 		87E4A649248CC31600CA3596 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		87E4A64B248CC3D500CA3596 /* UIView+Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shake.swift"; sourceTree = "<group>"; };
@@ -271,15 +271,8 @@
 		87063752248676B300D2EBF2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				870357DE2487A19C00005070 /* String+GithubURL.swift */,
-				870357E22487CE8500005070 /* URL+queryParameters.swift */,
-				876F21712488CD1400AD7180 /* UIImageview+round.swift */,
-				874FA5C7248963A9002F96A9 /* String+commitsURLPath.swift */,
-				870F4B26248AD03300425335 /* UINavigationController+isRecentlyLoggedIn.swift */,
-				87DF8FB0248B501000150316 /* Reachability+isConnected.swift */,
-				87E4A647248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift */,
-				87E4A649248CC31600CA3596 /* UIColor.swift */,
-				87E4A64B248CC3D500CA3596 /* UIView+Shake.swift */,
+				87E4A64E248CD65400CA3596 /* System */,
+				87E4A64D248CD63900CA3596 /* View */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				870D8A57248809530028E806 /* ProfileView.swift */,
-				87E4A643248BE20300CA3596 /* UIViewController+showAlert.swift */,
 				870CEBD8248B78CD000502DE /* UserFollowsView.swift */,
 				87DF8FB2248B646A00150316 /* UserFollows.xib */,
 			);
@@ -376,6 +368,30 @@
 				870357E42487D08A00005070 /* ServerError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		87E4A64D248CD63900CA3596 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87E4A649248CC31600CA3596 /* UIColor.swift */,
+				87E4A643248BE20300CA3596 /* UIViewController+showAlert.swift */,
+				876F21712488CD1400AD7180 /* UIImageview+round.swift */,
+				87E4A647248CB6D700CA3596 /* UITableView+reloadDataAnimation.swift */,
+				87E4A64B248CC3D500CA3596 /* UIView+Shake.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87E4A64E248CD65400CA3596 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				870357DE2487A19C00005070 /* String+GithubURL.swift */,
+				870357E22487CE8500005070 /* URL+queryParameters.swift */,
+				874FA5C7248963A9002F96A9 /* String+commitsURLPath.swift */,
+				870F4B26248AD03300425335 /* UINavigationController+isRecentlyLoggedIn.swift */,
+				87DF8FB0248B501000150316 /* Reachability+isConnected.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
