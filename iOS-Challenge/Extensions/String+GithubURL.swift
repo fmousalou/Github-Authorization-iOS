@@ -13,9 +13,9 @@ extension String {
     var githubURL: URL? {
         let secrets = Secrets()
         let parameters = ["client_id": secrets.clientID,
-        "redirect_uri": secrets.redirect_url,
-        "scope": "repo user",
-        "state": 0] as [String:Any]
+                          "redirect_uri": secrets.redirect_url,
+                          "scope": "public_repo user",
+                          "state": 0] as [String:Any]
         
         if let urlRequest = try? URLRequest(url: self, method: .get),
             let requestURL = (try? URLEncoding.default.encode(urlRequest, with:parameters))?.url {
