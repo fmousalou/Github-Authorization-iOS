@@ -11,6 +11,7 @@
         <!--Login Controller-->
         <scene sceneID="bna-qU-CkU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tru-Li-HbT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginController" id="s17-om-mQp" customClass="LoginController" customModule="iOS_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ceg-qa-ZZY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -58,149 +59,11 @@ Please login to the app using your Github Account.🙏🏼</string>
                         <outlet property="loginBtn" destination="NEP-Pn-zHz" id="sbf-G0-UQj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tru-Li-HbT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sm9-GL-lQM">
-            <objects>
-                <viewController id="pDk-Jd-Gc7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XPM-T0-nJ3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N9i-2u-ejq">
-                                <rect key="frame" x="20" y="44" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Aiw-E0-JTp"/>
-                                    <constraint firstAttribute="height" constant="120" id="WxM-Jd-Y9g"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="BTc-At-kaM">
-                                <rect key="frame" x="148" y="44" width="68" height="121.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imamad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-Bo-ZN7">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kabok" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttk-Mt-dSz">
-                                        <rect key="frame" x="0.0" y="50.5" width="68" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shiraz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3u-M0-b3Z">
-                                        <rect key="frame" x="0.0" y="101" width="68" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot5-Q6-x2C">
-                                <rect key="frame" x="20" y="191" width="374" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iGh-xv-5hF">
-                                <rect key="frame" x="20" y="547" width="354.5" height="52.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="290" translatesAutoresizingMaskIntoConstraints="NO" id="nsW-NB-oGw">
-                                        <rect key="frame" x="0.0" y="0.0" width="354.5" height="32"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="following_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6Bz-vF-SUe">
-                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="32"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="follower_icon" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-8D-aAO">
-                                                <rect key="frame" x="322.5" y="0.0" width="32" height="32"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="201" translatesAutoresizingMaskIntoConstraints="NO" id="jWb-5W-ocM">
-                                        <rect key="frame" x="0.0" y="32" width="354.5" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fl-1F-jup">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n12-8C-HAg">
-                                                <rect key="frame" x="273.5" y="0.0" width="81" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJj-co-zwe">
-                                <rect key="frame" x="91" y="440" width="247" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="N9i-2u-ejq" firstAttribute="leading" secondItem="ctR-Un-ebl" secondAttribute="leading" constant="20" id="UCi-Ib-hYy"/>
-                            <constraint firstItem="N9i-2u-ejq" firstAttribute="top" secondItem="ctR-Un-ebl" secondAttribute="top" id="kad-y6-SdL"/>
-                            <constraint firstItem="BTc-At-kaM" firstAttribute="top" secondItem="ctR-Un-ebl" secondAttribute="top" id="vLI-HR-8OB"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ctR-Un-ebl"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o6a-iZ-xch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1524.6376811594205" y="132.58928571428572"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="JUG-7F-yMB">
-            <objects>
-                <viewController id="dLy-8B-jxN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wiH-Pt-nmd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="oYZ-1N-cma"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iHY-9t-9vM">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="user_placeholder" id="Hma-gI-3we"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4xe-U7-AnK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3572.4637681159425" y="136.60714285714286"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="DLv-sd-9QG">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vz9-UW-aR5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NP1-X3-8xz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dLy-8B-jxN" kind="relationship" relationship="rootViewController" id="EpO-aI-oKm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P1h-0K-FM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2662.3188405797105" y="136.60714285714286"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="follower_icon" width="32" height="32"/>
-        <image name="following_icon" width="32" height="32"/>
         <image name="githubIcon" width="267" height="222"/>
-        <image name="user_placeholder" width="33.5" height="33.5"/>
     </resources>
 </document>
