@@ -47,7 +47,7 @@ class SearchView: UIView {
         backgroundViewLabel.textColor = .darkGray
         backgroundViewLabel.numberOfLines = 0
         backgroundViewLabel.textAlignment = .center
-        backgroundViewLabel.text = "Use the top sarch bar \nand find your favorite Repo 😍"
+        backgroundViewLabel.text = "Use top sarch bar \nto find your favorite Repo 😍"
         return backgroundViewLabel
     }()
     
