@@ -53,7 +53,7 @@ class ReposViewModel {
     }
     
     //MARK: Simple
-    var suspendedRequestQ: String?
+    private var suspendedRequestQ: String?
     var isAllowSegue: Bool {
         get {
             if reachability.isConnected {

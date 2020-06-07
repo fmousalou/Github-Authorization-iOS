@@ -10,18 +10,19 @@ import UIKit
 
 class UserFollowsView: UIView {
     
-    //MARK: Init
-    init(followers: Int?, following: Int?) {
-        super.init(frame: .zero)
-        commonInit()
-        flwersLabel.text = "\(followers ?? 0)"
-        flwingsLabel.text = "\(following ?? 0)"
+    var user: User? {
+        didSet {
+            // Set user follows
+            flwersLabel.text = "\(user?.followers ?? 0)"
+            flwingsLabel.text = "\(user?.following ?? 0)"
+        }
     }
+    
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()

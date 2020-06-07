@@ -9,57 +9,71 @@
 import UIKit
 import Moya
 import NVActivityIndicatorView
+import Reachability
 
 class ProfileController: UIViewController, NVActivityIndicatorViewable {
-    // TODO: Move logics to ViewModel
-    // TODO: Park Request
-    //MARK: Variables
+    // TODO: Make ViewModel
+    //MARK:- Variables
+    private let reachability: Reachability
+    private let profileView = ProfileView()
+    private var suspendedRequest = false
     private var user: User? {
         get {
-            return KeychainAPI.shared.user
+            KeychainAPI.shared.user
         }
         set {
             KeychainAPI.shared.user = newValue
         }
     }
-    private var profileView: ProfileView?
     
-    //MARK: LifeCycle
-    override func loadView() {
-        if user != nil {
-            profileView = ProfileView(user: user!)
-        }else {
-            profileView = ProfileView(user: nil)
+    //MARK:- Init
+    init() {
+        self.reachability = try! Reachability()
+        super.init(nibName: nil, bundle: nil)
+        initReachability()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    deinit {
+        print("There isn't retain cycle in \(#file)")
+    }
+    private func initReachability() {
+        reachability.whenReachable = {
+            [weak self] _ in
+            guard let sSelf = self else { return}
+            // If there is a suspended request
+            guard sSelf.suspendedRequest == true else { return}
+            // Send request again
+            sSelf.sendUpdateRequest()
         }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Error in \(#function)")
+        }
+    }
+    
+    //MARK:- LifeCycle
+    override func loadView() {
         self.view = self.profileView
+        // In order to assign variables to views
+        self.profileView.user = user
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Profile"
-        fetchUserInfo()
         navigationItem.rightBarButtonItem = editButtonItem
+        fetchUserInfo()
     }
     
-    deinit {
-        print("There isn't retain cycle in \(#file)")
-    }
-    
-    //MARK: Functions
+    //MARK:- Functions
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        guard let profileView = profileView else { return}
-        let tfStack = profileView.textFieldsStack
-        tfStack.arrangedSubviews.forEach {
-            if let tf = $0 as? UITextField {
-                tf.isUserInteractionEnabled = editing
-            }
-        }
-        (tfStack.arrangedSubviews.first as? UITextField)?.becomeFirstResponder()
-        profileView.bioTV.isEditable = editing
-        
-        if editing == false /*And then values changed*/ {
-            // Ask if he/she want to update profile or no
+        profileView.editable = editing
+        if !editing /*check if values changed*/ {
+            // Ask if he/she wants to update profile
             showAlert()
         }
     }
@@ -75,11 +89,7 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
             guard let sSelf = self else { return}
             switch(option) {
             case "Sure!":
-                if let newUser = sSelf.getUserInfoFromUI() {
-                    sSelf.update(new: newUser)
-                }else {
-                    Toast.shared.showIn(body: "Fill all fields please!")
-                }
+                sSelf.sendUpdateRequest()
             case "No":
                 Toast.shared.showIn(body: "Updating canceled!")
             default:
@@ -88,15 +98,15 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
         }
     }
     
-    private func getUserInfoFromUI() -> User? {
+    private func getUserInfoFromUI() -> User {
         // Get textfields
-        guard let textFieldsStack = profileView?.textFieldsStack.arrangedSubviews else { return nil}
+        let textFieldsStack = profileView.textFields
         // Read data
-        guard let name = (textFieldsStack[0] as? UITextField)?.text,
-            let company = (textFieldsStack[1] as? UITextField)?.text,
-            let location = (textFieldsStack[2] as? UITextField)?.text,
-            let bio = profileView?.bioTV.text
-            else { return nil}
+        let name = textFieldsStack[0].text
+        let company = textFieldsStack[1].text
+        let location = textFieldsStack[2].text
+        let bio = profileView.bioText
+        
         // Make model
         let user = User(name: name,
                         company: company,
@@ -107,10 +117,20 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
         return user
     }
     
+    private func sendUpdateRequest() {
+        guard reachability.isConnected else {
+            Toast.shared.showInternetConnectionError()
+            self.suspendedRequest = true
+            return
+        }
+        let newUser = getUserInfoFromUI()
+        self.update(new: newUser)
+    }
+    
     //MARK: Network
     private func fetchUserInfo() {
-        if user == nil,
-            let token = KeychainAPI.shared.token { // It's first time
+        if user == nil, // It's first time
+            let token = KeychainAPI.shared.token { // Get Token
             
             let authPlugin = AccessTokenPlugin { _ in token }
             let gitService = githubService(plugins: [authPlugin])
@@ -123,8 +143,12 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
                 switch result {
                 case .success(let response):
                     if let user = try? response.map(User.self){
+                        // Save in keychain
                         sSelf.user = user
-                        sSelf.view = ProfileView(user: user)
+                        // Update UI
+                        sSelf.profileView.user = user
+                    }else {
+                        Toast.shared.showIn(body: "Can't show your profile!")
                     }
                 case .failure:
                     Toast.shared.showServerConnectionError()
@@ -138,17 +162,18 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
         let authPlugin = AccessTokenPlugin { _ in KeychainAPI.shared.token! }
         let gitService = githubService(plugins: [authPlugin])
         startAnimating(message: "Connecting to the server")
+        
         gitService.request(.update(user: new)) {
             [weak self]
             (result) in
             guard let sSelf = self else { return}
             switch result {
             case .success(let response):
-                let js = try! response.mapJSON()
-                print(js)
                 if let updatedUser = try? response.map(User.self) {
-                    print("User Updated \n \(updatedUser)")
+                    sSelf.suspendedRequest = false
+                    // Save in Keychain
                     sSelf.user = updatedUser
+                    // Show proper Message
                     Toast.shared.showIn(body: "Successfully updated profile!",
                                         icon: "😍", theme: .success)
                 }else {
@@ -161,6 +186,3 @@ class ProfileController: UIViewController, NVActivityIndicatorViewable {
         }
     }
 }
-
-
-

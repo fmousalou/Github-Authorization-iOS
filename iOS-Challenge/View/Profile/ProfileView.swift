@@ -9,13 +9,56 @@
 import UIKit
 
 class ProfileView: UIView {
-    private let user: User?
+    
+    //MARK: Properties
+    var user: User? {
+        didSet {
+            nameTF.text = user?.name
+            companyTF.text = user?.company
+            locationTF.text = user?.location
+            bioTV.text = user?.bio
+            
+            // Assign user avatar
+            self.imageView.sd_setImage(with: user?.avatar_url)
+            
+            // Set user follows
+            self.followsView.user = user
+        }
+    }
+    var textFields: [UITextField] {
+        get {
+            let stackViews = self.textFieldsStack.arrangedSubviews
+            var tfsArrray = [UITextField]()
+            for view in stackViews {
+                if let tf = view as? UITextField {
+                    tfsArrray.append(tf)
+                }
+            }
+            return tfsArrray
+        }
+    }
+    var bioText: String { bioTV.text }
+    var editable: Bool = false {
+        didSet {
+            // Make TextFields Editable
+            let textFields = self.textFields
+            textFields.forEach {
+                $0.isUserInteractionEnabled = editable
+                $0.borderStyle = editable ? .roundedRect : .none
+            }
+            
+            // Make BioTextView ediatable
+            self.bioTV.isEditable = editable
+            
+            // Activate name TextField
+            textFields[0].becomeFirstResponder()
+        }
+    }
+    
     //MARK: Init
-    init(user: User?) {
-        self.user = user
+    init() {
         super.init(frame: .zero)
         setupView()
-        addViews()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -28,16 +71,6 @@ class ProfileView: UIView {
     //MARK: Setups
     private func setupView() {
         backgroundColor = .white
-        nameTF!.text = user?.name
-        companyTF!.text = user?.company
-        locationTF!.text = user?.location
-        bioTV.text = user?.bio
-        
-        // Assign user avatar
-        self.imageView.sd_setImage(with: user?.avatar_url)
-    }
-    
-    private func addViews() {
         // Imageview
         self.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
@@ -47,7 +80,7 @@ class ProfileView: UIView {
         }
         // Labels
         self.addSubview(textFieldsStack)
-        setupLabelStack()
+        setupTextFieldsStack()
         textFieldsStack.snp.makeConstraints { (make) in
             make.leading.equalTo(self.imageView.snp.trailing).offset(20)
             make.trailing.equalToSuperview().offset(-20)
@@ -65,8 +98,7 @@ class ProfileView: UIView {
         }
         
         // User Follows
-        let followsView = UserFollowsView(followers: user?.followers,
-                                      following: user?.following)
+        
         self.addSubview(followsView)
         followsView.snp.makeConstraints { (make) in
             make.top.equalTo(bioTV.snp_bottomMargin)
@@ -77,14 +109,17 @@ class ProfileView: UIView {
         }
     }
     
-    private func setupLabelStack() {
-        textFieldsStack.addArrangedSubview(nameTF!)
-        textFieldsStack.addArrangedSubview(companyTF!)
-        textFieldsStack.addArrangedSubview(locationTF!)
+    private func setupTextFieldsStack() {
+        textFieldsStack.addArrangedSubview(nameTF)
+        textFieldsStack.addArrangedSubview(companyTF)
+        textFieldsStack.addArrangedSubview(locationTF)
     }
     
     //MARK:- Views
-    private lazy var imageView: UIImageView = {
+    // Follows Subview
+    var followsView = UserFollowsView()
+    
+    private let imageView: UIImageView = {
         let imgView = UIImageView()
         imgView.image = UIImage(named: "user_placeholder")
         imgView.contentMode = .scaleAspectFit
@@ -92,7 +127,7 @@ class ProfileView: UIView {
         return imgView
     }()
     
-    let textFieldsStack: UIStackView = {
+    private let textFieldsStack: UIStackView = {
         let stackView = UIStackView()
         stackView.backgroundColor = .green
         stackView.alignment = .fill
@@ -104,55 +139,52 @@ class ProfileView: UIView {
     // MARK:- TextFields
     // TODO: Use Factory Pattern
     // Name TextField
-    private weak var nameTF: UITextField? = {
+    private let nameTF: UITextField = {
         let tf =  UITextField()
         tf.isUserInteractionEnabled = false
         tf.placeholder = "Name"
         tf.returnKeyType = .done
         tf.autocorrectionType = .no
         tf.font = UIFont.boldSystemFont(ofSize: 18)
-        tf.borderStyle = .roundedRect
         tf.clearButtonMode = .whileEditing
         return tf
     }()
     // Company TextField
-    private weak var companyTF: UITextField? = {
+    private let companyTF: UITextField = {
         let tf =  UITextField()
         tf.isUserInteractionEnabled = false
         tf.placeholder = "Company"
         tf.returnKeyType = .done
         tf.autocorrectionType = .no
         tf.font = UIFont.boldSystemFont(ofSize: 18)
-        tf.borderStyle = .roundedRect
         tf.clearButtonMode = .whileEditing
         return tf
     }()
     
     // Location TextField
-    private weak var locationTF: UITextField? = {
+    private let locationTF: UITextField = {
         let tf =  UITextField()
         tf.isUserInteractionEnabled = false
         tf.placeholder = "Location"
         tf.returnKeyType = .done
         tf.autocorrectionType = .no
         tf.font = UIFont.boldSystemFont(ofSize: 18)
-        tf.borderStyle = .roundedRect
         tf.clearButtonMode = .whileEditing
         return tf
     }()
     
     // Bio TextView
-    let bioTV: UITextView = {
+    private let bioTV: UITextView = {
         let tv =  UITextView()
         tv.text = "Biography"
         tv.font = UIFont.italicSystemFont(ofSize: 18)
         tv.returnKeyType = .done
-        // Round it
-        tv.layer.borderWidth = 1
-        tv.layer.cornerRadius = 10
-        tv.clipsToBounds = true
         tv.isEditable = false
         tv.isSelectable = false
+        // Round it
+        tv.layer.borderWidth = 0.5
+        tv.layer.cornerRadius = 10
+        tv.clipsToBounds = true
         return tv
     }()
 }
