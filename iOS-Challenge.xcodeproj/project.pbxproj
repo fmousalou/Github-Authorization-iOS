@@ -205,6 +205,7 @@
 		608D18DD23E091DB00BFE7C7 /* iOS-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
 				870357D7248789B200005070 /* Coordinator */,
 				87BC1D3A248768F300AA8760 /* Network */,
 				87063755248676DC00D2EBF2 /* Controller */,
@@ -214,7 +215,6 @@
 				87063752248676B300D2EBF2 /* Extensions */,
 				87063756248676EE00D2EBF2 /* Resources */,
 				870357D22487724B00005070 /* Helper */,
-				608D18DE23E091DB00BFE7C7 /* AppDelegate.swift */,
 			);
 			path = "iOS-Challenge";
 			sourceTree = "<group>";
